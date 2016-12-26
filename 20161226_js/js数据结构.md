@@ -25,3 +25,5 @@ null就是为空的值,即有一个值,但这个值为空。
 - 将数值转换成字符串  例如：String(123);返回值为"123"
 - 将布尔型转换成数值  例如：Numbar(true);返回值为1
 - 将布尔型转换成字符串   例如：String(false);返回值为"false"
+- 将Null转换成数值    例如：Number(null); 返回值为0
+- 将Undefined转换数值 例如：Number(undefined); 返回值为NaN
