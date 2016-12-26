@@ -12,12 +12,13 @@
 a{
     text-decoration:none;
 }
-li{
+ul li{
     list-style: none;
 }
 .content{
-    width: 100%;
-    height: 1000px;
+    width: 1200px;
+    height: 700px;
+    overflow: hidden;
     overflow:scroll;
     resize:both;
     margin:auto;
@@ -81,8 +82,7 @@ li{
 .header div:nth-child(4){
     width: 20%;
     height: 50px;
-    position: absolute;
-    right: 0;
+    margin-left:80%;
     line-height:50px;
     text-align: center;
 }
@@ -97,16 +97,13 @@ li{
     display: table;
 }
 .left{
-    width: 15%;
-    height: 750px;
+    width: 200px;
     background-color: #f5f5f5;
-    position: relative;
+    position: absolute;
 }
 .left div:first-child{
     width: 100%;
     height:60px;
-    position: absolute;
-    top: 0;
     line-height:60px;
     text-align: center;
 }
@@ -124,7 +121,7 @@ li{
 .left div:nth-child(2) a{
     display: block;
     color: #999;
-    line-height: 35px;
+    line-height: 30px;
 }
 .left div:nth-child(2) a:nth-child(1){
     color: #333;
@@ -137,10 +134,10 @@ li{
 }
 .left div:last-child{
     width: 100%;
-    margin-top:60px;
+    margin-top:80px;
 }
 .middle{
-    width: 20%;
+    width: 250px;
     background-color: #fff;
     position: relative;
 }
@@ -163,6 +160,7 @@ li{
     height: 30px;
     border-radius: 15px;
     outline: none;
+    border: 1px solid #e2e2e5;
     position: absolute;
     left:40px;
     top: 20px;
@@ -209,7 +207,6 @@ li{
 }
 .right{
     width: 65%;
-    background-color: #fff;
     position: relative;
 }
 .left,.middle,.right{
@@ -247,14 +244,31 @@ li{
 .right div:nth-child(2){
     border-bottom:1px solid #999;
 }
-.right div:nth-child(3) img{
+.right div:nth-child(3){
     width: 100%;
+    height: 50px;
+    line-height: 50px;
+    padding-left:20px;
+}
+.right div:nth-child(3) img{
+    padding:0 5px;
 }
 .right div:nth-child(4){
     width: 50%;
-    float: left;
+    height:800px;
+    background-color: rgba(0,0,0,.9);
+    color: #fff;
+    padding-left:40px;
+    position: absolute;
+    left: 0;
+    margin:0;
 }
 .right div:nth-child(5){
-    width: 50%;
-    float: right;
+    width: 41%;
+    height:800px;
+    background-color: #fff;
+    padding-left:40px;
+    position: absolute;
+    right: 0;
+    margin:0;
 }
