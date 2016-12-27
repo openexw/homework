@@ -5,9 +5,14 @@
  - Undefined表示未定义、不确定即此处没有任何值
  - Object对象（复合数据类型）
  - Null空（此处应该有个值，但现在是空缺的）
+<<<<<<< HEAD:2016-12-26_js/type.md
 
  **列举**：
 
+=======
+ 
+ #### 列举：
+>>>>>>> 3e814395fbbe13625652c3dca2682d3ebdbf84dd:2016-12-26_git/type.md
 - Boolean:true/false
 - Undefined:undefined
 - Null:null
