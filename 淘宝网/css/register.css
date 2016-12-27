@@ -1,0 +1,161 @@
+/*be in common use    start*/
+*{
+    padding: 0;
+    margin: 0;
+    font-family:微软雅黑;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clearfix{
+    zoom: 1;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+li{
+    list-style:none;
+}
+a{
+
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+/*be in common use    end*/
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+
+/*container start*/
+.container{
+    max-width: 540px;
+    min-width: 350px;
+    width: 100%;
+    height: 100%;
+    margin:0 auto;
+    overflow:hidden;
+}
+.hint{
+    width: 100%;
+    padding:10px 0;
+}
+.hint-left{
+    width: 60%;
+    float: left;
+}
+.hint-left p{
+    font-size: 17px;
+    color: #5c5c5c;
+    font-weight:600;
+}
+.hint-right{
+    width: 40%;
+    float: left;
+}
+.hint-right p{
+    font-size: 17px;
+    text-align: right;
+}
+.hint-right>p>a{
+    color: #a1a1a1;
+}
+.information{
+    width: 100%;
+    padding-top: 20px;
+}
+.account,.password{
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 0;
+}
+.password{
+    border-top: 1px solid #e6e6e6;
+    border-bottom: 1px solid #e6e6e6;
+}
+.account span,.password span{
+    width: 24%;
+    display: inline-block;
+    float: left;
+    color: #6C6C6C;
+    font-size: 18px;
+    font-weight:100;
+}
+.account input,.password input{
+    width: 75%;
+    float: left;
+    padding: 5px 0;
+    border: none;
+    outline: none;
+}
+.button{
+    width: 100%;
+    text-align: center;
+}
+.denglu{
+    width: 95%;
+    padding:15px 0;
+    margin-top:20px;
+    background-color: #ff4400;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    color: #f49b80;
+}
+.register{
+    width: 100%;
+    text-align: center;
+}
+.register-center{
+    width: 95%;
+    margin:0 auto;
+    padding:15px 0;
+    font-size: 18px;
+    font-weight: 300;
+    color: #ff4400;
+}
+
+input::-webkit-input-placeholder{
+    color: #ddd;
+    font-size: 16px;
+}
+input::-moz-placeholder{
+    color: #ddd;
+    font-size: 16px;
+}
+input:-ms-input-placeholder{
+    color: #ddd;
+    font-size: 16px;
+}
+/*container end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "UIcon";
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff') format('woff'),
+    url("../font/iconfont.ttf") format("truetype"),
+    url("../font/iconfont.svg#UIcon") format("svg");
+}
+i{
+    font-family:UIcon;
+    color: #737373;
+    font-style: normal;
+    position: absolute;
+}
+.searchbox-text i{
+    font-size: 22px;
+    color: #fff;
+    line-height: 25px;
+}
+.bottom-nav i{
+    font-size: 30px;
+
+}
+.recommendation-title-right i{
+    font-size: 30px;
+    margin-top: -4px;
+    color: #ff4400;
+}

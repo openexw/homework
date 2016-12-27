@@ -1,0 +1,346 @@
+/*be in common use    start*/
+*{
+    padding: 0;
+    margin: 0;
+    font-family:微软雅黑;
+}
+
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clearfix{
+    zoom: 1;
+}
+.clearfix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+li{
+    list-style:none;
+}
+a{
+
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+/*be in common use    end*/
+
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+}
+.container{
+    max-width: 540px;
+    min-width: 320px;
+    width: 100%;
+    height:830px;
+    margin:0 auto;
+    border:1px solid #e6e6e6;
+    border-bottom:none;
+    overflow:hidden;
+}
+.head,.footer{
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+}
+.body{
+    width: 100%;
+    position: relative;
+}
+
+/*head start*/
+.head-up{
+    width: 100%;
+    position: relative;
+    background: #d34201 url("../My-image/head-logo.png") no-repeat top center;
+    background-size: cover;
+}
+.settings{
+    width: 100%;
+}
+.settings span:first-child{
+    width: 15%;
+    background: rgba(0,0,0,.5);
+    display: inline-block;
+    text-align: center;
+    border-radius: 20px;
+    padding:8px 0;
+    margin:15px 15px 0 0;
+    color: #fff;
+    font-size: 14px;
+    float: right;
+}
+.settings-span2{
+    width: 15%;
+    background: rgba(0,0,0,.5);
+    float: left;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    position: absolute;
+    padding: 5px 0;
+    border-bottom-right-radius:30px;
+}
+.settings-span2 a{
+    color: #fff;
+}
+.portrait{
+    width: 25%;
+    float: left;
+}
+.name{
+    width: 25%;
+    float: left;
+    position: relative;
+    bottom:-3rem;
+}
+.portrait-img{
+    width: 60%;
+    margin:0 auto;
+    position: relative;
+    bottom: -2.5rem;
+}
+.portrait-img img{
+    width: 100%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid rgba(255,255,255,.7);
+}
+.name span{
+    font-size: 18px;
+    color: #fff;
+}
+.name img{
+    width: 20%;
+    position: relative;
+    top: 4px;
+    left: 5px;
+}
+.head-below{
+    width: 100%;
+    text-align: right;
+
+}
+.head-below-record{
+    width: 25%;
+    text-align: center;
+    float: right;
+    padding:15px 0;
+    border-right: 1px solid #e6e6e6;
+    font-size: 16px;
+    color: #666;
+}
+
+/*head end*/
+
+/*body start*/
+.body-indent{
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    background-color: #fff;
+}
+.body-indent-up{
+    width: 100%;
+}
+.body-indent-below{
+    width: 100%;
+    border: 1px solid #e6e6e6;
+}
+.body-indent-up li{
+    width: 20%;
+    float: left;
+    padding: 15px 0;
+    text-align: center;
+}
+.body-indent-up li>p{
+    color: #666;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+.indent-left{
+    width: 50%;
+    float: left;
+    text-align: left;
+    background-color: #fff;
+    padding:15px 0;
+}
+.left-span1{
+    background-color: #5090cd;
+    padding:5px 5px;
+}
+.left-span3{
+    background-color: #00aeef;
+    padding:5px 5px;
+}
+.left-span4{
+    background-color: #e7a200;
+    padding:5px 5px;
+}
+.left-span5{
+    background-color: #e64c2e;
+    padding:5px 5px;
+}
+.left-span2{
+    font-size: 18px;
+    color: #666;
+}
+.indent-right{
+    width: 50%;
+    float: left;
+    text-align: right;
+    background-color: #fff;
+    padding:15.5px 0;
+}
+.indent-right span{
+    font-size: 15px;
+    color: #666;
+}
+
+.body-classify{
+    width: 100%;
+    position: relative;
+    top: 20px;
+    background-color: #fff;
+}
+
+.body-ticket{
+    width: 100%;
+    position: relative;
+    top: 40px;
+    background-color: #fff;
+}
+
+/*body end*/
+
+/*footer start*/
+.footer{
+    position: relative;
+    top: 60px;
+
+}
+.foot-ul{
+    width: 100%;
+}
+.foot-ul li{
+    width: 25%;
+    float: right;
+}
+.foot-ul>li>p{
+    text-align: center;
+    padding:15px 0;
+    font-size: 15px;
+    color: #666;
+}
+/*footer end*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 500px){
+    .portrait-img{
+        width: 70%;
+        position: relative;
+        bottom: -2rem;
+    }
+    .name{
+        position: relative;
+        bottom:-2rem;
+    }
+    .name img{
+        position: relative;
+        top: 2px;
+    }
+}
+@media screen and (max-width: 400px){
+    .portrait-img{
+        width: 80%;
+
+    }
+    .body-indent-up li>p,.head-below-record{
+        font-size: 13px;
+    }
+    .left-span2{
+        font-size: 15px;
+    }
+    .indent-right span{
+        font-size: 13px;
+        padding-bottom:20px;
+    }
+    .left-span1 i{
+        font-size: 20px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
