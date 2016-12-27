@@ -1,4 +1,4 @@
-### 1. 列举JavaScript中的数据类型（六种）。列举布尔类型、Undefined、Null的值。
+## 1. 列举JavaScript中的数据类型（六种）。列举布尔类型、Undefined、Null的值。
  - Number整数和小数
  - String字符组成的文本（字符串）
  - Boolean布尔值（true或false）
