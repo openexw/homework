@@ -6,9 +6,13 @@
 
 # 选择题
 ## 5. 变量a和b，以下哪种情况`a+b`的值为NaN？
+
 A. var a = undefined, b = NaN;
+
 B. var a = '123', b = NaN;
+
 C. var a = undefined, b = NaN;
+
 D. var a = NaN, b = 'undefined';
 
 ## 6. Javascript中，以下代码运行的结果是？
@@ -19,26 +23,40 @@ var y = typeof typeof x[1];
 ```
 
 A. "function"
+
 b. "object"
+
 c. "number"
+
 d. string
 
 ## 7. 下面哪两个变量的值不是==
+
 A. var a = 0, b= -0;
+
 B. var a = NaN, b = NaN;
+
 C. a = null, b = undefined;
+
 D. var a = [], b = false;
 
 ## 8. 下面那个变量语句声明是不正确的？
 A. var aa;
+
 B. var bb = 3; cc = 'good';
+
 C. var dd = ee = 100;
+
 D. var ff = 3, gg = 'he's good';
 
 ## 9. 下面哪个不正确？
+
 A. NaN != null;
+
 B. NaN == NaN;
+
 C. {} != false;
+
 D. null != false;
 
 ## 10. 下面有一个表达式，它`console.log()`后的值为：
@@ -48,6 +66,9 @@ D. null != false;
 ```
 
 A. function150NaN
+
 B. function10050NaN
+
 C. undefined10050NaN
+
 D. NaN
