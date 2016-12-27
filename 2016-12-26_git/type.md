@@ -5,6 +5,7 @@
  - Undefined表示未定义、不确定即此处没有任何值
  - Object对象（复合数据类型）
  - Null空（此处应该有个值，但现在是空缺的）
+ 
  #### 列举：
 - Boolean:true/false
 - Undefined:undefined
