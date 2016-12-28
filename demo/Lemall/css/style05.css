@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clearFix{
+    zoom: 1;
+}
+.clearFix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+li{
+    list-style: none;
+}
+.wrap-content{
+    max-width: 640px;
+    min-width: 320px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.wrap-content a{
+    text-decoration: none;
+}
+#tab-con>li{
+    display: none;
+}
+#tab-con .active{
+    display: block;
+}
+.header{
+    position: relative;
+    max-width: 640px;
+    line-height: 60px;
+    height: 70px;
+    width: 100%;
+    background-color: #f5f5f5;
+    z-index: 1;
+}
+.header-left{
+    width: 100px;
+    height: auto;
+    position: absolute;
+    left: 6px;
+    top: 8px;
+    float: left;
+}
+.header-left span img{
+    width: 50px;
+    height: auto;
+
+}
+.header-center{
+    width: 50%;
+    margin: 0 auto;
+    position: absolute;
+    top: 6px;
+    left: 32%;
+}
+.header-center p{
+    color: #666;
+    font-size: 22px;
+}
+.header-right{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: -6px;
+    top: -4px;
+    float: right;
+}
+.header-right p{
+    color: #666;
+    font-size: 30px;
+}
+.content-tit{
+    width: 100%;
+    height: 54px;
+    background-color: #fff;
+    z-index: 1;
+}
+
+.content-tit ul{
+    width: 58%;
+    position: relative;
+    top: 10px;
+    left: 138px;
+}
+.content-tit li{
+    float: left;
+    width:30%;
+    height: 40px;
+    text-align: center;
+    padding: 3px;
+}
+.content-tit p {
+    border-bottom: 1px #5638a1 solid;
+    display: inline-block;
+    height: 33px;
+    padding: 0 2px;
+    font-size: 20px;
+    color: #666;
+}
+.content-con .content-con-shopIm{
+    max-width: 640px;
+    height: auto;
+}
+.content-con-shopIm img{
+    width: 100%;
+    height: auto;
+}
+.content-con-tit{
+    max-width: 640px;
+    height: auto;
+}
+.content-con-tit img{
+    width: 100%;
+    height: auto;
+}
+
+.footer-con{
+    max-width: 640px;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    z-index: 1;
+    background: url("../A_image/sprite_bgc.png") no-repeat;
+    background-size: 100% auto;
+}
+.footer-con li{
+    width: 25%;
+    float: left;
+    text-align: center;
+}
+.footer-con li span{
+    color: #fff;
+    font-size: 12px;
+}
+.content-box{
+    padding-bottom: 10px;
+}
+.kongBai{
+    width: 100%;
+    height: 66px;
+}
+.flor-box-tit{
+    width: 100%;
+    height: auto;
+    margin-top: 5px;
+}
+
+.flor-box-tit li{
+    float: left;
+    padding-left: 4px;
+}
+
+.flor-box-tit a{
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;;
+    color: #fff;
+    line-height: 38px;
+    height: 38px;
+    padding: 0 17px;
+    background:url("../A_image/a_bgc.jpg") no-repeat;
+    background-size: 100% 100%;
+    display: block;
+}
+.flor-box-shop-con{
+    width: 35%;
+    background: #f0f0f0;
+    float: left;
+}
+.flor-box{
+    background: #fafafa;
+}
+.flor-box-shop img{
+    width: 100%;
+    height: auto;
+}
+.flor-box-shop-right{
+    width: 62%;
+    height: auto;
+    float: right;
+}
+.flor-box-shop-right .tag{
+    width: 60px;
+    height: auto;
+    background-color: #5638a1;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 2px;;
+}
+.flor-box-shop-right .price{
+    color: #5638a1;
+    padding-top: 20px;
+}
+.price em{
+    font-size: 19px;
+}
+.flor-box-shop-content{
+    padding-top: 10px;
+    height: 4.3rem;
+    font-size: 14px;
+    color: #5e5b5b;
+}
+.flor-box-shop-content em{
+    color: #999;
+    font-size: 12px;
+}
+.flor-box-shop-content span img{
+    margin-top: 4px;
+    width: 69px;
+    height: auto;
+}
+.flor-box-shop{
+    width: 100%;
+    height: auto;
+}
+.kong{
+    width: 100%;
+    height: 60px;
+}
+
+@media all and (max-width: 408px){
+    .flor-box-tit a{
+        padding: 0 11px;
+    }
+    .flor-box-shop-right {
+        font-size: 0.8rem;
+    }
+}
+@media all and (max-width: 360px){
+    .flor-box-tit a{
+        padding: 0 5px;
+    }
+    .flor-box-shop-right {
+        font-size: 0.8rem;
+    }
+}
+
+
+
