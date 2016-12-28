@@ -34,11 +34,18 @@
             2/8 = 0 …… 2
             由下向上依次取余得：232
 ## 4. 如何判断一个数是NaN，请书写方法（用代码块表示）。
-    可以用isNaN()检测
-        如果把 NaN 与任何值（包括其自身）相比得到的结果均是 false，所以要判断某个值是否是 NaN，不能使用 == 或 === 运算符。
-        isNaN() 函数通常用于检测 parseFloat() 和 parseInt() 的结果，以判断它们表示的是否是合法的数字。当然也可以用 isNaN() 函数来检测算数错误，比如用 0 作除数的情况。
-    也可以用正则表达式的 /^(\d)$/来判断
-        ^(\d)$就是0-9的任意一个数字，^表示以...开头，\d表示0-9的数字，$表示以...结尾，所以这个就是表示单个数字了
+    isNaN
+    NaN在javascript中唯一一个值不等于自身的
+```js
+var a;
+if(a != a){
+
+}
+function isMyNaN(){
+    raturn a != a
+}
+
+```
 # 选择题
 ## 5.变量a和b，以下哪种情况a+b的值为NaN？
     A. var a = undefined, b = NaN;
@@ -73,7 +80,7 @@ var y = typeof typeof x[1];
 
     D. var a = [], b = false;
 
-    答案是：D
+    答案是：b
 ## 8. 下面那个变量语句声明是不正确的？
     A. var aa;
 
@@ -93,7 +100,7 @@ var y = typeof typeof x[1];
 
     D. null != false;
 
-    答案是：D
+    答案是：b
 ## 10. 下面有一个表达式，它console.log()后的值为：
 ```js
 var a = typeof string + 100 + 50 + NaN;
