@@ -31,13 +31,23 @@
     ```js
       var i = 100;
       for(i;i<1000;i++){
-          var index = i+"";
-          var g = +index.substr(2,1);
-          var s = +index.substr(1,1)
-          var b = +index.substr(0,1);
+          var index = i+"";           //将i转换成字符串
+          var g = +index.substr(2,1); //从数组第2个开始，提取1个数
+          var s = +index.substr(1,1)；//从数组第1个开始，提取1个数
+          var b = +index.substr(0,1); //从数组第0个开始，提取1个数
+
+        var str = i+"";     //将i转换成字符串
+        var b = str[0];     //提取字符串第0个；
+        var s = str[1];     //提取字符串第1个；
+        var g = str[2];     //提取字符串第2个；
+
+        var g = i%10;                       //把这个数除以10，提取他的余数，得到他的个位
+        var s = parseIng( i % 100 / 10);    //把这个数除以100，提取他的余数，然后在除以10，取整 得到他的十位
+        var b = parseIng( i / 100);         //把这个数除以100，取整 得到他的百位
+
 
           if(g*g*g+s*s*s+b*b*b == i){
-              console.log(g+"x"+g+"x"+g+"+"+s+"x"+s+"x"+s+"+"+b+"x"+b+"x"+b+":"+i);
+              console.log(i);
           }
       }
     ```
@@ -45,12 +55,12 @@
 3、一球从100米高度自由落下，每次落地后反跳回原高度的一半；再落下，求它在第10次落地时，共经过多少米？第10次反弹多高？
 
     ```js
-        var h = 100;
-        var s = 100;
-        for(i=0;i<10;i++){
-            h = h/2;
-            s=s+h;
-            console.log(s-h,h);
+        var h = 100;            //最高点
+        var s = 0;              //最低点
+        for(i=0;i<10;i++){      
+            h /= 2;            //每次除以2
+            s += h;              //
+            console.log(+h,s*2+100); //
         }
     ```
 
