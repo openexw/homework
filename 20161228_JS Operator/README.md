@@ -4,27 +4,27 @@
         var bth = document.getElementById("bth");
         var h1 = document.getElementById("h1");
 
-        bth.onclick = function () {
-            var input = document.getElementById("input-text");
-            var score = input.value;
-            if(score == ""){
-                alert("请输入内容");
-            }
-            var score = +score;
-            if(score != score){
-                alert("你输入的不是数字");
-            }
-            var grade;
-            if(score>=90){
-                grade="A";
-            }else if(score>=60 && score<=89){
-                grade="B";
-            }else if(score<=59){
-                grade="C";
-            }
-           h1.innerHTML = grade;
-        }
-    ```
+bth.onclick = function () {
+    var input = document.getElementById("input-text");
+    var score = input.value;
+    if(score == ""){
+        alert("请输入内容");
+    }
+    var score = +score;
+    if(score != score){
+        alert("你输入的不是数字");
+    }
+    var grade;
+    if(score>=90){
+        grade="A";
+    }else if(score>=60 && score<=89){
+        grade="B";
+    }else if(score<=59){
+        grade="C";
+    }
+   h1.innerHTML = grade;
+}
+```
 
 2、求出1000以内的所有水仙花数。
 
