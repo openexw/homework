@@ -1,6 +1,6 @@
 1、设学习成绩变量为score，成绩等级变量为grade。学习成绩>=90分的同学用A表示，60-89分之间的用B表示，60分以下的用C表示。最后输 出学生成绩和学生成绩等级。
 
-    ···js
+```js
         var bth = document.getElementById("bth");
         var h1 = document.getElementById("h1");
 
