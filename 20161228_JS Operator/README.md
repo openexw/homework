@@ -1,34 +1,34 @@
 1、设学习成绩变量为score，成绩等级变量为grade。学习成绩>=90分的同学用A表示，60-89分之间的用B表示，60分以下的用C表示。最后输 出学生成绩和学生成绩等级。
 
-    ···js
+```js
         var bth = document.getElementById("bth");
         var h1 = document.getElementById("h1");
 
-        bth.onclick = function () {
-            var input = document.getElementById("input-text");
-            var score = input.value;
-            if(score == ""){
-                alert("请输入内容");
-            }
-            var score = +score;
-            if(score != score){
-                alert("你输入的不是数字");
-            }
-            var grade;
-            if(score>=90){
-                grade="A";
-            }else if(score>=60 && score<=89){
-                grade="B";
-            }else if(score<=59){
-                grade="C";
-            }
-           h1.innerHTML = grade;
-        }
-    ```
+bth.onclick = function () {
+    var input = document.getElementById("input-text");
+    var score = input.value;
+    if(score == ""){
+        alert("请输入内容");
+    }
+    var score = +score;
+    if(score != score){
+        alert("你输入的不是数字");
+    }
+    var grade;
+    if(score>=90){
+        grade="A";
+    }else if(score>=60 && score<=89){
+        grade="B";
+    }else if(score<=59){
+        grade="C";
+    }
+   h1.innerHTML = grade;
+}
+```
 
 2、求出1000以内的所有水仙花数。
 
-    ```js
+```js
       var i = 100;
       for(i;i<1000;i++){
           var index = i+"";           //将i转换成字符串
@@ -50,7 +50,7 @@
               console.log(i);
           }
       }
-    ```
+```
 
 3、一球从100米高度自由落下，每次落地后反跳回原高度的一半；再落下，求它在第10次落地时，共经过多少米？第10次反弹多高？
 
@@ -78,7 +78,6 @@
             }
             console.log(str, flag ? '是' : '不是', '回文数')
         }
-// 判断是否回文数
             HWS(78987);
      }
     ```
