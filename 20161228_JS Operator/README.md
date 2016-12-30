@@ -1,5 +1,4 @@
 1、设学习成绩变量为score，成绩等级变量为grade。学习成绩>=90分的同学用A表示，60-89分之间的用B表示，60分以下的用C表示。最后输 出学生成绩和学生成绩等级。
-
 ```js
         var bth = document.getElementById("bth");
         var h1 = document.getElementById("h1");
@@ -25,9 +24,7 @@ bth.onclick = function () {
    h1.innerHTML = grade;
 }
 ```
-
 2、求出1000以内的所有水仙花数。
-
 ```js
       var i = 100;
       for(i;i<1000;i++){
@@ -51,9 +48,7 @@ bth.onclick = function () {
           }
       }
 ```
-
 3、一球从100米高度自由落下，每次落地后反跳回原高度的一半；再落下，求它在第10次落地时，共经过多少米？第10次反弹多高？
-
     ```js
         var h = 100;            //最高点
         var s = 0;              //最低点
@@ -63,9 +58,7 @@ bth.onclick = function () {
             console.log(+h,s*2+100); //
         }
     ```
-
 4、一个5位数，判断它是不是回文数。回文数字例：12321是回文数，个位与万位相同，十位与千位相同。
-
     ```js
         function HWS(num) {
             var str = num.toString();
@@ -81,9 +74,7 @@ bth.onclick = function () {
             HWS(78987);
      }
     ```
-
 5、猴子吃桃问题：猴子第一天摘下若干个桃子，当即吃了一半，还不过瘾，又多吃了一个。第二天早上又将剩下的桃子吃掉一半，又多吃了 一个。以后每天早上都吃了前一天剩下的一半零一个。到第10天早上想再吃时，见只剩下一个桃子了。求第一天共摘了多少。
-
     ```js
         var n= 1;
         for(var i=0; i< 10; i++){
@@ -91,20 +82,17 @@ bth.onclick = function () {
             console.log(n);
         }
     ```
-
 6、计算从1*1+1*2+1*3+1*4+1*5+…+1*9+2*1+2*2+…+2*9+…+9*1+9*2+…+9*9的值
-
-    ```js
-        for(a=11;a<99;a++){
-            for(b=12;b<100;b++){
-                a=a+b;
+ ```js
+        var num = 0;
+        for (var i=1;i<=9;i++){
+            for(var j=1;j<=9;j++){
+                num+=i*j;
             }
         }
-        console.log(a);
+        alert(num);
     ```
-
 7、计算从1*1+2*1+2*2+3*1+…+3*3+…+9*1+9*2+…+9*9的值
-
 ```js
     var a=0;
     for(var b=0;b<10;b++){
@@ -116,20 +104,19 @@ bth.onclick = function () {
 ```
 
 8、一个数如果恰好等于它的因子之和，这个数就称为“完数”。例如6=1＋2＋3.编程。计算出1000以内的完数的个数
-
 ```js
-        var n = 1000;
-        var r,j,i;
-        for(i=1;i<n; i++){
-            r=0;
-            for(j=1;j<i;j++){
-                if(i%j==0){
-                    r=r+j;
-                }
-            }
-            if(r==i){
-                document.write(r);
-                r=0;
+        var n = 1000;                                  var res = "";
+        var r,j,i;                                     for (var num=0;num<1000;num++){
+        for(i=1;i<n; i++){                                  var sum = 0;
+        r=0;                                                for(var i=1;i<num;i++){ 
+            for(j=1;j<i;j++){                                   for(num%i==0){
+                if(i%j==0){                                         sum=sum+i;
+            r=r+j;                                               }
+        }                                                    }
+                }                                           if(sum == num){
+                if(r==i){                                       res+=num+"\n";
+                document.write(r);                          }
+                r=0;                                    }
             }
         }
 ```
