@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <style>
+      .box{
+          width: 400px;
+          height:400px;
+          border:1px solid #ffb082;
+          margin: auto ;
+      }
+        #jieguo{
+            margin-top: 10px;
+        }
+        .number {
+            margin-top: 10px;
+        }
+        .btn{
+            margin: auto ;
+        }
+    </style>
+
+
+</head>
+<body>
+
+<div class="box">
+  <div class=".container-fluid">
+    <div class="row">
+        <form action="" class="form-horizontal">
+            <div id="shuru" class="col-md-9 col-md-offset-1 ">
+                <input id="js" type="text" class="form-control ">
+            </div>
+            <div id="shuchu" class="col-md-9 col-md-offset-1 ">
+                <input id="jieguo" type="text" class="form-control ">
+            </div>
+            <div class="col-md-10 col-md-offset-1 number ">
+                 <div class="col-md-2">
+                     <button id="7" type="button" class="btn btn-primary btn-lg">7</button>
+                 </div>
+                <div class="col-md-2">
+                    <button id="8" type="button" class="btn btn-primary btn-lg">8</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="9" type="button" class="btn btn-primary btn-lg">9</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="buzhidao" type="button" class="btn btn-primary btn-lg">←</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="c" type="button" class="btn btn-primary btn-lg">C</button>
+                </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1 number ">
+                <div class="col-md-2">
+                    <button id="4" type="button" class="btn btn-primary btn-lg">4</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="5" type="button" class="btn btn-primary btn-lg">5</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="6" type="button" class="btn btn-primary btn-lg">6</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="x" type="button" class="btn btn-primary btn-lg">X</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="chu" type="button" class="btn btn-primary btn-lg">÷</button>
+                </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1 number ">
+                <div class="col-md-2">
+                    <button id="1" type="button" class="btn btn-primary btn-lg">1</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="2" type="button" class="btn btn-primary btn-lg">2</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="3" type="button" class="btn btn-primary btn-lg">3</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="+" type="button" class="btn btn-primary btn-lg">+</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="-" type="button" class="btn btn-primary btn-lg">-</button>
+                </div>
+            </div>
+            <div class="col-md-10 col-md-offset-1  number">
+                <div class="col-md-2">
+                    <button id="0" type="button" class="btn btn-primary btn-lg">0</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="00" type="button" class="btn btn-primary btn-lg">00</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="." type="button" class="btn btn-primary btn-lg">.</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="%" type="button" class="btn btn-primary btn-lg">%</button>
+                </div>
+                <div class="col-md-2">
+                    <button id="=" type="button" class="btn btn-primary btn-lg">=</button>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+  </div>
+</div>
+<script>
+    var value=document.getElementById ('js');
+    var result=document .getElementById ('jieguo');
+    var po;
+    var seven=document.getElementById ('7');
+    var eight=document.getElementById ('8');
+    var nine=document.getElementById ('9');
+    var six=document.getElementById ('6');
+    var five=document.getElementById ('5');
+    var fore=document.getElementById ('4');
+    var three=document.getElementById ('3');
+    var two=document.getElementById ('2');
+    var one=document.getElementById ('1');
+    var zro=document.getElementById ('0');
+    var double=document.getElementById ('00');
+    var del=document.getElementById ('.');
+    var yue=document.getElementById ('%');
+    var ad=document.getElementById ('+');
+    var cut=document.getElementById ('-');
+    var ride=document.getElementById ('x');
+    var remove=document.getElementById ('chu');
+    var dengyu=document.getElementById ('=');
+
+
+
+    seven.onclick =function () {
+        value.value +=7;
+    };
+    eight.onclick =function () {
+        value.value +=8;
+    };
+   nine.onclick =function () {
+        value.value +=9;
+    };
+    six.onclick =function () {
+        value.value +=6;
+    };
+    five.onclick =function () {
+        value.value +=5;
+    };
+    fore.onclick =function () {
+        value.value +=4;
+    };
+    three.onclick =function () {
+        value.value +=3;
+    };
+    two.onclick =function () {
+        value.value +=2;
+    };
+    one.onclick =function () {
+        value.value +=1;
+    };
+   zro.onclick =function () {
+        value.value +=0;
+    };
+    double.onclick =function () {
+        value.value += '00';
+    };
+    del.onclick =function () {
+        value.value += '.';
+    };
+
+    yue.onclick =function () {
+        value.value +=' %';
+    };
+    ad.onclick =function () {
+        value.value +='+';
+    };
+    cut.onclick =function () {
+        value.value +='-';
+    };
+    ride.onclick =function () {
+        value.value +='*';
+    };
+    remove.onclick =function () {
+        value.value +='÷';
+    };
+    dengyu.onclick =function () {
+       var bo=value.value ;
+       var kk;
+       var bb;
+       var length;
+        console .log(bo);
+        console .log(typeof  bo);
+        kk=parseFloat(bo);
+        bb=kk.toString() ;
+        console .log(kk);
+        console .log(typeof kk);
+        console .log( bb );
+        console .log(typeof  bb );
+        length =bb.length ;
+        var vc=bo[length];
+        switch (vc){
+            case '+':
+                var re=bo.split("+");
+                result.value = (+re[0])+(+re[1]);
+                console .log((+re[0])+(+re[1]));
+                break ;
+            case'*':
+                var re=bo.split("*");
+                result.value = (+re[0])*(+re[1]);
+                console .log((+re[0])*(+re[1]));
+                break ;
+            case'-':
+                var re=bo.split("-");
+                result.value = (+re[0])-(+re[1]);
+                console .log((+re[0])-(+re[1]));
+                break ;
+
+            case'÷':
+                var re=bo.split("÷");
+                result.value = (+re[0])/(+re[1]);
+                console .log((+re[0])/(+re[1]));
+                break ;
+
+
+        }
+        value.value +='=';
+    }
+
+
+</script>
+</body>
+</html>
