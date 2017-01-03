@@ -1,0 +1,143 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/*左边固定，右边自适应第1种*/
+/*.one{
+    width: 100px;
+    float: left;
+    background-color: #890;
+}
+.two{
+    margin-left:100px;
+    overflow: hidden;
+    background-color: #369;
+    text-align: center;
+}*/
+/*左边固定，右边自适应第2种*/
+.parent{
+    width: 100%;
+    display: table;
+}
+.parent .one{
+    width: 100px;
+    background-color: #890;
+}
+.parent .two{
+    background-color: #369;
+    text-align: center;
+}
+.one,.two{
+    display: table-cell;
+}
+/*右边固定，左边自适应第1种*/
+/*.parent1{
+    width: 100%;
+    margin-top:30px;
+}
+.three{
+    width: 100px;
+    float: right;
+    background-color: #890;
+}
+.four{
+    background-color: #369;
+    margin-right:100px;
+}*/
+/*右边固定，左边自适应第2种*/
+.parent1{
+    width: 100%;
+    margin-top:30px;
+    display: table;
+}
+.three{
+    background-color: #369;
+    text-align: center;
+}
+.four{
+    width: 100px;
+    background-color: green;
+}
+.three,.four{
+    display:table-cell;
+}
+/*两边固定，中间自适应（三栏布局）*/
+/*.parent2{
+    width: 100%;
+    margin-top:30px;
+    position: relative;
+}
+.five{
+    width: 100px;
+    background-color: #890;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.six{
+    background-color: #369;
+    margin:0 100px;
+    text-align: center;
+}
+.seven{
+    width: 100px;
+    background-color: #890;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+*/
+.parent2{
+    width: 100%;
+    margin-top:30px;
+    display: table;
+}
+.five{
+    width: 100px;
+    background-color: #890;
+}
+.six{
+    background-color: #369;
+    text-align: center;
+}
+.seven{
+    width: 100px;
+    background-color: green;
+}
+.five,.six,.seven{
+    display: table-cell;
+}
+/*左边两栏固定，右边一栏固定，中间自适应（四栏布局）*/
+.parent3{
+    width: 100%;
+    margin-top:30px;
+    display: table;
+}
+.eight{
+    width: 100px;
+    background-color: #890;
+}
+.nine{
+    width: 100px;
+    background-color: blue;
+}
+.ten{
+    background-color: #369;
+    text-align: center;
+}
+.eleven{
+    width: 100px;
+    background-color: green;
+}
+.eight,.nine,.ten,.eleven{
+    display: table-cell;
+}
+/*滚动条*/
+.scrollbar{
+    margin:50px 50px;
+    width: 200px;
+    height: 300px;
+    background-color: #456;
+    overflow:scroll;
+    resize:both;
+}
