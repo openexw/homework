@@ -17,10 +17,16 @@
 ```js
  for(var i=100;i<200;++i){
         for(var j=2;j<i-1;++j){
+<<<<<<< HEAD
             i /= j;
             //var as = i%j;
             if(i != 0){
                 console.log(i);
+=======
+            var as = i%j;
+            if(as != 0){
+               // console.log(as);
+>>>>>>> a39929a5c4cb464282a1863284951a207c156dff
             }
         }
     }
@@ -28,6 +34,7 @@
 
 3.输入两个正整数m和n，求其最大公约数和最小公倍数。（利用辗除法）
 ```js
+<<<<<<< HEAD
 //最小公倍数
     var h5 = document.getElementById("span5");
     var btn5 = document.getElementById("btn5");
@@ -62,15 +69,22 @@
             }
         }
     }
+=======
+
+>>>>>>> a39929a5c4cb464282a1863284951a207c156dff
 ```
 4有一分数序列：2/1，3/2，5/3，8/5，13/8，21/13...求出这个数列的前20项之和。
 输入三个整数x,y,z，请把这三个数由小到大输出
 ```js
+<<<<<<< HEAD
 var x =2,y =1;
 var tmp;
 for(var i=0;i<20;i++){
     
 }
+=======
+
+>>>>>>> a39929a5c4cb464282a1863284951a207c156dff
 ```
 5.给一个不多于5位的正整数，要求：一、求它是几位数，二、逆序打印出各位数字。
 输入三个整数x,y,z，请把这三个数由小到大输出
@@ -85,6 +99,7 @@ var q =23854;
 ```
 6.请输入星期几的第一个字母来判断一下是星期几，如果第一个字母一样，则继续判断
 第二个字母。
+<<<<<<< HEAD
 ```js
 var h7 = document.getElementById("span7");
     var btn7 = document.getElementById("btn7");
@@ -129,6 +144,11 @@ var h7 = document.getElementById("span7");
         }
         h7.innerHTML=res;
     }
+=======
+输入三个整数x,y,z，请把这三个数由小到大输出
+```js
+
+>>>>>>> a39929a5c4cb464282a1863284951a207c156dff
 ```
 
 7.将一个数组逆序输出。
