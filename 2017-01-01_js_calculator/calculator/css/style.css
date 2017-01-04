@@ -1,0 +1,110 @@
+@charset "utf-8";
+/**Public Begin**/
+/*@font-face { font-family: 'Transponder'; src: url('fonts/transponder.eot'); src: url('fonts/transponder.ttf') format('truetype'), url('fonts/transponder.woff') format('woff'), url('fonts/transponder.svg') format('svg'); font-weight: normal; font-style: normal;}*/
+body {
+    color: #000;
+    background-color: #FFF;
+    margin: 0 auto;
+    font: .8em MuseoSans100, "Lucida Grande", Tahoma, Verdana, Arial, "微软雅黑", "华文细黑", "黑体", "宋体";
+}
+
+p {
+    margin: 0;
+}
+
+/**Public End **/
+#screen {
+    width: 310px;
+    margin: 50px auto; /*height:350px;margin:-175px -150px;position: absolute;top: 50%;left: 50%;*/
+}
+
+#formula {
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+    text-align: right;
+    white-space: normal;
+    padding: 5px 0;
+    border-bottom: 1px dashed #000;
+    margin: 0 5px;
+    height: 0.8em;
+}
+
+#result {
+    font-size: 2.1em;
+    text-align: right;
+    padding: 0 5px; /*font-family:Transponder;*/
+}
+
+.square, .horect, .verect {
+    font-size: 100%;
+    color: #FFF;
+    border: 0;
+    background-color: #0078e7;
+    text-decoration: none;
+    border-radius: 2px;
+    text-align: center;
+    margin: 6px 3px;
+    *margin: 6px 4px;
+    display: inline-block;
+    *float: left;
+}
+
+.square:hover, .horect:hover, .verect:hover {
+    background-image: linear-gradient(transparent, rgba(0, 0, 0, .05) 40%, rgba(0, 0, 0, .1));
+    cursor: pointer
+}
+
+.square:active, .horect:active, .verect:active {
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .15) inset, 0 0 6px rgba(0, 0, 0, .2) inset;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.horect {
+    width: 110px;
+    *width: 107px;
+    height: 50px;
+    line-height: 50px;
+}
+
+.verect {
+    width: 50px;
+    height: 112px;
+    line-height: 112px;
+}
+
+#number {
+    width: 180px; /* margin-left: -3px; */
+}
+
+#operator {
+    width: 60px;
+    margin-left: -4px;
+}
+
+#other {
+    width: 60px;
+    margin-left: -3px;
+}
+
+#number, #operator, #other {
+    display: inline-block;
+    *float: left;
+    vertical-align: top;
+}
+
+#header {
+    margin: 3px;
+    border: 1px solid #129FEA;
+    width: 282px;
+    box-shadow: inset 0 1px 3px #ddd;
+    border-radius: 4px;
+    padding: 3px;
+}
+
+#Lbrackets {
+    *margin-left: 6px;
+}

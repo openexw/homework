@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算器</title>
+    <link rel="stylesheet" href="./css/calculator.css">
+    <script type="" src="./js/calculator.js"></script>
+</head>
+<body>
+<table id="calculator" onClick="calculator()">
+    <tr>
+        <td id="display" colspan="5">0</td>
+    </tr>
+    <tr>
+        <td class="numberkey" >1</td>
+        <td class="numberkey" >2</td>
+        <td class="numberkey" >3</td>
+        <td class="numberkey" >+</td>
+        <td class="numberkey"  id="delete">c</td>
+    </tr>
+    <tr>
+        <td class="numberkey" >4</td>
+        <td class="numberkey" >5</td>
+        <td class="numberkey" >6</td>
+        <td class="numberkey" >-</td>
+        <td rowspan="3" id="equality" onclick="resultscalculator()">=</td>
+    </tr>
+    <tr>
+        <td class="numberkey" >7</td>
+        <td class="numberkey" >8</td>
+        <td class="numberkey" >9</td>
+        <td class="numberkey" >*</td>
+    </tr>
+    <tr >
+        <td class="numberkey" >+/-</td>
+        <td class="numberkey" >0</td>
+        <td class="numberkey" >.</td>
+        <td class="numberkey" >/</td>
+    </tr>
+    </table>
+</body>
+</html>
