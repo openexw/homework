@@ -3,8 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        *{
+            font-size:12px;}
+        .box{
+            width: 600px;
+            height: 600px;
+            background-color: #9dffe9;
+            margin: auto ;
+            background-image: url(../0.jpg);
+            background-repeat:round  ;
+            position: relative;
+        }
+        .box1{
+            width: 414px;
+            height: 260px;
+            background-color: rgba(44, 55, 234, 0.9);
+            margin-left: 98px ;
+            margin-top: 128px;
+            position: absolute;
+        }
+
+        .box2{
+            width: 400px;
+            height: 90px;
+            margin: auto ;
+            background-color: rgba(5,45,54,0.6);
+            margin-top: 10px;
+            color: white;
+            padding: 10px 0;
+        }
+        #check {
+            border-radius: 10px;
+            float: right;
+            padding: 2px 5px;
+            margin-top: 10px;
+        }
+        ol{
+            list-style: none;
+            padding: 0 ;
+        }
+        ol li{
+           line-height: 20px;
+            padding: 0 5px;
+        }
+        .num{
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            /*background-color: yellow;*/
+
+        }
+    </style>
 </head>
 <body>
+
+<div class="box">
+    <div class="box1">
+         <div class="box2">
+            var arr =["100px", "abc"-6, [],
+             -9866, 34, -2, 0, '300'
+             , ,
+             function(){alert(0)},
+             null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),
+             function(){alert(3)}, 'xyz'-90];
+         </div>
+        <button id="check" >开始查找</button>
+        <ol>
+            <li style="color: #ffcc99 ">
+                <span class="num" >①</span>所有的数字:
+                 <span id="allnum"></span>
+            </li>
+            <li style="color: #80ff18 ">
+                <span class="num"  >②</span>所有可以转化为数字的: <span id="kt"></span>
+            </li>
+            <li style="color: orangered ">
+                <span class="num"  >③</span>最大的数字:
+                <span id="max"></span>
+            </li>
+            <li style="color: deeppink ">
+                <span class="num"  >④</span>
+                运算结果为NaN的:
+                <span>
+
+                </span>
+            </li>
+        </ol>
+    </div>
+
+</div>
+
+
+
+
 <script>
   /*  var a=[4,5,6,4,5,7,8,9,7,6,5];
     for(var i=0;i<a.length ;i++)
@@ -22,62 +113,56 @@
     }
    a=a.filter(checkAdult);
     console .log(a);*/
-/*
-   var a=[['小A','女',21,'大一'],  ['小B','男',23,'大三'],
+/*   var a=[['小A','女',21,'大一'],  ['小B','男',23,'大三'],
 
    ['小C','男',24,'大四'],  ['小D','女',21,'大一'],
 
+/*
    ['小E','女',22,'大四'],  ['小F','男',21,'大一'],
 
    ['小G','女',22,'大二'],  ['小H','女',20,'大三'],
 
-   ['小I','女',20,'大一'],  ['小J','男',20,'大三']];
+   ['小I','女',20,'大一'],  ['小J','男',20,'大三']];*!/
    var b=[];
    var c=0;
    for( var i=0;i<a.length ;i++){
    for(var j=0;j<a[i].length ;j++){
-   if(a[i][j]=="大一"){b[c]=a[i][0];c++;}
+   if(a[i][j]=="大一"&&a[i][1]=="女"){b[c]=a[i][0];c++;}
    }
    }
+*/
 
-   console .log( b);
-   */
+/*   console .log( b);*/
 
    var o=[];
    var m=0;
+   var y=[];
   var arr = ["100px", "abc"-6, [],
       -9866, 34, -2, 0, '300'
       , ,
       function(){alert(0)},
       null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),
       function(){alert(3)}, 'xyz'-90];
-          for(var i=0;i<arr.length ;i++){
-              if(+arr[i]==arr[i] && arr[i]!=""){
-                 o[m]=arr[i];m++
+
+
+
+  for(var i=0;i<arr.length ;i++){
+              if(+arr[i]==arr[i] && arr[i]!=""&&typeof arr[i]=="number"){
+                 y[m]=arr[i];m++
               }
           }
-          console .log(o);
+          console .log(y);
 
+  console .log( "所有数字：" +y);
+  function ch(a) {
+      return (a+"") == a &&(+a)!=""&& typeof (a)!="function"&&typeof a !="object" ;
+  }
+   o=arr.filter(ch);
 
- /* {function che(age) {
-      return age+"" == age &&age+0==age;
-  }
-  o=o.filter(che);
-  console .log( o);
-  for(var i=0; i<o.length;i++ ){
-      o[i]=(+o[i]);
-  }
-  o=o.toString ();
-  console .log( "所有数字：" +o);}*/
-  function che(a) {
-      return (a+"") == a &&(+a)!=""&& typeof (a)!="function"&&a != document;
-  }
-  o=arr.filter(che);
-/*  o=o.toString ();*/
-    for(var i=0;i<o.length ;i++){
+   /* for(var i=0;i<o.length ;i++){
         console.log(typeof o[i]);
     }
-     console.log(o);
+     */
 
 var v=[];
 var p=0;
@@ -89,7 +174,18 @@ for(var j=0;j<o.length ;j++){
   var b=v;
       b.sort(function(a,b){return b-a});
   console .log("最大的数是"+b[0]);
+   var t=[];
+   var ry=0;
 
+  var kc=document.getElementById ('check');
+  var f=document.getElementById ('allnum');
+  var l=document.getElementById ('kt');
+  var r=document.getElementById ('max');
+  kc.onclick =function () {
+      f.innerHTML =y;
+      l.innerHTML =o;
+      r.innerHTML =b[0];
+  }
 </script>
 </body>
 </html>
