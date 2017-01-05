@@ -34,12 +34,12 @@
 + 使用循环完成下面的题，并使用函数封装。
     1. 求1-100的和
 ```js
-        
-        function sum(num){
-            var i = 0;
-            for(var j=1;j<=num;j++){
-                i +=j;
-            }
+        //循环方法                                   //递归方法
+        function sum(num){                          function sum(n){
+            var i = 0;                                 if(n == 1) return 1;
+            for(var j=1;j<=num;j++){                   return sum(n-1) + n;
+            i +=j;                                  }
+            }                                      console.log(sum(100));     
                 return i;
         }
         alert(sum(100));
@@ -47,11 +47,12 @@
     2. 求 1,3,5,7,9,...第n项的结果和前n项和,序号从0开始
 
 ```js
-    function sum(num){
-        var i = 0;
-        for(var n=0;n<=num;n++){
-            i += 2*n+1;
-        }
+        //循环方法                                     //递归方法
+    function sum(num){                                 function odd(n){             function sum(n){
+        var i = 0;                                         if(n==0) return 1;          if(n == 0) return 1;
+        for(var n=0;n<=num;n++){                           return odd(n-1)+2;          return sum(n-1) + odd(n);
+        i += 2*n+1;                                    }                            }
+        }                                                                           alert(sum(5))
         return i+','+(2*num+1);
     }
     alert(sum(5));
@@ -59,12 +60,13 @@
     3. 求10!
 
 ```js
-    function factorial(num){
-            var i = 1;
-            for(var j=1;j<=num;j++){
-                i *=j;
-            }
-                return i;
-        }
-        alert(factorial(10));
+        //循环方法                                    //递归方法
+    function factorial(num){                         function fact(num){
+            var i = 1;                                  if (num<=1){
+            for(var j=1;j<=num;j++){                        return 1;
+                i *=j;                                  }else{
+            }                                               return num*fact(num-1);
+                return i;                               }
+        }                                            }
+        alert(factorial(10));                        alert(fact(10));
 ```
