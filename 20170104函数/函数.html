@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>sdf</p>
+<p></p>
+<p></p>
+<div id="id">
+    sdf
+    <p>sdfa</p>
+    <p>afdfsaf</p>
+    <p></p>
+</div>
+<div class="id">
+
+</div>
+<script>
+    function  fib(n) {
+        if(n==1||n==2){return 1;}
+             return fib(n-1)+fib(n-2);
+    }
+
+
+  /*  function sum(n) {
+        var sum=0;
+       for(var i=0;i<=n;i++){
+           sum+=i;
+       }
+       return sum;
+    }/*
+    c=sum(100);*!/
+    console .log(c);*/
+    var h=0;
+    var b;
+    function umn(b){
+      if(b==1){return h+1;}
+      h+=b;
+      return umn(b-1);
+    }
+
+ c=umn(50);
+    console .log(c);
+
+    function kk (n) {
+        if(n==0){return 1;}
+       return kk(n-1)+(2*n+1);
+    }
+    c=kk(20);
+    console .log(c);
+      var s=1;
+      function js(n) {
+          if(n==1){return 1;}
+          return js(n-1)*n;
+      }
+    console .log(js(10));
+      /**
+       * 1.0 获取DOM节点
+       * 1.1 通过id获取
+       * 1.2通过标签获取
+       * 1.3通过类名获取
+       * */
+
+     /* document .getElementById ();
+      document .getElementsByName ();
+      document .getElementsByTagName ();
+      document .querySelector ();//只支持IE8以上的浏览器
+    document .querySelectorAll ();
+    var r=document .querySelector ("p");
+    var r=document .querySelector ("#body");
+    var r=document .querySelector (".body");*/
+
+    function _$(ele) {
+        var c=ele.toString ();
+        var n = c.charAt(0);//ele.charAt(0)
+        if(n=="#"){return  document.querySelector (ele)}
+        if(n=="."){return document.querySelector (ele)}
+        else {return document .querySelectorAll (ele)}
+    }
+    var v=_$('p');
+    console .log(v);
+
+    var v=_$("#id");
+    v.setAttribute("style","width:300px ;height:300px; border:1px solid blue");
+    var t=document.createElement("li");
+    var ul=document.createElement("ul");
+    console .log(v);
+    var t=document.createElement("li");
+    v.appendChild (ul);
+    ul.appendChild(t);
+    t.innerText ="jhsdkfhsajkf";
+    v.removeChild (_$("#id p"))
+
+</script>
+</body>
+</html>
