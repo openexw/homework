@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 630px;
+            padding: 20px;
+            background: #b19408;
+            margin: 0 auto;
+        }
+        #chess{
+            margin: 0 10px;
+            border: 3px solid rgb(68, 68, 68);
+        }
+       #chess div span{
+           /*padding-right: 30px;*/
+           /*border: 1px solid #000;*/
+       }
+
+        .line{
+            padding: 0;
+            margin: 0;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-width: 1px 2px 2px 1px;
+            border-color: #ccc #666 #666 #ccc;
+            border-style: solid;
+            position: relative;
+        }
+        .boundary span{
+            display: inline-block;
+            width: 49%;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 75px;
+            border-bottom: 2px solid #666;
+        }
+        .slash{
+            display: inline-block;
+            height: 2px;
+            background-color: #666;
+            transform: rotate(45deg);
+            position: absolute;
+            top: 34px;
+            left: -16px;
+            border-bottom: 1px solid #ccc;
+        }
+        .backlash{
+            transform: rotate(-45deg);
+        }
+
+        .broken{
+            border: 2px solid #666;
+            position: absolute;
+        }
+        .broken-top-left{
+            border-right: none;
+            border-bottom: none;
+            top: 2px;
+            left: 2px;
+        }
+        .broken-top-right{
+             border-left: none;
+             border-bottom: none;
+             top: 2px;
+             left: 4px;
+         }
+        .broken-bottom-left{
+            border-top: none;
+            border-right: none;
+            bottom: 4px;
+            left: 2px;
+        }
+        .broken-bottom-right{
+            border-top: none;
+            border-left: none;
+            bottom: 4px;
+            right: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div id="chess">
+        <!--<div class="con">
+            dg
+        </div>-->
+    </div>
+</div>
+
+<script src="chess.js"></script>
+</body>
+</html>

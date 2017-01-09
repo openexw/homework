@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    #chess{
+        width: 530px;
+        height: 580px;
+        background-color: orange;
+        border: 1px solid #ccc #666 #666 #ccc;
+        position: relative;
+        margin: auto ;
+        margin-top: 200px;
+
+    }
+</style>
+<body>
+<div id="chess">
+</div>
+<script>
+ for( var i=0 ;i<9;i++){
+     var div=document.createElement ('div');
+         div.className ="tr";
+         div.style.position ="relative";
+         div.style.border ="1px solid ";
+         div.style.borderColor ="#ccc #666 #666 #ccc";
+         div.style.margin ="auto";
+         div.style.display ="block";
+         div.style.height="60px";
+         div.style.width="480px";
+         div.style.boxSizing= "content-box";
+
+     var chess=document .getElementById ('chess');
+     chess.appendChild (div);
+     for(var j=0;j<8;j++){
+
+         var hp=document.getElementsByClassName ('tr');
+         var sp=document.createElement ('div');
+         if(i==4){
+             var span1=document.createElement ('span');
+
+             span1.innerHTML ="楚河";
+             span1.style.width ="50%";
+             span1.style.textAlign ="center";
+             span1.style.display ="block";
+             span1.style.float ="left";
+             span1.style.lineHeight ="60px";
+             span2=document.createElement ('span');
+             span2.innerHTML ="汉界";
+             span2.style.width ="50%";
+             span2.style.textAlign ="center";
+             span2.style.display ="block";
+             span2.style.lineHeight ="60px";
+             span2.style.float ="left";
+             hp[i].appendChild (span1);
+             hp[i].appendChild (span2);
+             break ;}
+
+         sp.className ="xq";
+         sp.style.width="60px";
+         sp.style.height="60px";
+         sp.style.background ="orange";
+         sp.style.border="1px solid ";
+         sp.style.borderColor ="#ccc #666 #666 #ccc";
+         sp.style.boxSizing= "border-box";
+         sp.style.float="left";
+         hp[i].appendChild (sp);
+     }
+
+ }
+  var all=document .getElementsByClassName ('xq');
+      var hx=document.createElement('div');
+      hx.style.width="168px";
+      hx.style.zIndex ="100";
+       hx.style.position ="absolute";
+      hx.style.border ="1px solid ";
+      hx.style.borderColor ="#ccc #666 #666 #ccc";
+      hx.style.transform ="rotate(45deg)";
+      hx.style.transformOrigin="0 0";
+      all[3].appendChild (hx);
+
+
+ var hx1=document.createElement('div');
+ hx1.style.width="168px";
+ hx1.style.zIndex ="100";
+ hx1.style.position ="absolute";
+ hx1.style.border ="1px solid ";
+ hx1.style.borderColor ="#ccc #666 #666 #ccc";
+ hx1.style.transform ="rotate(-46deg) translate(1px,-3px )";
+ hx1.style.transformOrigin="0 0";
+ all[19].appendChild (hx1);
+
+ var hx2=document.createElement('div');
+ hx2.style.width="166px";
+ hx2.style.zIndex ="100";
+ hx2.style.position ="absolute";
+ hx2.style.border ="1px solid";hx2.style.borderColor="#ccc #666 #666 #ccc";
+ hx2.style.transform ="rotate(45deg)";
+ hx2.style.transformOrigin="0 0";
+ all[51].appendChild (hx2);
+ var hx3=document.createElement('div');
+ hx3.style.width="166px";
+ hx3.style.zIndex ="100";
+ hx3.style.position ="absolute";
+ hx3.style.border ="1px solid ";hx3.style.borderColor="#ccc #666 #666 #ccc";
+ hx3.style.transform ="rotate(135deg)";
+ hx3.style.transformOrigin="0 0";
+ all[53].appendChild (hx3);
+ /*all[62].appendChild (hx1);*/
+ console .log(  all);
+    console .log(  all);
+</script>
+
+</body>
+</html>
