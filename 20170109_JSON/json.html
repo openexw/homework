@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据绑定和解析</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        div{
+            margin:0 auto;
+            width: 50%;
+            background-color: #ddd;
+        }
+        li{
+            width: 99.9%;
+            height: 200px;
+            list-style: none;
+            border:1px solid #999;
+        }
+        img{
+            width: 20%;
+            height: 200px;
+        }
+        a{
+            margin-left: 22%;
+            padding:10px 0;
+        }
+        h2{
+            margin-left: 22%;
+        }
+        p{
+            margin-left: 22%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="list">
+            <li>
+                <img src="" alt="">
+                <a href="http://baidu.com">标题</a>
+                <p>发布时间： <span></span></p>
+                <p>作者: <span></span></p>
+                <p>分类: <span></span></p>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="data.js"></script>
+<script>
+    var list = document.getElementById("list");
+    var d = data.results;
+    var html = "";
+    for(var i=0; i< d.length; i++){
+        html += createList(d[i]);
+    }
+    list.innerHTML = html;
+    function createList(data){
+        var imgUrl = "";
+        if(data["images"]){
+            imgUrl = data["images"][0];
+        }
+        var html = '<li>'+
+            '<img src="'+imgUrl+'" alt="">'+
+            '<h2>账号ID：<span>'+data["_id"]+'</span></h2>'+
+            '<a href="'+data["url"]+'">标题</a>'+
+            '<p>发布时间：<span>'+data["publishedAt"]+'</span></p>'+
+            '<p>作者:<span>'+data["who"]+'</span></p>'+
+            '<p>分类:<span>'+data["type"]+'</span></p>'+
+            '</li>';
+        return html;
+    }
+</script>
+</html>
