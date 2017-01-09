@@ -1,0 +1,99 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            background-color: #f665;
+            margin:10px 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .clearFix{
+            zoom: 1;
+        }
+        .clearFix::after{
+            clear: both;
+            display: block;
+            content: "";
+        }
+        img{
+            display: inline-block;
+            float: left;
+        }
+        a{
+            display: block;
+            font-size:30px;
+            color: #d9534f;
+            font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        i{
+            display: block;
+            line-height: 40px;
+            font-size:20px;
+            color: #4088b8;
+        }
+    </style>
+</head>
+<body>
+<ul id="list">
+     <li>
+         <img src="" alt="">
+         <a href="http://baidu.com">标题</a>
+         <i>发布时间： <span></span></i>
+         <i>作者: <span></span></i>
+         <i>分类: <span></span></i>
+     </li>
+</ul>
+<script src="data.js"></script>
+<script>
+    //1.将JSON对象转换为字符串
+    var a =JSON.stringify(data);
+    console.log(a);
+
+    //2.将数据保存到localstorage，并获取localstorage中的数据
+    localStorage.setItem("data",a);
+    var shift =localStorage.getItem("data");
+    console.log(shift);
+
+    //3.将获取的数据解析成json对象
+    shift =JSON.parse(shift);
+    console.log(shift);
+
+    //4.将json对象中的数据绑定到html中（注意样式的美化）
+    var list= document.getElementById("list");
+    var d =data.results;
+    var sum ="";
+    for(var i=0;i<d.length;++i){
+        sum += createList(d[i]);
+    }
+    list.innerHTML = sum;
+    function createList(ss){
+        var url = "";
+        if(ss["images"]){
+            url = ss["images"][0];
+            console.log(url);
+        }
+        var sum =
+            '<li class="clearFix">'+
+            '<img src="'+url+'" alt="">'+
+            '<a href="'+ss["url"]+'">标题</a>'+
+            '<i>发布时间： <span>'+ss["publishedAt"]+'</span></i>'+
+            '<i>作者: <span>'+ss["who"]+'</span></i>'+
+            '<i>分类: <span>'+ss["type"]+'</span></i>'+
+            '</li>';
+        return sum;
+    }
+</script>
+</body>
+</html>        

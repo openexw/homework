@@ -30,7 +30,7 @@ h2{
 h2:hover{
     border-top: 1px solid red;
     border-bottom: 1px solid blue;
-    transition: all 1s;
+
 }
 .nav>li:hover{
     background: #80ff18;
@@ -50,6 +50,7 @@ a:hover{
     position: absolute;
     left: 20px;
     display: none;
+    animation: to 0.2s normal;
 
 }
 .active{
@@ -57,4 +58,8 @@ a:hover{
 }
 .child li:hover{
     color: snow;
+}
+@keyframes to {
+    from{transform: translate(300px)}
+    to{transform: translate(0)}
 }
