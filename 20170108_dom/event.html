@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./iconfont234/iconfont.css">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #move{
+            width: 100px;
+            height: 60px;
+            background-color: #bce8f1;
+            position: absolute;
+            margin-left:-2%;
+            margin-top:-2%;
+        }
+        #right_menu{
+            width: 150px;
+            height: 250px;
+            background-color: #ff0;
+            display: none;
+            position: absolute;
+        }
+        .phone{
+            width:300px;
+            height: 500px;
+            background-color: #f6f6f6;
+            position: relative;
+            top:60px;
+            left:30px;
+        }
+        #ul{
+            position: absolute;
+            left:30%;
+            top: 5%;
+        }
+        .phone ul li{
+            display: block;
+            line-height: 30px;
+        }
+        .lis{
+            display: none;
+        }
+        .control{
+            width: 700px;
+            height: 400px;
+            position: absolute;
+            right: 8%;
+            top: 10%;
+            background-color: #f6f6f6;
+        }
+        .control>ul>li{
+            width: 20%;
+            float: left;
+        }
+        .tab{
+            padding:10px 0;
+            text-align: center;
+        }
+        .tab:hover{
+            background-color: #fff;
+            border-top: 3px solid red;
+        }
+        @keyframes you {
+            from{
+                transform: translate(300px);
+            }
+            to{
+                transform: translate(0);
+            }
+        }
+        .content{
+            position: absolute;
+            top: 14%;
+            left: 5%;
+            line-height: 40px;
+            display: none;
+            animation:you 0.2s normal;
+        }
+
+        .content li{
+            display: block;
+        }
+        .active{
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+<div id="move"></div>
+<div id="right_menu"></div>
+<div class="phone">
+    <ul id="ul">
+        <li>
+            <div class="list">
+                <i class="iconfont" id="icon1">&#xe6e3;</i>
+                我的好友
+            </div>
+            <ul class="lis">
+                <li>张三</li>
+                <li>李四</li>
+                <li>王五</li>
+                <li>赵六</li>
+            </ul>
+        </li>
+        <li>
+            <div class="list">
+                <i class="iconfont" id="icon2">&#xe6e3;</i>
+                企业好友
+            </div>
+            <ul class="lis">
+                <li>af三</li>
+                <li>f四</li>
+                <li>王afa五</li>
+                <li>赵af六</li>
+            </ul>
+        </li>
+        <li>
+            <div class="list">
+                <i class="iconfont" id="icon3">&#xe6e3;</i>
+                黑名单
+            </div>
+            <ul class="lis">
+                <li>张三</li>
+                <li>李四</li>
+                <li>王五</li>
+                <li>赵六</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<div class="control">
+    <ul>
+        <li>
+            <div class="tab">小熊的钥匙</div>
+            <ul class="content active">
+                <li>小熊：我走了，这一回是真的。</li>
+                <li>在敦煌"飞天"的时候，澔平，我要想你。</li>
+                <li>如果不死自制心太强，小熊，你也知道，</li>
+                <li>我那批三百七十五把钥匙会有起码一百把交给谁。</li>
+                <li>此刻的你在火车上还是在汽车里呢？</li>
+            </ul>
+        </li>
+        <li>
+            <div class="tab">小熊的口红</div>
+            <ul class="content">
+                <li>"口红"是我们之间象征"今天心情好不好"的意思。</li>
+                <li>这是因为如果心情不好的时候就就要去亲吻守护我们的"小熊"。</li>
+                <li>人生像一列玩具火车在奔跑旋转。</li>
+                <li>串联一节节车厢反复循环</li>
+                <li>有的车厢收藏未能实现的年少梦断</li>
+                <li>有的车厢满载过往朋友的消逝离散</li>
+            </ul>
+        </li>
+        <li>
+            <div class="tab">小熊的衣袖</div>
+            <ul class="content">
+                <li>任你卷起狂风暴雨掠过眼前</li>
+                <li>扰乱的何止丝发</li>
+                <li>还有我那轻巧易碎的心</li>
+            </ul>
+        </li>
+        <li>
+            <div class="tab">小熊的城堡</div>
+            <ul class="content">
+                <li>整个酷寒的西伯利亚就像一个大冰窖</li>
+                <li>捍卫着一个世界淡水最深又辽阔的内加尔湖</li>
+                <li>多么悸动心弦的冻原天地！</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<script>
+    var move =document.getElementById("move");
+    //移动鼠标执行函数
+    move.addEventListener("mousemove",function(event){
+        var x =event.clientX;
+        var y =event.clientY;
+        move.style.left=x+"px";
+        move.style.top=y+"px";
+    });
+    var right_menu =document.getElementById("right_menu");
+    //点击鼠标右键执行函数（出现菜单栏）
+    document.oncontextmenu = function(event){
+        var x =event.clientX;
+        var y =event.clientY;
+        right_menu.style.left=x+"px";
+        right_menu.style.top=y+"px";
+        right_menu.style.display="block";
+        return false;
+    }
+    //点击鼠标左键执行函数（消失菜单栏）
+    document.onclick=function(){
+        right_menu.style.display="none";
+    }
+
+
+    var list =document.getElementsByClassName("list");
+    var lis =document.getElementsByClassName("lis");
+    for(var i=0;i<list.length;++i){
+        flag=true;
+        list[i].onclick=function (){
+            for(var j=0;j<lis.length;++j){
+                lis[j].style.display="none";
+            }
+            if(flag == true){
+                this.nextElementSibling.style.display = "block";
+                flag=false;
+            }else if(flag ==false){
+                this.nextElementSibling.style.display = "none";
+                flag=true;
+            }
+        }
+    }
+
+    var tab =document.getElementsByClassName("tab");
+    var content =document.getElementsByClassName("content");
+    for(var i=0;i<tab.length;++i){
+        tab[i].onmouseover=function (){
+            for(var j=0;j<content.length;++j){
+                content[j].style.display="none";
+            }
+            this.nextElementSibling.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>
