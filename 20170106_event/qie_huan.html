@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab切换</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .clearfix{
+            zoom: 1;
+        }
+        .clearfix:after{
+            content:"";
+            display: block;
+            clear: both;
+        }
+        #tab{
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+        }
+        #tab-tit{
+            width: 100%;
+            height: 30px;
+            background-color: #eee;
+
+        }
+        #tab li{
+            float: left;
+            height: 30px;
+            line-height:30px;
+            padding:0 20px;
+            background-color: #eee;
+            cursor: pointer;
+
+        }
+        #tab li.active{
+            background-color: #ddd;
+        }
+        #div-con{
+            width: 500px;
+            height: 200px;
+        }
+        #div-con div{
+            width: 500px;
+            height: 200px;
+        }
+        #div-con div.active{
+            display: block;
+            background-color: peru;
+        }
+        #div-con div{
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <ul id="tab-tit" class="clearfix">
+            <li class="active">ipone</li>
+            <li>华为</li>
+            <li>小米</li>
+        </ul>
+        <div id="div-con">
+            <div class="active">ipone</div>
+            <div>华为</div>
+            <div>小米</div>
+        </div>
+    </div>
+</body>
+<script>
+
+    var tit = document.getElementById("tab-tit");
+    var li = tit.getElementsByTagName("li");
+    var con = document.getElementById("div-con");
+    var div = con.getElementsByTagName("div");
+
+    for(var i = 0; i<li.length; i++){
+        li[i].index = i;
+        li[i].onmouseover = function () {
+            for (var j = 0; j<li.length; j++){
+                li[j].className = "";
+                div[j].className = "";
+            }
+            this.className = "active";            div[this.index].className = "active";
+        }
+    }
+</script>
+</html>
