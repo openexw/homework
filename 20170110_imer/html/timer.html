@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    .content{
+        width: 860px;
+        height: 340px;
+        border: 1px solid red;
+        position: relative;
+        overflow: hidden;
+    }
+    #main{
+        width: 860px;
+        height: 300px;
+        border: 1px solid blue;
+        margin: auto ;position: relative;
+        transition: all 1s;
+    }
+    .theclass {
+        width: 500px;
+        height: 290px;
+        position: absolute;
+        border: 1px solid salmon; background-image: url(../images/z_img13.jpg);
+    }
+    .thid {
+        width: 350px;
+        height: 290px;
+        border: 1px solid lawngreen;
+        position: absolute; right: 0;
+    }
+    .thidimg{
+        width: 100%;
+        height: 50%;
+        border: 1px solid darkslategrey;
+        position: relative;
+        z-index: 100;
+    }
+
+    .thidimg img{
+        width: 100%;
+        z-index: 80;
+
+    }
+    .mainmesege {
+        width: 150px;
+        height: 100%;
+        background-color: rgba(128, 255, 24, 0.5);
+        position: absolute;
+        text-align: center ;
+
+    }
+.xk{
+    display: block;
+    text-align: left ;
+}
+    .xk1{
+        border:1px solid white;
+        padding: 5px 5px;
+ }
+.twomaedd {
+    width: 30%;
+    height: 100%;
+    background-color: rgba(128, 255, 24, 0.5);
+    position: absolute;
+    right: 0;
+    z-index: 1150;
+
+}
+    .twomaedd-1{
+        width: 100%;
+        height: 20%;
+        background-color: rgba(128, 255, 24, 0.5);
+        position: absolute;
+        bottom: 0;
+        z-index: 1150;
+
+    }
+    .guodong {
+        height: 40px;
+        width: 100%;
+        background-color: rgba(128, 255, 24, 0.5);
+        position: relative;
+        text-align: center ;
+    }
+    #left{
+        height: 100%;
+        width: 50px;
+       /* border: 1px solid red;*/
+        display: block;
+        float: left;
+        box-sizing: border-box;
+        border-radius: 50%;
+        background-image: url(../images/z_img18.png);
+
+    }
+    #right{
+        height: 100%;
+        width: 50px;
+       /* border: 1px solid red;*/
+        display: block;
+        float: left;
+        box-sizing: border-box;
+        border-radius: 50%;
+        background-image: url(../images/z_img18.png);
+        background-position:135px 0;
+    }
+    .ddceng {
+        margin: auto ;
+        width: 100px;
+        height: 100%;
+   /*     border: 1px solid red;*/
+    }
+    .ghk {
+        width: 860px;
+        height: 300px;
+        border: 1px solid red;
+        position: relative;
+        left: 860px;
+        overflow: hidden;
+    }
+</style>
+<body>
+   <div class="content">
+        <div id="main">
+            <div class="theclass">
+                 <div class="mainmesege">
+                    <h3>ABOUT BAOLONG</h3>
+                     <h3>宝能教育</h3>
+                     <p>宝能城市广场项目地处扬州北部新城，
+                         扬州北部新城毗邻省会城市南京，
+                         是经济发达的苏南地区通向苏北的桥头堡...</p>
+                     <span class="xk"><span class="xk1" >更多</span></span>
+                 </div>
+
+           </div>
+            <div class="thid">
+                 <div class="thidimg" style="background-image: url(../images/z_img15.jpg);">
+                     <div class="twomaedd">
+                        <h3>社会责任</h3>
+                         <p>引发新技术发展。融合国际先进教育理念</p>
+                     </div>
+                 </div>
+                <div class="thidimg" style="background-image: url(../images/z_img22.jpg);">
+                    <div class="twomaedd-1">
+                         <h3 style="margin-top: 5px">合作伙伴</h3>
+                    </div>
+                   </div>
+            </div>
+            <div class="ghk">
+                <div class="theclass">
+                    <div class="mainmesege">
+                        <h3>ABOUT BAOLONG</h3>
+                        <h3>宝能教育</h3>
+                        <p>宝能城市广场项目地处扬州北部新城，
+                            扬州北部新城毗邻省会城市南京，
+                            是经济发达的苏南地区通向苏北的桥头堡...</p>
+                        <span class="xk"><span class="xk1" >更多</span></span>
+                    </div>
+
+                </div>
+                <div class="thid">
+                    <div class="thidimg" style="background-image: url(../images/z_img14.jpg);">
+                        <div class="twomaedd">
+                            <h3>社会责任</h3>
+                            <p>引发新技术发展。融合国际先进教育理念</p>
+                        </div>
+                    </div>
+                    <div class="thidimg" style="background-image: url(../images/z_img21.jpg);">
+                        <div class="twomaedd-1">
+                            <h3 style="margin-top: 5px">合作伙伴</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="guodong">
+         <div class="ddceng">
+             <span id="left"></span>
+             <span id="right"></span>
+         </div>
+       </div>
+   </div>
+   <script>
+  var right= document.getElementById("right");
+  var  main= document.getElementById("main");
+  var left= document.getElementById("left");
+   right.onclick =function () {
+       main.style.left =" -860px" ;
+   };
+  left.onclick =function () {
+      main.style.left =" 0" ;
+  }
+   </script>
+</body>
+</html>

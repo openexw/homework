@@ -44,38 +44,43 @@
             color: #4088b8;
         }
     </style>
+    <script src="../../个人HTML项目/HTML/json/20170109_json/data.js"></script>
 </head>
 <body>
 <ul id="list">
-     <li>
-         <img src="" alt="">
-         <a href="http://baidu.com">标题</a>
-         <i>发布时间： <span></span></i>
-         <i>作者: <span></span></i>
-         <i>分类: <span></span></i>
-     </li>
+
 </ul>
-<script src="data.js"></script>
+
+<!--<script src="data.js"></script>-->
 <script>
     //1.将JSON对象转换为字符串
-    var a =JSON.stringify(data);
-    console.log(a);
+  /* var a= {
+        "_id": "56cc6d1d421aa95caa70756b",
+        "createdAt": "2015-10-27T11:43:13.864Z",
+        "desc": "\u600e\u6837\u7528 Android Annotations \u5199\u51fa\u9ad8\u6027\u80fd\u4ee3\u7801",
+        "publishedAt": "2015-10-28T03:51:19.324Z",
+        "type": "Android",
+        "url": "http://blog.csdn.net/feelang/article/details/49095235#0-tsina-1-79139-397232819ff9a47a7b7e80a40613cfe1",
+        "used": true,
+        "who": "wuzheng"
+    };
+*/
+   /* var b =JSON.stringify(data);*/
+    /*console.log(b);*/
 
     //2.将数据保存到localstorage，并获取localstorage中的数据
-    localStorage.setItem("data",a);
-    var shift =localStorage.getItem("data");
-    console.log(shift);
-
-    //3.将获取的数据解析成json对象
-    shift =JSON.parse(shift);
-    console.log(shift);
+    localStorage.setItem("gtr",data);
+    var shift =localStorage.getItem("gtr");/*/3.将获取的数据解析成json对象*/
+     shift =JSON. stringify (shift);
+     console.log(shift);
 
     //4.将json对象中的数据绑定到html中（注意样式的美化）
     var list= document.getElementById("list");
     var d =data.results;
+    console.log(d);
     var sum ="";
-    for(var i=0;i<d.length;++i){
-        sum += createList(d[i]);
+    for(var i=0;i<d.length;++i){    //建立循环。。且在循环中。循环调用函数。。
+        sum += createList(d[i]);    //在循环体中。累加sum的值。。
     }
     list.innerHTML = sum;
     function createList(ss){
@@ -84,9 +89,12 @@
             url = ss["images"][0];
             console.log(url);
         }
+    console.log(shift);
+
+
         var sum =
             '<li class="clearFix">'+
-            '<img src="'+url+'" alt="">'+
+            /*'<img src="'+url+'" alt="">'+*/
             '<a href="'+ss["url"]+'">标题</a>'+
             '<i>发布时间： <span>'+ss["publishedAt"]+'</span></i>'+
             '<i>作者: <span>'+ss["who"]+'</span></i>'+
