@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #slide{
+            width: 625px;
+            height: 270px;
+            margin: 0 auto;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        #slide-con{
+            width: calc(625px*5);
+            height: 270px;
+            position: absolute;
+            left: 0;
+        }
+        #slide-con img{
+            width: 625px;
+            height: 270px;
+            float: left;
+        }
+        #direction i{
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+            z-index: 2;
+            background-color: rgba(0,0,0,0.5);
+            padding: 15px 5px;
+            color: #fff;
+            cursor: pointer;
+            transform: translate(0, -50%);
+            position: absolute;
+            top: 50%;
+        }
+        #direction .left{
+            left: 0;
+        }
+        #direction .right{
+            right: 0;
+        }
+
+        /*指示器 start*/
+        #indicator{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        #indicator span{
+            display: inline-block;
+            width: 30px;
+            height: 4px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        #indicator span.active{
+            background-color: #0ff;
+        }
+        /*指示器 end*/
+    </style>
+</head>
+<body>
+    <div id="slide">
+        <div id="slide-con">
+            <img src=images/1.jpg alt="">
+            <img src=images/2.jpg alt="">
+            <img src=images/3.jpg alt="">
+            <img src=images/4.jpg alt="">
+            <img src=images/5.jpg alt="">
+        </div>
+        <div id="direction">
+            <i class="left"><</i>
+            <i class="right">></i>
+        </div>
+        <div id="indicator">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    <script src="move.js"></script>
+    <script>
+        var  slide = document.getElementById("slide");
+         var slideCon = document.querySelector("#slide-con");
+         var slideImg = document.querySelectorAll("#slide-con img");
+
+         var w = slideImg[0].offsetWidth;
+         var ind = document.querySelectorAll("#indicator span");
+
+         var direction = document.querySelectorAll("#direction i");
+         var prev = direction[0];
+         var next = direction[1];
+
+         var now = 0; //当前显示图片索引
+
+         var timer = null;
+
+       // 1. 大图的切换（通过指示器）
+        for(var i=0; i<ind.length; i++){
+            ind[i].index = i;
+            ind[i].onclick = function(){
+                now = this.index;
+                auto();
+            }
+        }
+
+        //2. 左右图片的切换
+
+         //2.1 上一张
+         prev.onclick = function(){
+             now--;
+             //判断是否在第一张
+             if(now == -1){
+                 now = slideImg.length - 1;
+             }
+             auto();
+         };
+
+         //2.2 下一张
+        var a = next.onclick = function(){
+            now++;
+            //判断是否是最后一张
+            if(now == slideImg.length){
+                now = 0;
+            }
+            auto();
+        };
+
+         //3. 自动播放
+         timer = setInterval(a, 3000);
+
+         //4.鼠标移出移入事件
+        slide.onmouseover = function(){
+            clearInterval(timer)
+        };
+
+        slide.onmouseout = function(){
+            timer = setInterval(a, 3000);
+        };
+
+         /**
+          * 图片切换的动画
+          */
+         function auto(){
+             //1.1 清除指示器原来的样式并给当前的添加指示器高亮
+             for(var j=0; j<ind.length;j++){
+                 ind[j].className = "";
+             }
+             ind[now].className = "active";
+
+             //1.2 大图片切换
+             startMove(slideCon, {"left": -now*w});
+         }
+    </script>
+</body>
+</html>
