@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="css/timer.css">
+</head>
+<body>
+    <div id="slide">
+        <div id="slide-con">
+            <!--第一幅-->
+            <div class="banner">
+                <div class="bnjy">
+                    <img src="images/z_img17.png" alt="">
+                    <h2>宝能教育</h2>
+                    <p>宝能教育凭借先进的教育服务理念，开放的教育合作平台，共赢的教育投融资模式，强大的资源资本实力，致力于向全社会提供领先、便捷...</p>
+                    <a href="#">更多</a>
+                </div>
+                <div class="shzr">
+                    <h3>社会责任</h3>
+                    <p>引领新发展 融合国际先进的教育理念</p>
+                </div>
+                <div class="hzhb">
+                    <h3>合作伙伴</h3>
+                </div>
+                <img id="img13" src="images/z_img13.jpg" alt="">
+                <img id="img14" src="images/z_img14.jpg" alt="">
+                <img id="img15" src="images/z_img15.jpg" alt="">
+            </div>
+
+            <!--第二幅-->
+            <div class="banner">
+                <div class="rc">
+                    <img src="images/z_img19.png" alt="">
+                    <h2>人才理念</h2>
+                    <p>“合理用人、客观评人、文化留人”。宝能教育殷切期待有识之士、有志之才加入我们，携手提供领先、便捷、优质的教育资源和服务。</p>
+                    <a href="#">更多</a>
+                </div>
+                <div class="yg">
+                    <h3>员工发展</h3>
+                    <p>引领新发展 融合国际先进的教育理念</p>
+                </div>
+                <div class="zp">
+                    <h3>招聘信息</h3>
+                </div>
+                <img id="img20" src="images/z_img20.jpg" alt="">
+                <img id="img21" src="images/z_img21.jpg" alt="">
+                <img id="img22" src="images/z_img22.jpg" alt="">
+            </div>
+        </div>
+        <div id="direction">
+            <i class="left"></i>
+            <i class="right"></i>
+        </div>
+    </div>
+</body>
+<script src="js/move.js"></script>
+<script>
+    var img = document.querySelectorAll(".banner");
+    var con = document.querySelector("#slide-con");
+    var slide = document.getElementById("slide");
+
+    var w = img[0].offsetWidth;
+
+    var direction = document.querySelectorAll("#direction i");
+    var prev = direction[0];
+    var next = direction[1];
+    var now = 0; //当前显示图片索引
+    var timer = null;
+
+
+
+
+    //2. 左右图片的切换
+    //2.1上一张
+    prev.onclick = function () {
+        now--;
+        if(now == -1){
+            now = img.length - 1;
+        }
+        auto();
+    };
+    //2.2下一张
+    next.onclick = function () {
+        now++;
+        if(now == img.length){
+            now = 0;
+        }
+        auto();
+    };
+    //3. 自动播放
+    timer = setInterval(next.onclick,2000);
+
+    //4. 鼠标移入移出事件
+    slide.onmouseover = function () {
+        clearInterval(timer);
+    };
+    slide.onmouseout = function () {
+        timer = setInterval(next.onclick,2000);
+    };
+    //图片切换动画
+    function auto() {
+        //2.2 大图片切换
+        startMove(con,{"left":-now*w});
+    }
+</script>
+</html>
