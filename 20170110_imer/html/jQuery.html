@@ -8,19 +8,68 @@
     <title>Document</title>
     <script src="./jquery.js"></script>
 </head>
-<body>
-<button id="go">Rum</button>
-<div id="block">hello!</div>
-<span data-index ="0001"></span>
-<script>
-    $("#go").click(function(){
-        $("#block").animate({
-            width:"200px",
-            height:"150px",
-            fontSize: "50px"
-        },500);
-    });
+<style>
+    #rt li{
+        float: left;
+        list-style: none;
+        padding: 0 15px;
+         background-color: #7dffd6;
+         margin-left: 5px;
+        display: inline-block;
 
+    }
+    #c{
+        display: block;
+        list-style: none;
+
+    }
+    li{
+        list-style: none;
+    }
+
+    .active {
+        display: block;
+    }
+    #rt{
+        display: block;height: 50px;
+        background-color: #ffe1b6;
+        margin: 0;
+        line-height: 50px;
+        text-align: center ;
+    }
+    .ghth{
+        width: 300px;
+        height: 300px;
+        border: 1px solid red;
+    }
+</style>
+<body>
+<div class="ghth">
+
+    <ul id="rt">
+        <li>手机</li>
+        <li>qq</li>
+        <li>MSN</li>
+    </ul>
+    <ul class="con">
+        <li class="active">dskf</li>
+        <li>dfa</li>
+        <li>dadsf</li>
+
+    </ul>
+</div>
+
+<script>
+    var con=$('.con li');//获取con 下面的所有li
+     $("#rt li").click(function () {//给 rt下面的li注册事件
+     $("#rt li").removeClass ("active");
+     $(this).addClass('active');//this 指向是 点击的li的索引值 i
+     con.hide();
+     var index=$(this).index();
+     $(con[index]).fadeIn();
+         $(con[index]).animate ({"left":"50px"},1000)
+
+ })
 </script>
 </body>
 </html>

@@ -1,84 +1,100 @@
-#first edit
+### jquer 选择器
+1 基本选择器
 
-**任务三(branch)**
-1. 新建一个文件夹，并进入文件夹 
+2 关系选择器
 
-2. 在文件夹中新建一个git仓库
+3 伪 类选择器
 
-3. 在仓库中新建一个web目录
+4 关系选择器
 
-4. 在web目录中新建文件: css/style.css、js/index.js、images/、index.php
+$ ("# mydiv")
 
-5. 在images文件夹下存放10张图片（图片内容随便）
+window.onload:需要页面中dom数、图片、的所有资源加载完之后才运行JavaScript
 
-6. 将web添加到仓库
+$（document）.read():当dom树加载完成后就可以运行JavaScript
 
-7. 将web提交到本地仓库
-
-8. 新建github仓库
-
-9. 将本地的仓库存推送到github
-
-10. 制造多次提交记录
-
-11. 回到上一版本，然后推送到github
-
-12. 回到原来的版本，并提推送到github
-
-13. 修改本地仓库的内容，对比修改的内容（对比单个文件和全部文件）
-
-14. 将修改的内容推送到github
-
-15. 新建一个分支dev
-
-16. 切换到dev分支，创建dev目录并进入
-
-17. 创建new_module目录并进入
-
-18. 创建server.php、app/User.php、database/app.sql
-
-19. 提交dev分支到github
-
-20. 将dev分支合并到master分支并推送到github
-
-21. 删除dev分支并推送
-
-#the second edit
- 
- #js 作业
-
- ## 一、概念
-
-1. 什么是变量？什么是常量？
-
-2. 什么是标识符？
-
-3. 理解JavaScript中的区块。
-
-5. 理解JavaScript中语句。
-
-#二、 简答题
+# 事件
+### $（“#div ”）.on( "click",function(){}
+)//添加事件
+### $("#div").off("click",function(){})//删除事件
+# ajaxs
+~~~
+13:37:05
+张德瑶 2017/1/13 13:37:05
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    // AJAX
+    //1.创建XMLHTTPRequest
+    /*
+     if(window.XMLHttpRequest){
+     var ajax = new XMLHttpRequest();
+     }else{//非IE6
+     var ajax = new ActiveXObject("Microsoft.XMLHTTP");
+     }
+    */
 
 
-1. JavaScript的组成，他们的全称是什么？中文名字是什么？
+    //2.与服务器之间进行连接
+    /*
+     方法 文件名 是否异步
+     ajax天生就是异步操作的
+     同步：一件一件来
+     异步：多件事一起
+    */
+    //ajax.open("GET", url, true);
 
-2. 简述JavaScript的发展简史。
+    //GET与POST的区别
+    /*
+    GET:通过网站
+    能在浏览器地址看到请求的内容数据
+    长度有限:4k-10k 容量小
+    安全性差
+    有缓存
+    更适合获取数据
+     */
+    /*
+    POST:通过HTTP content
+    容量相对比较大：2G
+    安全性好一点
+    没有缓存
+    更适合上传数据
+    安全性高的走法：走https协议
+     */
 
-3. 简述JavaScript的能干的事。
 
-4. 标识符的命名规则。
+    //3.发送请求
+   // xmlhttp.send()
 
-5. JavaScript中的保留关键字。
 
-6. 简述JavaScript中的注释种类，并举例说明。
+    //4.接受响应
+    /*ajax.onreadystatechange = function(){
+      0 未初始化，还没有调用open
+      1 载入，已经调用send方法，正在发送请求
+      2 载入完成，send已经完成，已接受到全部响应内容
+      3 解析，正在解析响应内容
+      4 完成，响应内容解析完成，可以在客户端调用了
+        if(ajax.readyState == 4){ //浏览器与服务器进行到哪一步 4表示整个过程已经完成
+            if(ajax.status == 200){
+                fnS(ajax.readAsText);
+                //console.log("成功了", ajax.readAsText);
+            }else{
+                if(fnF){
+                    fnF(ajax.status);
+                }
+            }
+        }
+    }*/
 
-7. 简[M (2述JavaScript中的输出方式。
-
-# 三、完成有道云笔记的界面布局
-
-**作业四**
-
-1. 列举JavaScript中的数据类型（六种）。列举布尔类型、Undefined、Null的值。
-2. 谈谈你对undefined和null的理解。
-3. 怎么判断一个值得类型，并举例说明。
-4. JavaScript中数据类型的转换方式有？请一一列举，并举例说明。
+</script>
+</body>
+</html>
+~~~
