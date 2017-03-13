@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>象棋</title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin:0;
+    }
+    .box{
+        width: 635px;
+        background-color: #b19408;
+        margin:50px auto;
+        border: 2px solid #000;
+    }
+    #chess{
+        margin:0 auto;
+        text-align: center;
+        width: 673px;
+        height: 675px;
+    }
+    .chu{
+        width: 100%;
+        height: 50px;
+        font-size: 20px;
+        line-height: 50px;
+    }
+    .td{
+        position: relative;
+        left:10px;
+        top: 5px;
+        width: 75px;
+        height: 75px;
+        border:1px solid #666;
+    }
+</style>
+<body>
+<div class="box">
+
+    <div id="chess"></div>
+</div>
+</body>
+<script>
+    var chess = document.getElementById("chess");
+    for(var i = 1;i < 5;i++){
+        var div = document.createElement("div");
+        for(var j=1;j<9;j++){
+            var child = document.createElement("td");
+            child.className = "td";
+            div.appendChild(child);
+        }
+        chess.appendChild(div);
+    }
+    for(var e =1 ;e<2 ;e++){
+        var span =document.createElement("span");
+
+    }
+    for(y=0;y<1;y++){
+        var d3=document.createElement("div");
+        d3.className = "chu";
+        div.appendChild(d3);
+        d3.innerHTML = "楚河"+"&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"+"汉界";
+    }
+    var chess = document.getElementById("chess");
+    for(var a = 1;a < 5;a++){
+        var div = document.createElement("div");
+        for(var b=1;b<9;b++){
+            var child = document.createElement("td");
+            child.className = "td";
+            div.appendChild(child);
+        }
+        chess.appendChild(div);
+    }
+</script>
+</html>
