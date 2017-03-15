@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>parse</title>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    div{
+        margin:0 auto;
+        width: 50%;
+        background-color: #ddd;
+    }
+    li{
+        width: 99.9%;
+        height: 200px;
+        list-style: none;
+        border:1px solid #999;
+    }
+    img{
+        width: 20%;
+        height: 200px;
+    }
+    a{
+        margin-left: 22%;
+        padding:10px 0;
+    }
+    h2{
+        margin-left: 22%;
+    }
+    i{
+        margin-left: 22%;
+        font-style: normal;
+        font-size: 18px;
+    }
+</style>
+</head>
+<body>
+<div>
+    <ul id="ul">
+        <li>
+            <img src="" alt="">
+            <a href="">标题</a>
+            <i>发布时间： <span></span></i>
+            <i>作者: <span></span></i>
+            <i>分类: <span></span></i>
+        </li>
+    </ul>
+</div>
+<script>
+    /**
+     * 数据绑定
+     * json ==> html中
+     * @type {Element}
+     */
+    var ul = document.getElementById("ul");
+    var a = ul.results;
+    var html = "";
+    for(var i=0; i<a.length; i++){
+        html += createList(a[i]);
+    }
+    ul.innerHTML = html;
+    function createList(c){
+        var imgUrl = "";
+        if(c["images"]){
+            imgUrl = c["images"][0];
+        }
+        var d = '<li>'+
+            '<img src="'+imgUrl+'" alt="">'+
+            '<a href="'+c["url"]+'">标题</a>'+
+            '<i>发布时间： <span>'+c["publishedAt"]+'</span></i>'+
+            '<i>作者: <span>'+c["who"]+'</span></i>'+
+            '<i>分类: <span>'+c["type"]+'</span></i>'+
+            '</li>';
+        return d;
+    }
+</script>
+</body>
+</html>

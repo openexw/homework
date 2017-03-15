@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="./css/computer.css">
+</head>
+<body>
+<div class="container">
+    <img src="./images/bg.png" alt="">
+    <div class="box">
+    <div class="text">
+        var arr = ["100px", "abc"-6, [], -9866, 34, -2, 0, '300', , function(){alert(0)},
+            null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),
+        function(){alert(3)}, 'xyz'-90];
+    </div>
+        <h3 id="h1">1.所有的数字是：</h3>
+        <h3 id="h2">2.可以转换成数字的：</h3>
+        <h3 id="h3">3.转成数字的最大值：</h3>
+        <h3 id="h4">4.所有运算结果NaN的位置是：</h3>
+        <input type="button" value="开始查找" id="btn"class="t_btn">
+    </div>
+</div>
+</body>
+<script>
+    var arr = ["100px", "abc"-6, [], -9866, 34, -2, 0, '300', , function(){alert(0)},
+        null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),
+        function(){alert(3)}, 'xyz'-90];
+    var num = [];
+    var canNum = [];
+    var canNumAfter = [];
+    var maxNum;
+    var indexArr = [];
+    var btn = document.getElementById("btn");
+    var h1 = document.getElementById("h1");
+    var h2 = document.getElementById("h2");
+    var h3 = document.getElementById("h3");
+    var h4 = document.getElementById("h4");
+
+    btn.onclick = function () {
+        for(var i in arr){
+            //判断是否是数字
+            if (parseFloat(arr[i]).toString() != "NaN" && !isNaN(arr[i]) && typeof arr[i] != "string" ) {
+                num.push(arr[i]);
+                h1.innerHTML = "1.所有的数字是："+num;
+            }
+
+            //判断是否可以转换成数字
+            if(parseInt(arr[i])){
+                canNum.push(arr[i]);
+                canNumAfter.push(parseInt(arr[i]));
+                h2.innerHTML = "2.可以转成数字的："+canNum;
+            }
+
+            //
+            if(isNaN(arr[i]) && typeof arr[i] != "object" && typeof arr[i] != "function"){
+                if(arr[i].toString() == "NaN"){
+                    indexArr.push(i);
+                    h4.innerHTML = "4.所有运算结果是NaN的位置："+indexArr;
+                }
+            }
+
+        }
+        function so(a, b){
+            return b-a;
+        }
+        canNumAfter.sort(so);
+        maxNum = canNumAfter[0];
+        h3.innerHTML = "3.转成数字的最大值："+maxNum;
+    };
+
+</script>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .clearfix {
+            zoom: 1;
+        }
+
+        .clearfix:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        #tab {
+            width: 550px;
+            height: 400px;
+            margin: 0 auto;
+        }
+
+        #tab-tit {
+            width: 100%;
+            height: 40px;
+            background: #9d9d9d;
+            line-height: 40px;
+        }
+
+        #tab-tit li {
+            display: inline-block;
+            float: left;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+
+        #tab-tit li:hover {
+            background: #dddddd;
+        }
+        #tab-tit .active{
+            background: #dddddd;
+        }
+
+        #div-con {
+            height: 300px;
+            width: 100%;
+            background: #dff0d8;
+        }
+
+        #div-con .active {
+            display: block;
+        }
+
+        #div-con div {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul id="tab-tit">
+        <li class="active">apple</li>
+        <li>小米</li>
+        <li>华为</li>
+    </ul>
+    <div id="div-con">
+        <div class="active">apple</div>
+        <div>小米</div>
+        <div>华为</div>
+    </div>
+</div>
+</body>
+<script>
+    var tab_tit = document.getElementById("tab-tit");
+    var li = tab_tit.getElementsByTagName("li");
+    var div_con= document.getElementById("div-con");
+    var div = div_con.getElementsByTagName("div");
+    for(var i=0 ;i<li.length; i++){
+        li[i].index= i;
+        li[i].onmouseover = function () {
+            for (var j=0;j<li.length; j++){
+                li[j].className="";
+                div[j].className="";
+            }
+            this.className = "active";
+            div[this.index].className ="active";
+        }
+    }
+</script>
+</html>
