@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+    <meta charset="utf-8" />
+    <title>相邻选择符 (E+F)_CSS参考手册_web前端开发参考手册系列</title>
+    <meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+    <style>
+        /*p + p {
+            color: #f00;
+        }*/
+        .con{
+            width: 400px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+        .con .sd+p{
+            color: #f00;
+        }
+
+
+        .opop small{
+
+        }
+        .opop>small{
+
+        }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+        .nav{
+            width: 1000px;
+            height: 50px;
+            line-height: 50px;
+            background-color: #896;
+        }
+        .nav li{
+
+            list-style: none;
+            float: left;
+            padding: 0 30px ;
+            /*width: 200px;*/
+            text-align: center;
+        }
+        .nav li:hover{
+            background-color: #fff;
+        }
+        a{
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+<div class="test">
+    <h3>这是一个标题</h3>
+    <p>这是一个文字段落</p>
+    <p>这是一个文字段落</p>
+    <h3>这是一个标题</h3>
+    <p>这是一个文字段落</p>
+    <h3>这是一个标题</h3>
+    <p>这是一个文字段落</p>
+    <p>这是一个文字段落</p>
+</div>
+
+<div class="con">
+    <p>这是1个文字段落</p>
+    <p>这是2个文字段落</p>
+    <p class="sd">这是3个文字段落</p>
+    <p>这是4个文字段落</p>
+    <p>这是5个文字段落</p>
+</div>
+
+
+<ul class="nav">
+    <li><a href="">刘新颖</a></li>
+    <li>关于我</li>
+    <li>这是真的吗这是一个文字段落</li>
+
+</ul>
+
+<style>
+
+</style>
+</body>
+</html>

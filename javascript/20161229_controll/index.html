@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*0
+    undefined
+    null
+    ""
+    false
+    NaN*/
+
+
+
+
+  /*  if(){
+        //code
+    }*/
+    var a = "100";
+    var num = 0;
+    switch (a){
+        case "1":
+        case "2":
+            break;
+        case "2":
+        case "2":
+            num = +a+2;
+            break;
+    }
+
+    console.log(num);
+
+    //分支
+    /**
+     * if
+     * if ... else
+     * switch ... case
+     *  break
+     * */
+    //循环
+    /**
+     * for
+     * while
+     * do...while
+     */
+
+    /**
+     * ex1:初始化
+     * ex2：循环条件
+     * ex3：迭代（自增）
+     */
+    /*for(ex1; ex2; ex3){
+
+    }*/
+
+    var a = 100; //初始化
+
+    while (a>20){ //表达式里--循环条件
+//        console.log(a);
+        a--; //迭代
+
+    }
+
+    for(var a=100; a>20; a--){
+//        console.log(a);
+        //循环体
+    }
+
+    do{
+        //循环体
+        console.log("循环体");
+    }while (false)
+
+    /**
+     * continue:
+     * break;
+     */
+    var a =0;
+    for(;;){
+        if(a == 20){
+            break;
+        }
+//        console.log(a);
+        a++;
+    }
+
+    for(var i=0; i<10; i++){
+        if(i == 5){
+            continue;
+        }
+
+        console.log(i); //0 1 2 3 4
+    }
+</script>
+</body>
+</html>

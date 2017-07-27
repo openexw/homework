@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var b = [4, 5, 6, 4, 5, 7, 8, 9, 7, 6, 5];
+    var res = [];
+    for(var i=0; i< b.length; i++){
+        var flag = false;
+        for(var j=0; j<res.length; j++){
+            if(b[i] ==res[j]){
+                flag = true;
+                break;
+            }
+        }
+        if(!flag){
+            res.push(b[i]);
+        }
+    }
+
+    console.log(res);
+//    var sd = s(b);
+//    console.log(sd);
+
+    var arr = ["100px", "abc"-6, [], -9866, 34, -2, 0, '300', , function(){alert(0)},
+        null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),
+        function(){alert(3)}, 'xyz'-90];
+
+//    alert(arr.length);
+    var num = []; //是否是数字
+    var canNum = []; //能转成数字的数组
+    var canNumAfter = []; //转成数字之后的数组
+    var maxNum;
+    var indexArr = [];
+    for(var i in arr){
+
+        //判断是否是数字
+        if (typeof arr[i] == 'number' && arr[i].toString() != "NaN") {
+            num.push(arr[i]);
+        }
+
+        //判断是否可以转换成数字
+        if(parseInt(arr[i])){
+            canNum.push(arr[i]);
+            canNumAfter.push(parseInt(arr[i]))
+        }
+
+        //判断NaN的位置
+        if(isNaN(arr[i]) && typeof arr[i] != "object" && typeof arr[i] != "function"){
+
+            if(arr[i].toString() == "NaN"){
+                console.log(i)
+                indexArr.push(i);
+            }
+        }
+
+    }
+
+    /**
+     * Fun：排序
+     */function so(a, b){
+        return b-a;
+    }
+
+    canNumAfter.sort(so);
+    console.log(num);
+    console.log(canNumAfter);
+    console.log(canNumAfter[0]);
+    console.log(indexArr.toString());
+
+    /**
+     * 1. 给定一个数组`[4,6,7,8,9]`，求出数组中所有元素之和。
+     */
+
+    var a=[4,6,7,8,9];
+    var sum=0;
+    for(var i=0;i< a.length ;i++){
+        sum+=a[i];
+
+    }
+//console.log(sum);
+    /**
+     * 2. 数组`[4,5,6,4,5,7,8,9,7,6,5]`, 去掉数组中重复的元素。
+     */
+    console.log("第二题")
+
+    /*a2[1] = "";
+    a2["user"] = "Jack"; //key=>value*/
+
+//    for..in..
+ /*   for( var i in a2){
+
+    }*/
+
+   /* for(var i in a2){
+        for(var j in a2){
+            if(i != j){
+                if(a2[i]==a2[j]){
+                    a2.splice(j,1);
+                }
+            }
+        }
+    }
+    console.log(a2);*/
+    var a2 = [4,5,6,4,5,7,8,9,7,6,5];
+    var res = []; //去除重复元素之后的结果
+    for(var i=0; i<a2.length; i++){ //4
+        var flag = false; // 默认没有重复元素
+        for(var j=0; j<res.length; j++){
+            if(a2[i] == res[j]){ //a2[3] == res[0]
+                flag = true;
+                break;
+            }
+        }
+
+        if(!flag){
+            res.push(a2[i]); //[4, 5, 6]
+        }
+    }
+//    console.log(res);
+
+    /**
+     *  在一个大学的编程选修课班里，我们得到了一组参加该班级的学生数据，分别是姓名、性别、年龄和年级，
+     *  接下来呢，我们要利用JavaScript的知识挑出其中所有是大一的女生的的名字哦。
+
+     学生信息如下：
+
+     ('小A','女',21,'大一'),  ('小B','男',23,'大三'),
+
+     ('小C','男',24,'大四'),  ('小D','女',21,'大一'),
+
+     ('小E','女',22,'大四'),  ('小F','男',21,'大一'),
+
+     ('小G','女',22,'大二'),  ('小H','女',20,'大三'),
+
+     ('小I','女',20,'大一'),  ('小J','男',20,'大三')
+     */
+    var a =['小A','女',21,'大一'];
+    var b =['小B','男',23,'大三'];
+    var c =['小C','男',24,'大四'];
+    var d =['小D','女',21,'大一'];
+    var e =['小E','女',22,'大四'];
+    var f =['小F','男',21,'大一'];
+    var g =['小G','女',22,'大二'];
+    var h =['小H','女',20,'大三'];
+    var i =['小I','女',20,'大一'];
+    var j =['小J','男',20,'大三'];
+
+    var arr = [a,b,c,d,e,f,g,h,i,j];
+    for(i=0;i<arr.length;i++){
+        if(arr[i][1]=='女' && arr[i][3]=='大一'){
+            var b=arr[i][0];
+            console.log(b);
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div id="div">dfg</div>
+<input type="text" />
+<p><input type="text" /> <span>focusout fire</span></p>
+<p><input type="password" /> <span>focusout fire</span></p>
+<script src="../dist/js/jQuery.min.js"></script>
+<script>
+    /**
+     * window.onload 与 $(document).ready()的区别
+     * window.onload: 需要页面中DOM树、图片、视频、音频等资源加载完成之后才允许运行JavaScript代码
+     *
+     * $(document).ready(function(){
+     *
+     * })：当DOM树加载完成之后就允许运行JavaScript代码了
+     * $(function(){
+     *
+     * });
+     */
+    $("p").focusin(function() {
+        $(this).find("span").css('display','inline').fadeOut(1000);
+    });
+    $(window).unload( function () { alert("Bye now!"); } );
+
+        $(function(){
+           /* var div = document.getElementById("div");
+            function ds(){
+                console.log("df")
+            }*/
+//            div.onclick  = function
+           /* div.addEventListener("click", function(){
+                console.log("df")
+            });*/
+            $("#div").on("click", function(){
+                console.log("df");
+            });
+            $("#div").on("mouseover", function(){
+                console.log("dfsd");
+            });
+            $("#div").off("click");
+            $("#div").bind("click",function(){
+                console.log("bind");
+            });
+            $("#div").unbind("click");
+            $("#div").hover(function(){
+                $(this).mouseout(function(){
+                    $(this).css("font-size", "50px")
+                });
+            });
+
+        });
+
+
+</script>
+</body>
+</html>

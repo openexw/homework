@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #slide{
+            width: 625px;
+            height: 270px;
+            margin: 0 auto;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        #slide-con{
+            height: 270px;
+            position: absolute;
+            left: 0;
+        }
+        #slide-con img{
+            width: 625px;
+            height: 270px;
+            float: left;
+        }
+        #direction i{
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+            z-index: 2;
+            background-color: rgba(0,0,0,0.5);
+            padding: 15px 5px;
+            color: #fff;
+            cursor: pointer;
+            transform: translate(0, -50%);
+            position: absolute;
+            top: 50%;
+        }
+        #direction .left{
+            left: 0;
+        }
+        #direction .right{
+            right: 0;
+        }
+
+        /*指示器 start*/
+        #indicator{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        #indicator span{
+            display: inline-block;
+            width: 30px;
+            height: 4px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        #indicator span.active{
+            background-color: #0ff;
+        }
+        /*指示器 end*/
+    </style>
+</head>
+<body>
+    <div id="slide">
+        <div id="slide-con">
+            <img src=images/1.jpg alt="">
+            <img src=images/2.jpg alt="">
+            <img src=images/3.jpg alt="">
+            <img src=images/4.jpg alt="">
+            <img src=images/5.jpg alt="">
+        </div>
+        <div id="direction">
+            <i class="left"><</i>
+            <i class="right">></i>
+        </div>
+        <div id="indicator">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <script>
+        var slideCon = document.getElementById("slide-con");
+        var aImg = slideCon.getElementsByTagName("img");
+        var width = aImg[0].offsetWidth;
+        var len = aImg.length
+        slideCon.style.width = width * len +"px";
+
+        //获取指示器
+        var indicator = document.getElementById("indicator").getElementsByTagName("span");
+
+        //指示器
+        for(var i=0; i<len; i++){
+            indicator[i].index = i;
+            indicator[i].onmouseover = function(){
+                //清除所有的样式
+                for(var k=0; k<indicator.length; k++){
+                    indicator[k].className = "";
+                }
+                this.className = "active";
+                console.log(this.index);
+                startMove(slideCon, -this.index*width);
+                k = this.index
+            };
+        }
+
+        var startMove = function(obj, target){
+//            var slideCon = document.getElementById("slide-con");
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                var speed = -20;
+                if(target > obj.offsetLeft){
+                    speed = 20;
+                }else{
+                    speed = -20;
+                }
+                if( Math.abs(target - obj.offsetLeft) <= speed){
+                    clearInterval(obj.timer);
+                    obj.style.left = target + "px";   //抖动问题
+                }else{
+                    obj.style.left = obj.offsetLeft+speed+"px";
+                }
+            }, 30);
+        };
+
+        var k = 0;
+        var times ;
+        function autoPlay(){
+            k++;
+            if (k > aImg.length - 1) {
+                // alert('停下');
+                slideCon.style.left = 0;
+                k = 1;  // 因为第6张就是第一张，我们已经播放完毕了， 下一次播放第2张
+                // 第2张的索引号是1
+            }
+
+
+            //console.log(k);
+            startMove(slideCon, -k*width);
+            setIndicator(k);
+        }
+        times = setInterval(autoPlay, 5000);
+
+        var slide = document.getElementById("slide");
+        slide.onmouseover = function(){
+            clearInterval(times);
+        }
+        slide.onmouseout = function(){
+            times = setInterval(autoPlay, 5000)
+        }
+
+
+function setIndicator(index){
+    console.log(index);
+    for(var j=0; j<indicator.length; j++){
+        indicator[j].className = "";
+    }
+    indicator[index].className = "active"
+}
+        //direction
+
+        var direction = document.getElementById("direction").getElementsByTagName("i");
+            console.log("key", k);
+        //左边移动
+        direction[0].onclick = function(){
+            k--;
+            if(k == -1) {
+                k = 4
+            }
+            autoPlay();
+        };
+        //左边移动
+        direction[1].onclick = function(){
+            k++;
+            if(k == 5){
+                k = 0;
+            }
+
+            autoPlay();
+        }
+    </script>
+</body>
+</html>

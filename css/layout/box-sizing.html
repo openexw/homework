@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>box-sizing</title>
+    <style>
+        @keyframes rainbow {
+            0% { background: #c00; }
+            50% { background: orange; }
+            100% { background: yellowgreen; }
+        }
+        .box {
+            width: 200px;
+            height: 200px;
+           /* background-color: #789;
+            border: 5px solid #000;*/
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .box:hover {
+            animation: 1s rainbow infinite;
+        }
+
+@keyframes SimpleAnimation {
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@keyframes complexAnimation {
+    0%{
+        opacity: 1;
+    }
+    20%{
+        opacity: 0.9;
+    }
+    90%{
+        opacity: 0.1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+        .box-img{
+            width: 400px;
+            height: 237px;
+            overflow: hidden;
+        }
+        .box-img img{
+            width: 400px;
+            height: 237px;
+            transition: 1s;
+        }
+        .box-img img:hover{
+            width: 500px;
+            height: 300px;
+        }
+        @keyframes pound {
+            from { transform: none; }
+            to { transform: scale(1.2); }
+        }
+        .heart-box{
+            width: 400px;
+            height: 400px;
+
+        }
+        .heart {
+            animation: pound .3s infinite;
+        }
+        @keyframes typing { from { width: 0; } }
+        @keyframes blink-caret { 50% { border-color: transparent; } }
+
+        h1 {
+            font: bold 200% Consolas, Monaco, monospace;
+            border-right: .1em solid;
+            /*width: 16.5em; !* fallback *!*/
+            width: 30ch; /* # of chars */
+            margin: 2em 1em;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typing 20s steps(30, end), /* # of steps = # of chars */
+            blink-caret .5s step-end infinite alternate;
+        }
+
+        /*h2 {
+            font: bold 2em Consolas;
+            width: 20ch;
+            white-space: normal;
+            overflow: hidden;
+            border-right: 0.1em solid;
+            animation: typing 20s steps(20, end),
+            blink-caret 0.5s step-end infinite alternate;
+        }*/
+
+        @keyframes char {
+            from{
+                width: 0;
+            }
+        }
+        @keyframes keyLight {
+            50%{
+                border-right-color: transparent;
+            }
+        }
+        h2{
+            font: bold 2em Consolas; /*设置字体*/
+            width: 20ch; /*文字的宽度*/
+            overflow: hidden; /*超出部分隐藏*/
+            white-space: nowrap; /*强制一行显示*/
+            border-right: 0.1em solid; /*有边框——光标*/
+            animation: char 20s steps(20, end), /*动画*/
+            keyLight 0.5s infinite step-end;
+        }
+    </style>
+
+</head>
+<body>
+<!--
+<div class="box">
+    <div class="heart-box">
+        <img src="heart.svg" alt="" class="heart">
+    </div>
+</div>
+-->
+
+<div class="box-img">
+    <img src="images/butterfly.jpg" alt="">
+</div>
+
+<h1>Typing animation by Lea Verou.</h1>
+
+<h2>console.log(number);</h2>
+<script>
+    var s = 0;
+    function sd(){
+        console.log(s);
+        var sds = "90";
+    }
+    for(var i=0; i<5; i++){
+        let we = i;
+    }
+    console.log(we);
+</script>
+</body>
+</html>

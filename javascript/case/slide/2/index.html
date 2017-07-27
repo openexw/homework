@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>360新闻图文混排js焦点图 - 站长素材</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
+<script type="text/javascript" src="js/prototype.js"></script>
+<script type="text/javascript" src="js/ImageSlide.js"></script>
+
+</head>
+<body>
+
+<div id="focusImage" class="slide">
+
+	<ul class="contents">
+		<li class="current">
+			<div class="image"><a href="#"><img src="images/1.jpg" width="400" height="282"></a></div>
+			<div class="text">
+				<span class="title"><a href="#">新华社英文推出习近平系列旧照</a></span>
+				<p>12月23日，新华英文推出习近平系列新老照片，题目为《Profile photos: Xi Jinping: Man of the people, statesman of vision》。</p>
+			</div>
+		</li>
+		<li>
+			<div class="image"><a href="#"><img src="images/2.jpg" width="400" height="282"></a></div>
+			<div class="text">
+				<span class="title"><a href="#">新华社英文推出李克强系列旧照</a></span>
+				<p>12月23日，新华英文推出李克强系列新老照片，题目为《Profile photos: Li Keqiang: A man who puts people first》。</p>
+			</div>
+		</li>
+		<li>
+			<div class="image"><a href="#"><img src="images/3.jpg" width="400" height="282"></a></div>
+			<div class="text">
+				<span class="title"><a href="#">中国老一辈领导的夫人们</a></span>
+				<p>劳安与朱镕基同是湖南人，且都在湘西上过学。朱镕基与劳安的结识，得益于朱镕基中学时的一位同窗好友，劳安是朱镕基一位名为劳特夫同学的妹妹。</p>
+			</div>
+		</li>
+		<li>
+			<div class="image"><a href="#"><img src="images/4.jpg" width="400" height="282"></a></div>
+			<div class="text">
+				<span class="title"><a href="#">北京异地考生家长请愿被警方驱散 </a></span>
+				<p>12月22日，北京，部分非京籍考生家长在奥运大厦附近请愿，呼吁教育公平，集会持续很短时间后被警方驱散。近日，15岁的江西女孩占海特在微博上争取非沪...</p>
+			</div>
+		</li>
+		<li>
+			<div class="image"><a href="#"><img src="images/5.jpg" width="400" height="282"></a> </div>
+			<div class="text">
+				<span class="title"><a href="#">越南抗议者组成足球队反华</a></span>
+				<p>越南抗议者为避政府驱散，成立名为“NO U FC”足球队反华，U暗指南海“九段线”，FC既代表“足球俱乐部”，也是“该死的中国”的简称。</p>
+			</div>
+		</li>
+	</ul>
+	
+	<div class="triggers">
+		<a href="javascript:;" class="cur current"><img src="images/1.jpg" width="58" height="38"></a>
+		<a href="javascript:;"><img src="images/2.jpg" width="58" height="38"></a>
+		<a href="javascript:;"><img src="images/3.jpg" width="58" height="38"></a>
+		<a href="javascript:;"><img src="images/4.jpg" width="58" height="38"></a>
+		<a href="javascript:;"><img src="images/5.jpg" width="58" height="38"></a>
+	</div>
+
+	<div class="icon-dot">
+		<a href="javascript:;" class="cur current"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+		<a href="javascript:;"></a>
+	</div>
+	
+	<span class="link-watch pre down"></span>
+	<span class="link-watch next down"></span>
+	
+</div>
+
+<script type="text/javascript">
+new ImageSlide({
+	project:"#focusImage",
+	content:".contents li",
+	tigger:".triggers a",
+	dot:".icon-dot a",
+	watch:".link-watch",
+	auto:!0,
+	hide:!0
+})
+</script>
+
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+<p>适用浏览器：IE8、360、FireFox、Chrome、Safari、Opera、傲游、搜狗、世界之窗. </p>
+<p>来源：<a href="http://sc.chinaz.com/" target="_blank">站长素材</a></p>
+</div>
+</body>
+</html>

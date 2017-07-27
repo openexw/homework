@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*
+        属性
+            空格：包含
+            > : 表示的是儿子
+            +: 之后的一个元素
+            ~: 之后的所有元素
+        */
+        .nav>li{
+
+        }
+        li.er~li{
+            background-color: #988;
+        }
+        input[type="password"]{
+              border: 1px solid #f00;
+          }
+
+        /*伪类选择器*/
+        /**
+        E:last-child：选择最后一个
+        E:first-child: 选择第一个
+        E:not(s)：选择不含s的元素
+        E:nth-child(n): 选择第n个元素，n可以是表达式
+        */
+        /* .nav li{
+             border-bottom: 1px solid #f00;
+         }
+         .nav li:last-child{
+             border: none;
+         }*/
+        .nav li:not(:first-child){
+            border-bottom: 1px solid #f00;
+        }
+        /**
+        */
+        .nav li:nth-child(2n){
+            background-color: #098;
+        }
+
+        input:checked{
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<ul class="nav">
+    <li>1</li>
+    <li>2</li>
+    <li class="er">3.er</li>
+    <li>4</li>
+    <li>5</li>
+    <li>
+        23
+       <!-- <ul>
+            <li>1_x</li>
+            <li>2_x</li>
+            <li>3_x</li>
+        </ul>-->
+    </li>
+</ul>
+
+<form action="">
+    <!--
+        HTML5表单属性
+
+        disabled：表示禁用
+        required：必填
+        readonly：只读
+        placeholder：输入提示
+        pattern：正则表达式验证
+
+        HTML type类型
+
+button
+checkbox
+color
+date
+datetime
+datetime-local
+email
+file
+hidden
+image
+month
+number
+password
+radio
+range
+reset
+search
+submit
+tel
+text
+time
+url
+week
+
+Note
+
++ 使用checkbox时，name的值需要加上一个[]，方便提交
+
+新增的：
+
++ color： 颜色选择器
++ date： 日期选择器（年、月、日）
++ email：email地址（在表单提交时进行简单验证）
++ image: 图片
++ month: 选择年、月
++ week：年、周
++ number：选择数字
++ range: 范围滑块
++ tel:电话号码
++ url:网址
++ time：时间
+    -->
+    <input type="time" name="" id="">
+    <input type="range" name="" id="" step="50" maxlength="100">
+    <input type="number" name="" id="">
+    <input type="week" name="" id="">
+    <input type="month" name="" id="">
+    <input type="image" src="../drag/images/logo.jpeg" width="200" height="200" alt="">
+    <input type="file" name="" id="">
+    <input type="email" name="" id="">
+    <input type="datetime" name="" id="">
+    <input type="datetime-local" name="" id="">
+    <input type="date" name="" id="">
+    <input type="color" name="" id="">
+    <input type="checkbox" name="sex[]" id="">
+    <input type="text" name="" id="" placeholder="请输入用户名">
+    <input type="password" name="" id="" disabled="disabled">
+    <input type="email" name="" id="" value="12@qq.cm" required readonly>
+
+    <input type="checkbox" name="" id="" checked="checked"> er
+    <input type="checkbox" name="" id=""> erer
+    <select name="" id="">
+        <option value="" selected></option>
+    </select>
+    <input type="text" name="" pattern="[A-Za-z]{3}" id="">
+    <input type="tel" name="" id="">
+    <input type="submit" value="sdh">
+    
+</form>
+</body>
+</html>

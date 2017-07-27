@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    if(window.localStorage){
+        console.log("yes");
+    }else{
+        console.log("NO");
+    }
+    /**
+     * 增
+     * 删
+     * 改
+     * 查
+     */
+
+    /**
+     * key: string，本地存储数据的名称
+     * data: string，如果传值不为字符串，会自动转成字符串
+     */
+
+   /* var arr = [23,5];
+    var s = String(arr);
+    console.log(s);*/
+    var ob = {"user": "Jack"};
+    var s = String(ob);
+    console.log(s); //[object Object]
+    //存储
+    localStorage.setItem("users", "345");
+    /**
+     * 修改：
+     * key值不变，只需要将内容进行更新即可
+     */
+    localStorage.setItem("users", "8968767788");
+
+    /**
+     * 查：获取本地存储的数据
+     */
+//    第一种方式
+    var s = localStorage["users"];
+//    alert(s);
+
+    //第二种方式，推荐使用
+    var val = localStorage.getItem('users');
+    console.log(val);
+
+    /**
+     * 删：
+     *
+     * removeItem(key): key==>本地存储数据的名称
+     */
+
+    localStorage.removeItem("users");
+
+    /**
+     * 删除当前应用的所有本地存储（localStorage）
+     */
+    localStorage.clear();
+
+    /**
+     * 补充
+     */
+
+    //将json对象存储到localStorage
+
+    //json数据
+    var person = {"user": "Jack", "age": 23};
+
+    //将person转换成字符串
+    var str = JSON.stringify(person);
+    //将字符串存储到localStorage
+    localStorage.setItem("person", str);
+    //获取localStorage中的person数据
+
+    var sPerson = localStorage.getItem("person"); //{"user":"Jack","age":23}
+
+
+    //将jsonString转换成json对象
+    var oPerson = JSON.parse(sPerson);
+    console.log(oPerson.age);
+
+
+    //    console.log(typeof str, str, person);
+
+</script>
+</body>
+</html>

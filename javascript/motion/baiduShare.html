@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #share{
+            width: 150px;
+            height: 200px;
+            background-color: #789;
+            position: absolute;
+            left: -150px;
+        }
+        #share span{
+            position: absolute;
+            width: 20px;
+            height: 60px;
+            line-height: 20px;
+            background-color: #345;
+            right: -20px;
+            top: 70px
+        }
+    </style>
+</head>
+<body>
+    <div id="share">
+        <span>分享到</span>
+    </div>
+
+    <script>
+        var share = document.getElementById("share");
+        share.onmouseover = function(){
+            startMove( 0)
+        };
+        share.onmouseout = function(){
+            startMove(-150)
+        };
+        var timer = null;
+        /*function startMove(){
+            var shares = document.getElementById("share");
+            clearInterval(timer);
+            timer = setInterval(function(){
+                if(shares.offsetLeft == 0){
+                    clearInterval(timer);
+                }else{
+                    shares.style.left = shares.offsetLeft+10+"px";
+                }
+            }, 30);
+        }*/
+
+        /**
+         * @param speed 速度
+         * @param iTarget 目标(移动到哪)
+         */
+        /*function startMove(speed, iTarget){
+            var shares = document.getElementById("share");
+            clearInterval(timer);
+            timer = setInterval(function(){
+                if(shares.offsetLeft == iTarget){
+                    clearInterval(timer);
+                }else{
+                    shares.style.left = shares.offsetLeft+speed+"px";
+                }
+            }, 30);
+        }*/
+        /**
+         * 如果两个函数功能一样，参数越少越好，所以需要干掉一个
+         * 例子:
+         * 生活中坐出租车，不会告诉他你要开多快，只会告诉你一个目标
+         * 干掉速度
+         *
+         * left: 30 iTarget: 300 右->正
+         * left: 600 iTarget: 50 左->负
+         */
+        function startMove(iTarget){
+            var shares = document.getElementById("share");
+            clearInterval(timer);
+            timer = setInterval(function(){
+                var speed = 0;
+                //确定速度的正负（运动的方向）
+                if(shares.offsetLeft >iTarget){
+                    speed = -10;
+                }else{
+                    speed = 10;
+                }
+                if(shares.offsetLeft == iTarget){
+                    clearInterval(timer);
+                }else{
+                    shares.style.left = shares.offsetLeft+speed+"px";
+                }
+            }, 30);
+        }
+    </script>
+</body>
+</html>

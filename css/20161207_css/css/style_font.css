@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Ticon";
+    src: url(../font/iconfont.eot);
+    src: url(../font/iconfont.eot?#iefix) format("embedded-opentype"),
+     url(../font/iconfont.woff) format("woff"),
+     url(../font/iconfont.ttf) format("truetype"),
+     url(../font/iconfont.svg#Ticon) format("svg");
+}
+.font-Ticon{
+    /*font-family: Ticon;
+    font-size: 3em;
+    font-style: normal;*/
+    font: normal 3em/12 Ticon;
+    text-shadow: 1px 5px 10px #f00;
+}
+.font-Ticon:after{
+    content: "\e645";
+}
+.box{
+    width:200px;
+    height:200px;
+    border:1px solid blue;
+
+
+
+}
+.box:hover{
+    transform: rotate(50deg) skew(30deg) translate(100px, 50px) scale(1.5);
+    transform: rotate(60deg);
+    transform-origin: 50% 50%;
+}
+.box2{
+    width: 200px;
+    height: 200px;
+    border:3px solid darkred;
+}
+.box2:hover{
+    transform: translate(100px, 50px);
+    transition: transform 2s;
+    transition-delay: 2s;
+}
+.box3{
+    font-size: 30px;
+    line-height: 300px;
+    text-align: center;
+    color: #ffffff;
+    width: 300px;
+    height: 300px;
+    background: #000;
+    position: relative;
+    left: 0;
+    /*transition-property: left;
+    transition-duration: 2s;
+    transition-timing-function: linear;*/
+
+   /* transition: left 2s linear,
+                background-color 2s ease-in;*/
+
+    transition-property: left,background-color;
+    transition-duration: 2s,2s;
+    transition-timing-function: linear,ease-in;
+    transition-delay: 1s,1.1s;
+}
+.box3 a{
+    font-size: 14px;
+}
+.box3:hover{
+    left: 200px;
+    background-color: #ff0;
+}

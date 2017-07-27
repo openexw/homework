@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="con">ef</div>
+
+    <ul id="ul">
+        <li>item_1</li>
+        <li>item_2</li>
+        <li>item_3</li>
+        <li>item_4</li>
+        <li>item_5</li>
+    </ul>
+<script>
+    /**
+     * 变量提升
+     */
+//    alert(d);
+    /**
+     * func: 函数名
+     * 形参：形式参数
+     * 实参
+     */
+    function func(参数){
+        //函数体
+    }
+
+    /**
+     * 匿名函数：没有函数名
+     */
+    /**
+     * 预加载
+     **/
+    fun();
+   /*var fun  = function(){
+        //函数体
+        console.log("fun0");
+   };*/
+
+    function fun(a){
+        var user = {};
+        /**
+         * 访问对象中的属性时，可以使用`.`或者`[]`
+         *
+         * 索引数组：
+         *
+         * arr.0
+         *
+         * 闭包
+         **/
+        user["name"] = "Jack";
+        user["age"] = "13";
+       return user;
+    }
+
+    var sd = fun.toString();
+    console.log(sd); //
+
+
+
+
+
+    /*new Function("x", "y", "return x+y");
+
+    function sdf(x, y){
+        return x+y;
+    }*/
+    var foo = new Function('return "hello world"');
+    console.log(foo());
+
+
+
+    var d = "a"; // 全局变量
+
+    var user = {name: "Kan"}
+    var arr = [0,1];
+    /**
+     * 形参
+     */
+    var sx = function(arr){
+        arr[1] = 10;
+    }
+
+    /**
+     * 实参
+     */
+    sx(arr)
+    console.log(arr); //
+
+
+    /**
+     *
+     */
+
+    function add(obj){
+//        arguments[0] = 20;
+        var arg0 = arguments[0];
+       if( typeof arg0  == "object"){
+           for(var i in arg0){
+                console.log(i, arg0[i]);
+           }
+       }else{
+           console.log(arguments[0], arguments[1])
+       }
+
+    }
+var li = document.getElementsByTagName('li');
+
+
+    /**
+     * 闭包
+     */
+    for(var i=0; i<li.length; i++){
+        var d = 0;
+        li[i].onclick = function(){
+//            console.log(this);
+        }
+
+        function ddd(){
+            console.log(d);
+        }
+        ddd();
+    }
+
+    function sds(){
+        var d = "dsff";
+        function ddd(){
+            return d;
+        }
+        return ddd;
+    }
+
+    var s = sds();
+    console.log(s());
+
+//    console.log(this);
+//    var s = add("width", "200px");
+
+    function f1() {
+        var n = 999;
+        function f2() {
+            console.log(n);
+        }
+        return f2;
+    }
+
+    var result = f1();
+    result(); // 999
+
+    function Person(){ //对象
+        var age = 10;
+        var name = "Jhon";
+
+        function intro(){
+            console.log("我是"+name+", 今年"+age+"岁");
+        }
+        return {
+            "age": age,
+            "name": name
+        }
+    }
+
+    console.log(Person().name);
+    /**
+     * 什么是闭包：
+     *
+     * 实现一个闭包：
+     *
+     * 闭包的作用：
+     * 1. 获取函数内部的局部变量
+     * 2. 封装对象的私有属性和私有方法（函数）
+     */
+
+    /**
+     * 立即执行函数
+     */
+    (function (){
+        console.log("sff");
+//    })();
+    }());
+
+
+
+    eval("var a = 0")
+    console.log(a);
+
+    //1、1、2、3、5、8、13、21、34、55……
+
+
+
+    function fbi(n){
+        var a = 1;
+        var b;
+        for(var i=0; i<n; i++){
+            if(i==0 || i==1){
+                b = a;
+            }else{
+                var temp = a; //2
+                a = b; //b=3, a =3
+                b = temp+b; // b=5
+            }
+        }
+
+        return b;
+    }
+
+   console.log(fbi(100));
+
+    //1、1、2、3、5、8、13、21、34、55……
+    function fbi1(n){
+        if(n==1 || n==2){
+            return 1;
+        }
+        return fbi1(n-1)+ fbi(n-2)
+    }
+
+    /**
+     * fbi1(2) + fbi(1)
+     * 1 + 1 = 2
+     * 4
+     *  fbi1(3) + fbi(2)
+     *  |
+     *  fbi1(3)
+     *  |
+     * fbi1(2) + fbi(1)
+     * |
+     * 1+1
+     */
+    console.log(fbi1(10));
+
+
+    /**
+     * 1. 先假设这个函数已经存在
+     * 2. 确定递归体
+     * 3. 确定跳出条件（临界条件）
+     * 4. 书写递归函数
+     *
+     * 递归的特点：
+     * 1. 自己调用自己
+     * 2. 临界条件（跳出结构）
+     * @param n
+     * @returns {*}
+     */
+    function sum(n){
+        if(n == 1) return 1; //跳出条件
+
+        return sum(n-1) + n; //递归体
+    }
+
+    console.log(sum(100));
+
+
+    function odd(n){
+        if(n==0) return 1;
+        return odd(n-1)+2;
+    }
+
+    function sumx(n){
+        if(n == 0) return 1;
+        return sumx(n-1) + odd(n);
+    }
+
+//    console.log(odd(10));
+    console.log(sumx(3));
+
+</script>
+
+</body>
+</html>

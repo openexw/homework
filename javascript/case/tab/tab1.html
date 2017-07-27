@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+
+    <style>
+        *{
+            padding: 0;
+            margin: 0px;
+        }
+        li{
+            list-style: none;
+        }
+        .clearFix{
+            zoom: 1;
+        }
+        .clearFix:after{
+            clear: both;
+            display: block;
+            content: "";
+        }
+        .tab{
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid #000;
+        }
+        #tab-tit{
+            background-color: #eee;
+        }
+        .tab li{
+            float: left;
+            height: 45px;
+            line-height: 45px;
+            padding: 0 20px;
+            cursor: pointer;
+
+        }
+        .tab li.active{
+            background-color: #fff;
+        }
+
+        #div-con{
+            width: 100%;
+            height: 300px;
+        }
+        #div-con div{
+            display: none;
+        }
+        #div-con div.active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tab">
+        <ul id="tab-tit" class="clearFix">
+            <li class="active">apple</li>
+            <li>华为</li>
+            <li>小米</li>
+        </ul>
+
+        <div id="div-con">
+            <div class="active">apple</div>
+            <div>华为</div>
+            <div>小米</div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * 1. 添加的mouseover事件——给li
+         *  1.1 li背景变化
+         *  1.2 div-con的内容变化
+         */
+
+        console.log(Math.sqrt(5000));
+        //获取到li
+        var tabTit = document.getElementById("tab-tit");
+        var tabLi = tabTit.getElementsByTagName("li");
+
+        var tabCon = document.getElementById("div-con");
+        var tabDiv = tabCon.getElementsByTagName("div");
+
+        //
+        for(var i=0; i<tabLi.length; i++){
+            tabLi[i].index = i;
+            tabLi[i].onmouseover = function(){
+//                console.log(this);
+                //清除tab-li高亮样式
+                for(var j=0; j<tabLi.length; j++){
+                    tabLi[j].className = "";
+                    tabDiv[j].className = "";
+                }
+
+                //给当前对象添加样式
+                this.className = "active"
+                tabDiv[this.index].className = "active";
+            };
+        }
+
+        /*var div_con =document.getElementById("tab-tit");
+        var ali = tab-tit.getElementsByTagName("li");
+        var con =document.getElementById("div-con");
+        var aDiv = con.getElementsByTagName("div");
+        for(var i=0;i<ali.length;i++){
+            ali[i].index=i;
+            ali[i].onmousover=function(){
+                ali[i].className="";
+                aDiv[i].className = "";
+                for(var i=0;i<ali.length;i++){
+
+                }
+            }
+        }*/
+    </script>
+</body>
+</html>

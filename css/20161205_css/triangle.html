@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .triangle{
+            margin-top: 50px;
+            width: 0;
+            height: 0;
+            border-style:solid;
+            border-width: 50px 100px 50px 100px;
+            border-color: transparent transparent #0ff transparent;
+            -moz-transform: rotate(210deg);
+            -ms-transform: rotate(210deg);
+            -o-transform: rotate(210deg);
+            transform: rotate(210deg);
+            /* border-top: 50px solid #ff0;
+             border-left: 50px solid #908;
+             border-right: 50px solid #00f;
+             border-bottom: 50px solid #090;*/
+        }
+
+        /*.triangle-up{
+            width: 0;
+            height: 0;
+            border-style:solid;
+            border-width: 50px;
+            border-color: transparent #0f0 #0f0 transparent;
+        }*/
+        .triang:after{
+            content: "";
+            width: 0;
+            height: 0;
+            border-style:solid;
+            border-width: 50px 0 50px 100px;
+            border-color: transparent transparent #0ff transparent;
+            /*-moz-transform: rotate(20deg);
+            -ms-transform: rotate(20deg);
+            -o-transform: rotate(20deg);
+            transform: rotate(20deg);*/
+        }
+    </style>
+</head>
+<body>
+
+    <div class="triangle"></div>
+    <div class="triangle-up"></div>
+
+    <div class="triang"></div>
+</body>
+</html>

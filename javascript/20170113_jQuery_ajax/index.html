@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #con{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+<input type="text" name="user" > //na
+<input type="text" name="pass" > //12345
+
+<div id="con"></div>
+<script src="../dist/js/jQuery.min.js"></script>
+<script>
+    /*$("#con").load("bus.html", {limit: 4}, function(){
+        console.log("dg")
+    });*/
+//    $("#con").load("http://w3.org");
+    /**
+     * 跨域
+     *
+     *  user = na &pass=12345
+     *
+     *  Node
+     */
+    $.ajax("http://gank.io/api/random/data/Android/2",{
+//        data: "type=web&page=3",
+        type: "GET", //POST
+        dataType: "jsonp",
+//        jsonpCallback: "handleResponse",
+        jsonp: 'callback',
+        processData: false,
+        contentType: "application/x-www-form-urlencoded; charset=utf-8",
+
+    });
+
+    /**
+     * restful
+     * type=Android&count=2
+     * random/data/Android/2
+     */
+    $.get("http://gank.io/api", {"type":"Android", "count":2}, callback, "json");
+    function callback(data){
+        console.log(data);
+    }
+
+    $.post();
+
+</script>
+</body>
+</html>

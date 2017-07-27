@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #div{
+            padding: 10px;
+            width:840px;
+            height: 120px;
+            overflow: hidden;
+            margin: 0 auto;
+            margin-top: 100px;
+            border: 1px solid #000;
+            position: relative;
+        }
+        .clearFix{
+            zoom: 1;
+        }
+        .clearFix:after{
+            clear: both;
+            display: block;
+            content: "";
+        }
+        #div ul{
+            position: absolute;
+            top: 10px;
+            left: 0;
+        }
+        #div li{
+            font-size: 30px;
+            line-height: 120px;
+            text-align: center;
+            float: left;
+            width: 200px;
+            height: 120px;
+            background-color: #976;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    <ul class="clearFix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+</div>
+
+<script>
+    var div = document.getElementById("div");
+    var aLi = div.getElementsByTagName("li");
+    var ul = div.getElementsByTagName("ul")[0];
+    ul.innerHTML = ul.innerHTML+ul.innerHTML;
+    ul.style.width = aLi.length*210+"px";
+    setInterval(function(){
+        if(ul.offsetLeft < -ul.offsetWidth/2){
+            ul.style.left = "0";
+        }
+        ul.style.left = ul.offsetLeft -2+"px"
+    }, 30);
+
+</script>
+</body>
+</html>

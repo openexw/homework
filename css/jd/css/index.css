@@ -1,0 +1,283 @@
+/*自定义图标字体 start*/
+@font-face {
+    font-family: "MIcon";
+    src: url('../font/iconfont.eot?t=1481092943040'); /* IE9*/
+    src: url('../font/iconfont.eot?t=1481092943040#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../font/iconfont.woff?t=1481092943040') format('woff'), /* chrome, firefox */
+    url('../font/iconfont.ttf?t=1481092943040') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+    url('../font/iconfont.svg?t=1481092943040#iconfont') format('svg'); /* iOS 4.1- */
+}
+/*自定义图标字体 end*/
+/*common start*/
+*{
+    padding: 0;
+    margin: 0;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+/*清除浮动*/
+.clearFix{
+    zoom: 1;
+}
+.clearFix:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+li{
+    list-style: none;
+}
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none; /*去除a标签的下划线*/
+}
+.jd-sprites{
+    display: block;
+    background: url(../images/jd-sprites.png) no-repeat;
+    -webkit-background-size: 200px 200px;
+    background-size: 200px 200px;
+}
+.icon{
+    display: inline-block;
+    font-family: MIcon;
+}
+body{
+    line-height: 1;
+    font-size: 15px;
+    background-color: #fff;
+    font-family: PingFangSC-Regular,Helvetica,"Droid Sans",Arial,sans-serif;
+}
+/*common end*/
+
+/*内容部分 start*/
+.wrap-content{
+    max-width: 640px;
+    /*height: auto;*/
+    min-width: 320px;
+    height: 2000px;
+    margin: 0 auto;
+    background-color: #f3f3f3;
+    position: relative;
+}
+
+/*搜索框 start*/
+.wrap-content .search-box{
+    width: 100%;
+    height: 40px;
+    /*background-color: #c91523;*/
+    background-color: rgba(201, 21, 35, 0.5);
+    position: fixed;
+    top: 0;
+    max-width: 640px;
+}
+.jd-search{
+    position: relative;
+}
+
+    /*logo start*/
+.search-box .logo{
+    width: 75px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+}
+.search-box .logo div{
+    display: inline-block;
+    width: 56px;
+    height: 24px;
+    background-position: 0 -105px;
+    margin-top: 5px;
+    position: absolute;
+    left: 10px;
+}
+    /*logo end*/
+    /*搜索框 start*/
+.search-box form{
+    margin: 0 50px 0 75px;
+}
+.search-box .form-box{
+    width: 100%;
+    height: 100%;
+}
+.search-box .form-box .search-box-input{
+    width: 93%;
+    border: none;
+    outline: 0;
+    vertical-align: middle;
+    background-color: #fff;
+    height: 30px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+    padding-left: 30px;
+    margin-top: 5px;
+}
+.search-box form .icon-search{
+    position: absolute;
+    left: 85px;
+    top: 14px;
+}
+.search-box form .icon-search:after{
+    content: '\e625';
+    color: #000;
+}
+    /*搜索框 end*/
+
+    /*登录 start*/
+.search-box .login-box{
+    width: 50px;
+    position: absolute;
+    top: 12px;
+    right: 0px;
+    text-align: center;
+}
+
+.search-box .login{
+    border: none;
+    outline: 0;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+}
+    /*登录 end*/
+/*搜索框 end*/
+
+/*banner start*/
+.banner li a{
+    width: 100%;
+    height: 100%;
+}
+.banner li img{
+    width: 100%;
+    height: 100%;
+}
+/*banner end*/
+
+/*导航 start*/
+.min-navbar{
+    padding:10px 0;
+}
+.min-navbar li{
+    width: 20%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.min-navbar li a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #000;
+    margin: 5px 0;
+}
+.min-navbar li img{
+    display: block;
+    width: 58px;
+    height: 58px;
+    margin: 6px auto;
+}
+.min-navbar li p{
+    text-align: center;
+}
+/*导航 end*/
+
+/*京东快报 start*/
+.jd-paper{
+    margin: 0 8px 8px;
+    background-color: #fff;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+    margin-top: 10px;
+}
+.jd-paper>img{
+    width: 73px;
+    height: 16px;
+    vertical-align: middle;
+    position: absolute;
+    left: 0;
+    top: 7px;
+}
+.jd-paper .paper-msg{
+    padding-left: 80px;
+    vertical-align: middle;
+}
+.jd-paper .paper-msg span{
+    font-size: 12px;
+}
+.jd-paper .paper-msg span.m{
+    color: #f00;
+    font-size: 14px;
+    padding-right: 4px;
+}
+.jd-paper .paper-msg a{
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: #000;
+}
+    /*京东快报 end*/
+/*内容部分 end*/
+/*bottom nav start*/
+.bottom-navbar{
+    height: 44px;
+    width: 100%;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 10px 0 rgba(155,143,143,0.6);
+    -moz-box-shadow: 0 0 10px 0 rgba(155,143,143,0.6);
+    box-shadow: 0 0 10px 0 rgba(155,143,143,0.6);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+.bottom-navbar li{
+    float: left;
+    width: 25%;
+    color: #000;
+    font-size: 22px;
+}
+.bottom-navbar li a{
+    color: #000;
+}
+/*bottom nav end*/
+
+
+/*媒体查询*/
+@media screen and (max-width: 640px){
+    .min-navbar li{
+        height: 84px;
+    }
+}
+
+@media screen and (max-width: 414px){
+    .min-navbar li{
+        height: 56px;
+        font-size: 14px;
+    }
+    .min-navbar li img{
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media screen and (max-width: 375px){
+    .min-navbar li{
+        height: 51px;
+        font-size: 12px;
+    }
+    .min-navbar li img{
+        width: 34px;
+        height: 34px;
+    }
+}

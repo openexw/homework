@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container{
+            width: 1000px;
+            height: 200px;
+            background-color: #890;
+
+            /*第一种方式*/
+            /*margin: 0 auto;*/
+
+            /*第二种方式*/
+           /* position: absolute;
+            left: 50%;
+            !*margin-left: -500px;*!
+
+            transform: translate(-50%); !*IE9+*!*/
+         /*   display: table-cell;
+            vertical-align: middle; !*内容居中*!*/
+
+            /*垂直居中*/
+          /*  position: absolute;
+            top: 50%;
+            left: 50%;
+            !*margin-top: -100px;*!
+
+            transform: translate(-50%, -50%);*/
+            display:inline-block;
+        }
+        body{
+            display:table-cell;
+            vertical-align:middle;
+            text-align:center;
+        }
+        .table{
+            display: table;
+            width: 800px;
+            margin: 0 auto;
+        }
+        .table>div{
+            display: table-row;
+        }
+        .table p{
+            display: table-caption;
+            caption-side: bottom;
+            text-align: center;
+        }
+        .table label,
+        .table input{
+            display: table-cell;
+            width: 100px;
+            /*text-align: right;*/
+            margin-bottom: 10px;
+        }
+        .table label{
+            text-align: right;
+        }
+        .table input{
+            width: 300px;
+            height: 30px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            border: none;
+            border: 1px solid #000;
+            padding-left: 10px;
+            outline: none;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <form action="" class="table">
+            <p>首先，请告诉我你的名字和电话！</p>
+            <div>
+                <label for="UserName">用户名</label>
+                <input type="text" id="UserName">
+            </div>
+            <div>
+                <label for="Telephone">电话号码</label>
+                <input type="text" id="Telephone">
+            </div>
+            <div>
+                <label for="Age">年龄</label>
+                <input type="text" id="Age">
+            </div>
+        </form>
+
+        <table>
+
+        </table>
+    </div>
+</body>
+</html>

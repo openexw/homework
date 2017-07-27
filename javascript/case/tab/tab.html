@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0px;
+        }
+        li{
+            list-style: none;
+        }
+        #tab{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .clearFix{
+            zoom: 1;
+        }
+        .clearFix:after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        #tab #tab-tit{
+            height: 45px;
+            line-height: 45px;
+            background-color: #eeeeee;
+        }
+        #tab #tab-tit li{
+            float: left;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+        #tab #tab-tit li:hover,
+        #tab #tab-tit li.active{
+            background-color: #fff;
+        }
+        #tab-con{
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        #tab-con .con{
+            width:1500px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #tab-con .con div{
+            width: 500px;
+            height: 300px;
+            background-color: #865;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="tab">
+        <ul id="tab-tit" class="clearFix">
+            <li class="active">apple</li>
+            <li>华为</li>
+            <li>小米</li>
+        </ul>
+        <div id="tab-con">
+           <div class="con" id="tab-content">
+               <div>1</div>
+               <div>2</div>
+               <div>3</div>
+           </div>
+        </div>
+    </div>
+
+    <script>
+        var tabTit = document.getElementById("tab-tit");
+        var tabLi = tabTit.getElementsByTagName("li");
+        var tabContent = document.getElementById("tab-content");
+        for(var i=0; i<tabLi.length; i++){
+            tabLi[i].index = i;
+            tabLi[i].onclick = function(){
+                for(var j=0; j<tabLi.length; j++){
+                    tabLi[j].className = "";
+                }
+                this.className = "active";
+                var speed = 10;
+                var leftOffset = 0;
+                var self = this;
+                if(this.index != 0){
+                    var timer = setInterval(function(){
+                        if(leftOffset < 500){
+                            var left = (self.index-1)*500 + leftOffset;
+                            tabContent.style.left = -left+"px"
+                        }else{
+                            clearInterval(timer)
+                        }
+//                    console.log(speed);
+                        leftOffset+=speed;
+                    }, 30);
+                }else{
+                    tabContent.style.left = 0+"px"
+                }
+
+//                console.log(speed)
+            }
+        }
+    </script>
+</body>
+</html>

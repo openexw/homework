@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .parent{
+            width: 100%;
+            display: table;
+            height: 500px;
+        }
+        .center,.right{
+            display: table-cell;
+            height: 100%;
+        }
+        .parent .left{
+            width: 175px;
+            background-color: #786;
+            overflow: scroll;
+            height: 500px;
+            /*resize: both;*/
+        }
+
+        /*css滚动条美化**/
+        .parent .left::-webkit-scrollbar{
+            width: 14px;
+        }
+        .parent .left::-webkit-scrollbar-track,
+        .parent .left::-webkit-scrollbar-thumb{
+            border: 5px solid transparent;
+        }
+        .parent .left::-webkit-scrollbar-track {
+            box-shadow: 1px 1px 5px rgba(0,0,0,.2) inset;
+        }
+        .parent .left::-webkit-scrollbar-thumb {
+            min-height: 20px;
+            background-clip: content-box;
+            box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;
+        }
+
+        .parent .left::-webkit-scrollbar-corner {
+            background: transparent;
+        }
+        #scroll-1 {
+            width:200px;
+            height:200px;
+            overflow:auto;
+        }
+        #scroll-1 div {
+            width:400px;
+            height:400px;
+        }/*
+        !*滚动条整体*!
+        ::-webkit-scrollbar {
+            width:10px;
+            height:10px;
+        }
+        !*滚动条两端的按钮*!
+        ::-webkit-scrollbar-button    {
+            background-color:#FF7677;
+        }
+        !*外层轨道*!
+        ::-webkit-scrollbar-track     {
+            background:#0f0;
+        }
+        !*内层轨道*!
+        ::-webkit-scrollbar-track-piece {
+            !*background:#ff0000;*!
+        }
+        !*滑块*!
+        ::-webkit-scrollbar-thumb{
+            background:#FFA711;
+            border-radius:4px;
+        }
+        !*边角**!
+        ::-webkit-scrollbar-corner {
+            background:#82AFFF;
+        }
+        !**定义右下角拖动块的样式，不能与-webkit-scrollbar-corner同时存在*!
+        ::-webkit-resizer  {
+            background: #f00;
+        }*/
+
+        /***
+
+        firefox: http://bbs.kafan.cn/thread-1529981-1-1.html
+        IE: http://www.w3cways.com/1670.html
+
+        */
+        .left p{
+            height: 600px;
+        }
+        .parent .center{
+            width: 240px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="left">
+            <p>left</p>
+        </div>
+        <div class="center">
+            <p>center</p>
+        </div>
+        <div class="right">
+            <p>right</p>
+        </div>
+    </div>
+</body>
+</html>

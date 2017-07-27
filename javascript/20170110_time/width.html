@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: #f00;
+            position: absolute;
+        }
+        #div{
+            top: 20px;
+        }
+        #div1{
+            top: 90px;
+        }
+        #div2{
+            top: 150px;
+        }
+    </style>
+</head>
+<body>
+<div id="div" onmouseover="startMove(this, 300)">1</div>
+<div id="div1" onmouseover="startMove(this, 300)">2</div>
+<div id="div2" onmouseover="startMove(this, 300)">3</div>
+
+<script>
+    var timer = null;
+    function startMove(obj, target){
+
+        timer = setInterval(function(){
+            var speed = 5;
+            var width = obj.offsetWidth;
+
+            if(width == 300){
+                clearInterval(timer);
+            }else{
+                obj.style.width = width+speed+"px";
+            }
+        }, 30)
+    }
+</script>
+</body>
+</html>

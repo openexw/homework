@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .range{
+            width: 200px;
+            height: 30px;
+            position: relative;
+        }
+        .bg{
+            width: 100%;
+            display: inline-block;
+            height: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            background-color: #000;
+        }
+        .seek{
+            position: absolute;
+            top: 9px;
+            left: 40px;
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background-color: #f00;
+        }
+        .volume{
+            position: absolute;
+            top: 12px;
+            left: 0px;
+            display: inline-block;
+            height: 5px;
+            width: 20%;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+
+<ul id="list">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<div class="range">
+    <!--滑块-->
+    <span class="seek"></span>
+    <!--全部音量大小-->
+    <span class="bg"></span>
+    <!--音量-->
+    <span class="volume">   </span>
+</div>
+
+<script>
+//document.getElementById()
+
+/**
+ * querySelector(): 返回的是DOM对象
+ * querySelectorAll(): 返回的是NodeList集合
+ * @type {NodeList}
+ */
+    var s = document.querySelectorAll('li')
+
+    //NodeList ==> 数组
+</script>
+</body>
+</html>

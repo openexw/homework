@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div{
+            width: 300px;
+            height: 300px;
+            background-color: #897;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+    <script>
+        var timer;
+        function startMove(){
+            var div = document.getElementById("div");
+            /**
+             * 改变速度：（1）
+             * 一般情况不会去动setInterval中的30（会卡顿），而是去动left中的值
+             */
+              clearInterval(timer); //解决（4）的问题
+            timer = setInterval(function(){
+                var speed = 7;
+                /**
+                 * 为什么速度为7时，会无效？（2）
+                 * 7 14 。。。 595 602 跳过了300
+                 */
+//                if(div.offsetLeft == 600){
+                //修改后停在了602
+//                if(div.offsetLeft >= 600){ //到达终点之后
+                /**
+                 * 更好的解决办法
+                 */
+                if(Math.abs(600 - div.offsetLeft) <= 7){
+                    div.style.left = 600+"px";
+                    clearInterval(timer)
+
+                }else{//到达终点之前
+                    /** （3）
+                     * 当运行完一次，动画停止后，点击一次依然会执行该函数startMove，下面这句话依然会执行。
+                     *
+                     * 解决办法，在上else
+                     * @type {string}
+                     */
+                    div.style.left = div.offsetLeft+speed+"px"
+                }
+
+                /**
+                 * 还有一个问题：
+                 * 当我点击了次数多了之后，速度回加快，原因是每点击一次，都会开一个定时器
+                 *
+                 * 解决办法：保证每次只有一个定时器在工作（4）
+                 */
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn" value="开始运动" onclick="startMove()">
+<div id="div"></div>
+
+</body>
+</html>

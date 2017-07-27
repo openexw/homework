@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*#con{
+            position: relative;
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+        }*/
+        #div{
+            width: 200px;
+            height: 200px;
+            background-color: #908;
+            position: absolute;
+            left: 0px;
+            top: 50px;
+
+
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="开始运动" onclick="move()">
+<div id="con">
+    <div id="div"></div>
+</div>
+
+<script>
+    /**
+     * 隔一段时间之后执行'code/func',延迟执行，单位为ms
+     * setInterval(func/code, 300):
+     * setTimeout(func/code, 300):
+     *
+     * 区别：
+     * 1. setInterval(): 重复执行，相同的间隔时间后无限循环执行`code/func`
+     * 2. setTimeout(): 只执行一次
+     * eval()
+     */
+    var timer;
+    function move(){
+        var div = document.getElementById("div");
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var speed = 1;
+            if(div.offsetLeft >= 500){
+                /**
+                 * 清除清定时器
+                 * timerId：设置定时器时返回的值
+                 */
+                clearInterval(timer)
+            }else{
+                div.style.left = div.offsetLeft+speed+"px";
+            }
+        }, 30);
+    }
+
+
+</script>
+</body>
+</html>

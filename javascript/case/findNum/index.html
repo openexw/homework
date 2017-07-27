@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 550px;
+            height: 450px;
+            position: absolute;
+            background: url(image/bg.png) 0 0 no-repeat;
+            background-size: 100% 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .box-c{
+            position: relative;
+        }
+        .box{
+            position: absolute;
+            top: 19px;
+            left: 19px;
+            width: 444px;
+            height: 260px;
+            background: url(image/5.jpg) 0 0 no-repeat;
+            background-size: 100% 100%;
+        }
+        .box textarea{
+            resize: none;
+            border: 1px solid #e9e9e9;
+            outline: none;
+            padding: 10px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            width: 400px;
+            margin-left: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            height: 100px;
+            background: none;
+            color: #eee;
+        }
+        .btn{
+            height: 25px;
+            border: 1px solid #000;
+            border-radius: 35px;
+            padding:0 10px;
+            outline: none;
+            position: absolute;
+            right: 10px;
+            top: 140px;
+        }
+        .btn:hover{
+
+        }
+        ul li{
+            list-style: none;
+        }
+        ul li:first-child{
+            color: #bdca22;
+        }
+        ul li:nth-child(2){
+            color: #4dd4ec;
+          
+        }
+        ul li:nth-child(3){
+            color: #df4c9f
+        }
+        
+        ul li:last-child{
+            color: #ed9a37;;
+        }
+        ul li span{
+            color: #000;
+            width: 25px;
+            height: 25px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+        }
+    </style>
+    <!--
+        知识点：
+
+parseInt，typeof，isNaN，-Infinity，NaN，&&逻辑运算符
+    -->
+</head>
+<body>
+<div class="container">
+    <div class="box-c">
+        <div class="box">
+            <textarea name="" id="area" cols="30" rows="10" readonly>var arr = ["100px", "abc"-6, [], -9866, 34, -2, 0, '300', , function(){alert(0)},null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),function(){alert(3)}, 'xyz'-90];</textarea>
+
+            <input type="button" value="开始查找" class="btn">
+
+            <ul>
+                <li>
+                    <span>1</span> 所有的数字是：<span></span>
+                </li>
+                <li>
+                    <span>2</span> 可以转成数字的：<span></span>
+                </li>
+                <li>
+                    <span>3</span> 转成数字的最大值：<span></span>
+                </li>
+                <li>
+                    <span>4</span> 转成数字后结果是NaN的位置是：<span></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+    var arr = ["100px", "abc"-6, [], -9866, 34, -2, 0, '300', , function(){alert(0)},
+        null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),
+        function(){alert(3)}, 'xyz'-90];
+</script>
+</body>
+</html>

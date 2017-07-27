@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>keyframes</title>
+    <style>
+        @keyframes YUO {
+            from{
+                background-color: #fff;
+            }
+            to{
+                background-color: #000;
+            }
+        }
+        @keyframes opacity {
+            from{
+                -webkit-transform: scale(1, 1);
+                -moz-transform: scale(1, 1);
+                -ms-transform: scale(1, 1);
+                -o-transform: scale(1, 1);
+                transform: scale(1, 1);
+            }
+            50%{
+                -webkit-transform: scale(0.8, 1.2);
+                -moz-transform: scale(0.8, 1.2);
+                -ms-transform: scale(0.8, 1.2);
+                -o-transform: scale(0.8, 1.2);
+                transform: scale(0.8, 1.2);
+            }
+            to{
+                -webkit-transform: scale(1.2, 2);
+                -moz-transform: scale(1.2, 2);
+                -ms-transform: scale(1.2, 2);
+                -o-transform: scale(1.2, 2);
+                transform: scale(1.2, 2);
+            }
+        }
+        .box{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+          /*  animation-name: YUO; !*动画名称*!
+            animation-delay: 1s; !*动画延迟执行时间*!
+            animation-direction: reverse; !*动画执行的方向*!
+            animation-duration: 3s; !*动画持续的时间*!
+            animation-iteration-count: infinite; !*动画循环的次数*!*/
+
+            animation: YUO 3s 1s infinite reverse,
+            opacity 3s 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+    </div>
+</body>
+</html>

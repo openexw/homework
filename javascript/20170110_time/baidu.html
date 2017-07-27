@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #share{
+            width: 150px;
+            height: 200px;
+            position: absolute;
+            left: -150px;
+            background-color: #f00;
+        }
+        #share span{
+            width: 20px;
+            height: 80px;
+            line-height: 20px;
+            padding-left: 5px;
+            color: #fff;
+            font-size:14px;
+            background-color: #345;
+            position: absolute;
+            right: -25px;
+            top: 60px;
+            border-top-right-radius:5px;
+            border-bottom-right-radius:5px;
+        }
+        #sharex{
+            width: 150px;
+            height: 200px;
+            position: absolute;
+            left: -150px;
+            top: 200px;
+            background-color: #f00;
+        }
+        #sharex span{
+            width: 20px;
+            height: 80px;
+            line-height: 20px;
+            padding-left: 5px;
+            color: #fff;
+            font-size:14px;
+            background-color: #345;
+            position: absolute;
+            right: -25px;
+            top: 100px;
+            border-top-right-radius:5px;
+            border-bottom-right-radius:5px;
+        }
+    </style>
+</head>
+<body>
+<div id="share" onmouseover="move(this, 0)" onmouseout="move(this, -150)">
+    <span>百度分享</span>
+</div>
+
+<div id="sharex" onmouseover="move(this, 0)" onmouseout="move(this, -150)">
+    <span>百度分享</span>
+</div>
+
+<script>
+    var timer;
+    var timer2;
+    /**
+     * 移入
+     * -150 -> 0
+     *
+     * 移出
+     * 0 -> -150
+     */
+    function move(obj, target){
+        var share = document.getElementById("share");
+        //清除之前的定时器
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var speed = 10;
+            var left = obj.offsetLeft;
+            //确定是正方向还是反方向
+            if(target - left >0){
+                speed = 10;
+            }else{
+                speed = -10;
+            }
+            if(obj.offsetLeft == target){
+                clearInterval(timer);
+            }else{
+                obj.style.left = obj.offsetLeft + speed+"px";
+            }
+        },30);
+    }
+
+/*function move(target){
+    var share = document.getElementById("share");
+    clearInterval(timer);
+    timer = setInterval(function(){
+        var left = share.offsetLeft;
+        var speed = 0;
+        if((target-left)>0){
+            speed = 10;
+        }else{
+            speed = -10;
+        }
+        if(left == target){
+            clearInterval(timer);
+        }else{
+            share.style.left = share.offsetLeft+speed+"px";
+        }
+    }, 30);
+}*/
+</script>
+</body>
+</html>

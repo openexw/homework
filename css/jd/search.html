@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*自定义图标字体 start*/
+        @font-face {
+            font-family: "MIcon";
+            src: url('font/iconfont.eot?t=1481092943040'); /* IE9*/
+            src: url('font/iconfont.eot?t=1481092943040#iefix') format('embedded-opentype'), /* IE6-IE8 */
+            url('font/iconfont.woff?t=1481092943040') format('woff'), /* chrome, firefox */
+            url('font/iconfont.ttf?t=1481092943040') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+            url('font/iconfont.svg?t=1481092943040#iconfont') format('svg'); /* iOS 4.1- */
+        }
+        /*自定义图标字体 end*/
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .wrap-content{
+            max-width: 640px;
+            margin: 0 auto;
+            background-color: #789;
+            height:2000px;
+        }
+        .wrap-content .search-box{
+            max-width: 640px;
+            width: 100%;
+            height: 40px;
+            background-color: #345;
+            position: fixed;
+            top: 0;
+        }
+        .jd-search{
+            width: 100%;
+            position: relative;
+        }
+        .logo{
+            width: 75px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .login{
+            width: 50px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: #878;
+        }
+        .logo .icon-logo{
+            display: inline-block;
+            background: url(images/jd-sprites.png) no-repeat;
+            -webkit-background-size: 200px 200px;
+            background-size: 200px 200px;
+            background-position: 0 -105px;
+            width: 60px;
+            height: 24px;
+        }
+        .form{
+            margin: 0 50px 0 75px;
+        }
+        .search-con{
+            width: 100%;
+        }
+        .icon-search{
+            font-family: MIcon;
+            position: absolute;
+            left: 80px;
+            top:5px;
+        }
+        .icon-search:after{
+            content: "\e625";
+        }
+        .search-input{
+            width: 93%;
+            height: 30px;
+            -webkit-border-radius: 15px;
+            -moz-border-radius: 15px;
+            border-radius: 15px;
+            outline: none;
+            border: none;
+            padding-left: 30px;
+        }
+        .login input{
+            border: none;
+            background: none;
+            outline: none;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap-content">
+        <div class="search-box">
+            <div class="jd-search">
+                <div class="logo">
+                    <span class="icon-logo"></span>
+                </div>
+                <form action="" class="form">
+                    <div class="search-con">
+                        <label for="" class="icon-search"></label>
+                        <input type="text" class="search-input">
+                    </div>
+                </form>
+                <div class="login">
+                    <input type="submit" value="登录" class="login">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

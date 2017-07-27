@@ -1,0 +1,81 @@
+
+<html>
+<head>
+    <!--<link rel="stylesheet" type="text/css" href="css/main.css">-->
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #main {
+            -webkit-column-count: 4;
+            -moz-column-count: 4;
+            column-count: 4;
+            -moz-column-gap:20px;
+            -webkit-column-gap:20px;
+            column-gap:20px;
+            padding: 10px;
+        }
+        .box {
+            padding: 15px;
+            border: solid 2px #eeeeee;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        .box img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div class="box">
+        <div class="pic">
+            <img src="">
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="">
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="">
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="">
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="">
+        </div>
+    </div>
+    <div class="box">
+        <div class="pic">
+            <img src="">
+        </div>
+    </div>
+    <!-- 这里省略多个class为box的div-->
+    <div class="box">
+        <div class="pic">
+            <img src="">
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    var width = 300, height = 300;
+    $('.box img').each(function () {
+// 随机图片的高宽，如果大小一样，就没必要用瀑布流了
+        width = Math.floor(Math.random() * 100) + 300;
+        height = Math.floor(Math.random() * 500) + 300;
+        $(this).attr('src', 'http://jb51.net/' + height + '/' + width);
+    });
+</script>
+</html>

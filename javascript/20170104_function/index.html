@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+    <p>提取出来的数字:</p><i id="ts1"></i>
+    <p>能够转换成数字的：</p><i id="ts2"></i>
+    <p>能够转换成数字的最大值：</p><i id="ts3"></i>
+    <input type="button" value="button" onclick="tse()">
+</form>
+<script>
+    /**
+     *  var arr = ["100px", "abc"-6, [], -9866, 34, -2, 0, '300', , function(){alert(0)},
+     null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),
+     function(){alert(3)}, 'xyz'-90];
+     */
+    var arr = ["100px", "abc"-6, [], -9866, 34, -2, 0, '300', , function(){alert(0)},
+        null, document, [], true, '200px'-30, "23.45元", 5, Number("abc"),
+        function(){alert(3)}, 'xyz'-90];
+    var arrs= [];
+    function tse(){
+        for( var i in arr){
+            if(typeof arr[i] == 'number' && arr[i].toString()!='NaN'){
+                console.log(arr[i])
+                document.getElementById("ts1").innerHTML += arr[i]+",";
+                document.getElementById("ts2").innerHTML += arr[i]+",";
+                arrs.push(+arr[i])
+            }
+            if(typeof arr[i] == 'string'){
+                document.getElementById("ts2").innerHTML += arr[i]+",";
+                arrs.push(+arr[i]);
+            }
+        }
+        for(var is in arrs){
+            if( String(arrs[is]) == 'NaN' ){
+                arrs[is] = '';
+                function heh(a,b) {
+                    return b-a;
+                }
+            }
+            arrs.sort(heh);
+        }
+         document.getElementById("ts3").innerHTML = arrs.slice(0,1);
+    }
+</script>
+</body>
+</html>

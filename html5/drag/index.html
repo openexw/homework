@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #drop{
+            width: 500px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<!--
+1. 设置元素可拖动
+draggable = "true"
+-->
+<img id="drop" src="images/2.jpg"/>
+<img src="images/logo.jpeg" id="img" draggable="true" alt="" width="300" height="200">
+
+<script>
+
+
+
+    /*var sd = {
+    //成员变量
+        age: 10,
+        //方法
+        event: function(){
+            //vv
+        }
+
+    };*/
+    var img = document.querySelector('#img');
+    var drop = document.querySelector('#drop');
+    var nowDrag= null; //表示的是当前被拖动的对象
+    /**
+     * 开始拖动
+     */
+    img.ondragstart = function(e){
+      this.style.border = "2px solid #f00";
+      this.style.opacity = "0.2";
+        nowDrag = e.target;
+        e.dataTransfer.setData("Text", e.target.src);
+    };
+
+    drop.ondragover = function (e) {
+        e.preventDefault(); //禁止浏览器默认的事件
+    };
+
+    /**
+     *
+     */
+    drop.ondrop = function(e){
+        e.preventDefault(); //禁止浏览器默认的事件
+        var s = e.dataTransfer.getData("Text");
+
+        if(e.target != nowDrag){
+            nowDrag.src = e.target.src;
+            e.target.src = s;
+        }
+//        this.appendChild(document.querySelector(s));
+    };
+    /**
+     * 拖动结束
+     */
+    img.ondragend = function(e){
+        this.style.border = "none";
+        this.style.opacity = "1";
+//        console.log(e.getDataTransferItem('Text'));
+    }
+
+
+</script>
+</body>
+</html>

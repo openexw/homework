@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>倒计时</title>
+    <!--以下为css样式-->
+    <style type= "text/css">
+        .daojishi h2
+        {
+            font-family:Helvetica, Microsoft YaHei, Arial, sans-serif;
+            font-size:14px;
+            margin-bottom:5px;
+            color:#151515;
+        }
+        .daojishi #timer
+        {
+            font-family:Helvetica, Microsoft YaHei, Arial, sans-serif;
+            font-size:14px;
+            color:#151515;
+            font-weight:bold;
+        }
+    </style>
+    <!--<script type = "text/javascript" src = "timer.js">
+    </script>-->
+</head>
+<body >
+<div class = "daojishi">
+    <h2>剩余时间为：</h2>
+    <div id = "timer"></div>
+</div>
+
+<div>
+    <h2>过年倒计时：</h2>
+    <div id="time"></div>
+</div>
+
+<script>
+    var str = "2017-01-27 11:59:59";
+    function getTime(str){
+        var ts = new Date(str).getTime()-new Date().getTime(); //毫秒数的时间差
+
+        /*ts/1000 - s
+        s/60 - m
+        m/60 h
+        h/24 d
+
+        36/24 // 天
+        36%24 = 1...12 //小时
+
+
+        1*/
+
+
+        //天数
+        var days = parseInt(ts/1000/60/60/24);
+        //小时数
+        var hours = parseInt(ts/1000/60/60%24);
+        //分钟数
+        var min = parseInt(ts/1000/60%60);
+        //秒数
+        var sec = parseInt(ts/1000%60);
+
+        days = checkTime(days);
+        hours = checkTime(hours);
+        min = checkTime(min);
+        sec = checkTime(sec);
+
+        return days+"天"+hours+"时"+min+"分"+sec+"秒";
+    }
+
+    function checkTime(i) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+    setInterval(function(){
+        var s = getTime(str);
+        document.getElementById("time").innerText = s;
+    }, 1000)
+
+</script>
+</body>
+</html>

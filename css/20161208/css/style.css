@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;}
+.div{
+    width: 1366px;
+    height: 2000px;
+    background-color: #00f;
+}
+
+@media all and (max-width: 900px) {
+    .div{
+        width: 900px;
+        /*height: 100%;*/
+        background-color: #f00;
+    }
+}

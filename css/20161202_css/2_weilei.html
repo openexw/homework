@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*伪类选择器*/
+        /*鼠标移上去的样式*/
+        a:hover{
+            color: #ff0000;
+            background-color: #890;
+        }
+        /*访问前的样式*/
+        a:link{
+            color: #000;
+        }
+        /*访问后的样式*/
+        a:visited{
+            color: #0ff;
+        }
+        /*焦点状态的样式*/
+        input[type="text"]:focus{
+            background-color: #567;
+        }
+        /*
+            first-child
+            last-child
+            nth-child(n)
+            checked
+            disabled
+
+        */
+
+        /*伪对象选择器*/
+        /*
+            :before
+            ::before
+
+             E:after/E::after
+
+             <input type="text" placeholder="占位符" />
+
+input::-webkit-input-placeholder {
+	color: #999;
+}
+
+        */
+
+        input::-webkit-input-placeholder{
+            font-size: 20px;
+            color: #0ff;
+        }
+        input::-moz-placeholder{
+            font-size: 20px;
+            color: #0ff;
+        }
+        input:-ms-input-placeholder{
+
+        }
+        body{
+            background-color: #000;
+            color: #ffffff;
+        }
+        /*.box p:first-child{
+            color: #0ff;
+        }
+        .box p:last-child{
+            color: #0ff;
+        }*/
+
+        .box p:nth-child(3n-1){
+            color: #0ff;
+        }
+
+        table{
+            width:100%;
+            border-collapse: collapse;
+        }
+        table td{
+             border: 1px solid #0ff;
+         }
+        table tr:nth-child(2n){
+            background-color: #234;
+        }
+
+        .form input:checked{
+            width: 30px;
+            height: 30px;
+        }
+        .form input:disabled{
+            background-color: #f00;
+        }
+
+        .er::after{
+           content: "\1000";
+        }
+
+        .icon::after{
+            content: url(reg_1.png);
+
+        }
+        .icon::before{
+            content: "908";
+        }
+
+        .form input[type="checkbox"]{
+            /*没选中*/
+             content: url("image/c.png");
+         }
+        .form input[type="checkbox"]:checked{
+            /*选中*/
+            content: url("image/checked.png");
+        }
+    </style>
+</head>
+<body>
+    <a href="#">百度</a>
+    <a href="#">QQ</a>
+
+    <input type="text" placeholder="ertyh">
+
+    <div class="box">
+        <p>这是第1个p标签</p>
+        <p>这是第2个p标签</p>
+        <p>这是第3个p标签</p>
+        <p>这是第4个p标签</p>
+        <p>这是第5个p标签</p>
+        <p>这是第6个p标签</p>
+    </div>
+
+
+    <div class="form">
+        <input type="checkbox" name="" id="" checked="checked">
+        <input type="checkbox" name="" id="">
+
+        <input type="text" disabled>
+    </div>
+
+    <div class="er">
+
+    </div>
+
+    <div class="icon">dsgg</div>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+</body>
+</html>

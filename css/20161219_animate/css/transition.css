@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.div{
+    width: 500px;
+    height: 200px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.div img{
+    width: 500px;
+    height: 200px;
+    /*transition: color dur 类型 delay, background dur 类型 delay;*/
+
+}
+.div img:hover{
+    transform: scale(1.2);
+}

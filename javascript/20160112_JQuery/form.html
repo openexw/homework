@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form>
+    <input type="button" value="Input Button"/>
+    <input type="checkbox" />
+
+    <div>
+        <input id="file" type="file" />
+        <input type="hidden" />
+        <input type="image" />
+    </div>
+
+    <input type="password" disabled/>
+    <input type="radio" />
+    <input type="reset" />
+
+    <input type="submit" />
+    <input type="text" />
+    <select><option>Option</option></select>
+
+    <textarea></textarea>
+    <button>Button</button>
+
+</form>
+
+<script src="../dist/js/jQuery.min.js"></script>
+
+<script>
+    $("input[type='file']")
+    $("form :disabled").removeAttr("disabled");
+    var input = $("input[type='text']");
+    console.log(input);
+    input[0].setAttribute("width", "200px")
+//    input[1].getAttribute("width")
+    input[0].style.width = "200px";
+    input[1].className = "";
+
+    $(input[0]).attr("width");
+    $(input[0]).css("width", "200px");
+    $(input[0]).addClass("df");
+</script>
+</body>
+</html>

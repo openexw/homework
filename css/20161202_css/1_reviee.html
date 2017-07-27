@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        /*一、元素选择符*/
+        /*通配符*/
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        /*标签选择符*/
+        div{
+            height: 300px;
+        }
+        /*id选择器*/
+        #con{
+            width: 100%;
+        }
+        /*类选择器*/
+        .context{
+            background-color: #fff;
+        }
+
+        /*二、关系选择符*/
+        /*包含选择器*/
+        .con div{
+            color: #890;
+        }
+        /*子选择器*/
+        .con>h2{
+
+        }
+        /*相邻选择器*/
+        .io+p{
+
+        }
+        /*兄弟选择器*/
+        .io~p{
+
+        }
+        /*三、属性选择符*/
+        h2[title]{
+
+        }
+        input[type="text"]{
+
+        }
+    </style>
+</head>
+<body>
+    <h2 title="h2"></h2>
+    <h2></h2>
+
+    <div class="input-con">
+        <input type="text" name="" id="">
+        <input type="password" name="" id="">
+        <input type="checkbox" name="" id="">
+    </div>
+</body>
+</html>

@@ -1,0 +1,165 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    list-style: none;
+}
+
+.clearFix{
+    zoom: 1;
+}
+
+.clearFix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+
+body{
+    background: #f8f8f8;
+}
+/*content start*/
+
+.content{
+    width: 945px;
+    height: 396px;
+    border: 1px solid #f0f0f0;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.step{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.step li{
+    float: left;
+    width: 292px;
+    padding: 7px 0;
+    background-color: #ddd;
+    color: #666;
+    position: relative;
+    margin-right: 10px;
+}
+.step li.before::before{
+    content: "";
+    display: block;
+    width: 0px;
+    height:0px;
+    border-width: 18px;
+    border-style:solid;
+    border-color: transparent transparent transparent #fff;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    z-index: 1;
+}
+.step li.after::after{
+    content: "";
+    display: block;
+    width: 0px;
+    height:0px;
+    border-width: 18px;
+    border-style:solid;
+    border-color: transparent transparent transparent #f96;
+    position: absolute;
+    top: 0;
+    right: -36px;
+    z-index: 2;
+}
+.step li.active{
+    background-color: #f96;
+    color: #ffffff;
+    
+}
+.step li.active span{
+    color: #ffb266;
+    background-color: #fff;
+}
+.step li span{
+    margin-left: 15px;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #999;
+    color: #fff;
+    vertical-align: middle;
+    text-align: center;
+    font-size: 12px;
+}
+
+/*form start*/
+form{
+    margin-top: 84px;
+    margin-left: 200px;
+}
+form li{
+    margin-bottom: 20px;
+}
+form li .label{
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+form li input[type='text']{
+    height: 35px;
+    padding-left: 5px;
+    border: 1px solid #ccc;
+    width: 163px;
+}
+.send-verify{
+    display: inline-block;
+    width: 120px;
+    height: 35px;
+    background-color: #ddd;
+    vertical-align: middle;
+    text-align: center;
+    line-height: 35px;
+    cursor: pointer;
+    font-size: 12px;
+}
+#phone{
+    width: 295px;
+}
+#phone-verify{
+
+}
+.btn{
+    width: 296px;
+    height: 28px;
+    background-color: #dc3c00;
+    border: none;
+    color: #fff;
+}
+.email{
+    font-size: 12px;
+    color: #4299d8;
+
+}
+.email a{
+    text-decoration: none;
+}
+.email i{
+    display: inline-block;
+    width: 12px;
+    height: 10px;
+    background: url("../image/mail.png") 0 0 no-repeat;
+    margin-right: 5px;
+}
+
+/*form end*/
+/*content end*/
+
+.border{
+    width: 0px;
+    height:0px;
+    border-width: 50px;
+    border-style:solid;
+    border-color: transparent transparent transparent #876;
+}

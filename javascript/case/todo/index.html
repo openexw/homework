@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>todo list</title>
+    <link rel="stylesheet" href="../../dist/css/bootstrap.min.css">
+    <style>
+        body{
+            font-family: "Microsoft YaHei";
+        }
+        table i{
+            padding:5px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            font-style: normal;
+        }
+
+        table i.icon-del{
+            background-color: #ff0000;
+            cursor: pointer;
+        }
+        
+        table i.icon-ok{
+            background-color: #0ff;
+        }
+
+        .text-line{
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="nav nav-bar">
+           <div class="navbar-header">
+               <a class="navbar-brand" href="#">TodoList</a>
+           </div>
+
+            <ul class="nav navbar-nav">
+                <li >
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" id="listCon" class="form-control" placeholder="请填写内容">
+                        </div>
+                        <input type="button" class="btn btn-default" id="add" value="添加" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+        <table class="table" id="table">
+            <tbody id="table-tbody"></tbody>
+        </table>
+    </div>
+
+
+
+    <script>
+        var data = [
+                [true, "你要吃饭？算了不给你吃"],
+                [false, "你要吃饭？算了不给你吃"]
+        ];
+        var tbody = document.getElementById("table-tbody");
+
+        /**
+         * 创建todo
+         * @param list
+         */
+        function createTodo(list){
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            var td2 = document.createElement("td");
+            var td3 = document.createElement("td");
+
+            if(list[0]){ //任务完成了
+                var i = document.createElement("i");
+                i.className = "glyphicon glyphicon-ok";
+                td1.appendChild(i);
+
+                td2.innerText = list[1];
+                td2.className = "text-line";
+            }else{ //任务没有完成
+
+                //创建并添加到第一个td
+                var input = document.createElement("input");
+                input.setAttribute("type", "checkbox");
+                td1.appendChild(input);
+
+                //内容
+                td2.innerHTML = list[1];
+            }
+
+
+            var i = document.createElement("i");
+            i.className = "glyphicon glyphicon-remove";
+            td3.appendChild(i);
+
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            tr.appendChild(td3);
+
+            tbody.appendChild(tr);
+        }
+
+        function add(){
+           var add =  document.getElementById("add");
+           var listCon =  document.getElementById("listCon");
+            add.onclick = function(){
+                var val = listCon.value;
+                createTodo([false, val]);
+                listCon.value = "";
+            }
+        }
+        for(var i=0; i<data.length; i++){
+            createTodo(data[i]);
+        }
+        add();
+    </script>
+</body>
+</html>

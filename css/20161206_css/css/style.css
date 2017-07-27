@@ -1,0 +1,89 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.div1{
+    width: 100px;
+    height: 100px;
+    border:1px solid red;
+    background-image: url("../bottom.png");
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 2px 5px 20px #00f, 2px 5px 20px #00f;
+    -moz-box-shadow: inset 2px 5px 20px #00f, 2px 5px 20px #00f;
+    box-shadow: inset 2px 5px 20px #00f, 2px 5px 20px #00f;
+}
+.ul{
+    width: 500px;
+    height: 100px;
+    border:1px solid red;
+
+}
+.ul>li{
+    float: left;
+    width: 50px;
+    height: 30px;
+    list-style:none;
+    border:1px solid red;
+
+}
+.clearFix{
+    zoom: 1;
+}
+.clearFix:after{
+    content: "";
+    clear: both;
+    display: block;
+}
+.clear{
+    clear: both;
+}
+.of{
+    zoom: 1;
+    overflow: auto;
+}
+.text{
+    width: 300px;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis ;
+}
+.nav{
+    border: 1px solid #000;
+    background-color: #890;
+}
+.nav li{
+    float: left;
+}
+.text{
+    width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.box1{
+    width: 300px;
+    height: 100px;
+    background: violet;
+    position: relative;
+}
+.box2{
+    width: 200px;
+    height: 100px;
+    background: red;
+    position: absolute;
+    left: 20px;
+    top: 0;
+}
+
+
+
+
+
+
+

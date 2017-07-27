@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /**{
+            padding: 0;
+            margin: 0;
+        }
+        .com{
+            width: 1000px;
+            margin: 0 auto;
+            color: #fff;
+            line-height: 100px;
+            text-align: center;
+            font-size: 20px;
+        }
+        li{
+            position: relative;
+            left: 8px;
+            width: 200px;
+            height: 100px;
+            background-color: #000033;
+            border: 1px solid #000066;
+            transition-duration: 0.5s;
+            transition-property: left;
+        }
+
+        li:first-child{
+            transition-timing-function: linear;
+        }
+        li:hover{
+            left: 200px;
+        }*/
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .com{
+            width: 1000px;
+            margin: 0 auto;
+            background-color: #339999;
+            height: 4000px;
+        }
+
+        .com li{
+            list-style: none;
+            /*display: table;*/
+            width: 200px;
+            height: 100px;
+            background-color: #f00;
+            margin-top: 10px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+            color: #ffffff;
+            font-weight: bold;
+            position: relative;
+            left: 8px;
+
+            transition-duration: 0.5s; /*持续时间**/
+            transition-property: left; /*属性*/
+        }
+
+        li:first-child{
+            transition-delay: 1s;
+            transition-timing-function: linear; /*线性*/
+        }
+
+        li:nth-child(2){
+            transition-timing-function: ease; /*平滑*/
+        }
+
+        li:hover{
+            left: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="com">
+    <ul>
+        <li>linear</li>
+        <li>ease</li>
+        <li>ease-in</li>
+        <li>ease-out</li>
+        <li>ease-in-out</li>
+    </ul>
+</div>
+
+</body>
+</html>

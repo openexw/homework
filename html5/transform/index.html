@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transform</title>
+    <style>
+        .box{
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            background-color: #976;
+
+            transform: translate(20px, 20px);
+            transform-origin: 200px 200px;
+        }
+    </style>
+</head>
+<body>
+
+位移：<input type="range" name="" id="" max="500" step="20">
+旋转：<input type="range" name="" id="" max="360" step="5">
+放大/缩小：<input type="range" name="" id="" max="5" min="-2" step="0.5">
+skew：<input type="range" name="" id="" max="100" min="-50" step="10">
+<div class="box"></div>
+
+
+<script>
+    var range = document.querySelectorAll("input[type='range']");
+    var box = document.querySelector(".box");
+    range[0].onchange = function(e){
+        console.log(e.target.value);
+        box.style.transform = 'translate('+e.target.value+'px,'+ e.target.value+'px)';
+    };
+    range[1].onchange = function (e) {
+
+        box.style.transform = 'rotate('+e.target.value+'deg)';
+
+    };
+    range[2].onchange = function(e){
+        box.style.transform = 'scale('+e.target.value+','+ e.target.value+')';
+    };
+    range[3].onchange = function(e){
+        box.style.transform = 'skew('+e.target.value+'deg,'+ e.target.value+'deg)';
+    };
+</script>
+</body>
+</html>

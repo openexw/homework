@@ -1,0 +1,127 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.transform{
+    font-family: "Microsoft YaHei";
+    margin-top: 50px;
+    margin-left: 200px;
+
+}
+.transform div{
+    width: 100px;
+    height: 100px;
+    margin-left: 20px;
+    /*background-color: #0ff;*/
+    text-align: center;
+    line-height: 100px;
+    color: #000;
+    margin-left: 20px;
+    font-weight: bold;
+    float: left;
+    cursor: pointer;
+}
+.transform div:hover{
+    transition: 1s all;
+}
+.transform .rotate{
+    cursor: pointer;
+}
+.transform .rotate span{
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background-color: #0ff;
+}
+.transform .rotate span:hover{
+/*
+    !*确定旋转中心*!
+    -webkit-transform-origin: 50% 0;
+    -o-transform-origin: 50% 0;
+    -moz-transform-origin: 50% 0;
+    -ms-transform-origin: 50% 0; !*top*!
+    transform-origin: 50% 0; !*top*!*/
+
+    /*旋转度数*/
+   /* -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);*/
+    transform-style: preserve-3d;
+    transform: rotate3d(1,0, 1, 45deg);
+}
+
+.transform .scaleX:hover{
+    transform: scaleX(1.4);
+}
+.transform .scaleX{
+    cursor: pointer;
+    background-color: #f00;
+}
+.transform .scaleY{
+    background-color: #00f;
+
+}
+
+.transform .scaleY:hover{
+    transform: scaleY(1.5);
+}
+
+.transform .scale{
+    background-color: #456767;
+}
+.transform .scale:hover{
+    /*transform: scale(2);*/
+    transform: scale(1.2, 1.5);
+}
+
+.transform .skewX{
+    background-color: #ab8;
+}
+.transform .skewX:hover{
+    transform: skewX(45deg);
+}
+
+.transform .skewY{
+    background-color: #45678a;
+}
+.transform .skewY:hover{
+    transform:  skewY(30deg);
+}
+
+.transform .skew{
+    background-color: #bcda98;
+}
+.transform .skew:hover{
+    transform: skew(34deg,20deg);
+}
+
+.transform .translateX{
+    background-color: #abc890;
+}
+.transform .translateX:hover{
+    transform: translateX(-20px);
+}
+.transform .translateY{
+    background-color: #330033;
+}
+.transform .translateY:hover{
+    transform: translateY(50%);
+}
+
+.transform .translate{
+    background-color: #333366;
+}
+
+.transform .translate:hover{
+    transform: translate(20px, 30px);
+}
+.transform .translate:hover span{
+    /*transform: rotate(45deg);*/
+}
+/**
+translate()： 指定对象的2D translation（2D平移）。第一个参数对应X轴，第二个参数对应Y轴。如果第二个参数未提供，则默认值为0
+translatex()： 指定对象X轴（水平方向）的平移
+translatey()： 指定对象Y轴（垂直方向）的平移
+*/
+

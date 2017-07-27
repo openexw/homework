@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <link rel="stylesheet" href="http://lib.sinaapp.com/js/bootstrap/2.3.1/css/bootstrap.min.css">
+    <style>
+        .container{
+            padding-top:35px;
+        }
+        .del{
+            text-decoration:line-through;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <a class="brand" href="#">TodoList</a>
+            <form class="navbar-form pull-left">
+                <input type="text" id="todoContent" class="span5">
+                <button type="button" id="addBtn" class="btn">Add</button>
+            </form>
+        </div>
+    </div>
+
+    <table class="table">
+        <tbody></tbody>
+    </table>
+    <a href="javascript:;" id="delDone">删除已完成的Todo</a>
+</div>
+
+<script type="text/javascript">
+
+    (function(){
+        //数据源
+        var store = [
+            {content:"学习ToDo的开发",done:false},
+            {content:"完成ToDo的开发",done:true},
+            {content:"完成五月工作总结",done:true},
+            {content:"给张三丰打电话中午吃饭",done:false},
+            {content:"给李四发微信",done:true}
+        ];
+
+        function createTodo(todo){
+            var tr = document.createElement("tr");
+            var td1 = document.createElement("td");
+            td1.setAttribute("width","40");
+            var td2 = document.createElement("td");
+            td2.innerHTML = todo.content;
+
+            if(todo.done) {
+                td2.setAttribute("class","muted del");
+                var icon = document.createElement("i");
+                icon.setAttribute("class","icon-ok");
+
+                td1.appendChild(icon);
+            } else {
+                var checkbox = document.createElement("input");
+                checkbox.setAttribute("type","checkbox");
+                checkbox.onclick = function (){
+                    var icon = document.createElement("i");
+                    icon.setAttribute("class","icon-ok");
+
+                    this.parentNode.nextSibling.setAttribute("class","muted del");
+                    this.parentNode.replaceChild(icon,this);
+                };
+
+                td1.appendChild(checkbox);
+            }
+            tr.appendChild(td1);
+            tr.appendChild(td2);
+            /*新事件添加的位置*/
+            //添加到前面
+            var tbody = document.getElementsByTagName("tbody")[0];
+            tbody.insertBefore(tr,tbody.firstChild);
+            /*  添加到后面
+             document.getElementsByTagName("tbody")[0].appendChild(tr);
+             */
+        }
+
+        for(var i = 0;i < store.length;i++) {
+            var todo = store[i];
+            createTodo(todo);
+        }
+        //定义addBtn的功能
+        document.getElementById("addBtn").onclick = function(){
+            var input = document.getElementById("todoContent");
+            var content = input.value;
+            if(content) {
+                var todo = {content:content,done:false};
+                createTodo(todo);
+                input.value = "";
+            } else {
+                input.focus();
+            }
+        };
+        //定义删除已完成的Todo
+        document.getElementById("delDone").onclick = function(){
+            var tbody = document.getElementsByTagName("tbody")[0];
+
+            for(var i = 0;i < tbody.childNodes.length;i++){
+                var tr = tbody.childNodes[i];
+
+                if(tr.firstChild.firstChild.getAttribute("class")){
+                    tbody.removeChild(tr);
+                    i--;
+                }
+            }
+        };
+
+    })();
+</script>
+
+</body>
+</html>

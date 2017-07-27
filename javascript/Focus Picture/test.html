@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .focus-pic{
+            width: 500px;
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        .pic{
+            width: 2500px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: auto;
+        }
+        .pic li{
+            width: 500px;
+            height: 200px;
+            overflow: hidden;
+            float: left;
+        }
+        .indicator{
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+        }
+        .indicator li{
+            width: 10px;
+            height: 10px;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            border-radius: 50%;
+            background-color: #fff;
+            float: left;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        .indicator .active{
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="focus-pic" >
+        <ul class="pic" id="pic">
+            <li>
+                <img src="images/1.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/2.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/3.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/4.jpg" alt="">
+            </li>
+            <li>
+                <img src="images/5.jpg" alt="">
+            </li>
+        </ul>
+        <ol class="indicator" id="indicator">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ol>
+    </div>
+    <script>
+        window.onload = function(){
+            var aPic, aIndicator;
+            var oPic = document.getElementById("pic");
+            aPic = oPic.getElementsByTagName("li");
+            aIndicator = document.getElementById("indicator").getElementsByTagName("li");
+            console.log(aIndicator);
+            for(var i=0; i<aIndicator.length; i++){
+                aIndicator[i].index = i;
+                aIndicator[i].onclick = function(){
+                    console.log(oPic.offsetLeft);
+                    //清除所有指示器的样式
+                    for(var j=0; j<aIndicator.length; j++){
+                        aIndicator[j].className = "";
+                    }
+                    this.className = "active";
+                    animate(oPic, -this.index * aPic[0].offsetWidth);
+                }
+            }
+            function animate(obj, target) {
+                clearInterval(obj.timer);  // 要开启定时器，先清除以前定时器
+                // 有2个参数 第一个 对象谁做动画  第二 距离 到哪里
+                // 如果 offsetLeft 大于了  target 目标位置就应该反方向
+                var speed = obj.offsetLeft < target ? 15 : -15;
+                obj.timer = setInterval(function () {
+                    var result = target - obj.offsetLeft;  //  他们的值 等于 0 说明完全相等
+                    // 动画的原理
+                    obj.style.left = obj.offsetLeft + speed + "px";
+                    if (Math.abs(result) <= 15) {
+                        obj.style.left = target + "px";   //抖动问题
+                        clearInterval(obj.timer);
+                    }
+                }, 10);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*一、元素选择符*/
+        *{ /*1. 通配符*/
+            padding: 0;
+            margin: 0;
+        }
+
+        /*2. 标签选择器（类型选择器）*/
+        div{
+            color: #000;
+        }
+        p{
+            color: #f00;
+        }
+
+        /*3. id选择器*/
+        #div-box{
+            width: 500px;
+            height: 400px;
+        }
+
+        /*4. 类选择器*/
+        .h2{
+            background-color: #789;
+        }
+
+        /*二、关系选择器*/
+
+        /*5. 包含选择符*/
+        .content h2 small{
+            color: #0f0;
+        }
+        .content small{
+            color: #f00;
+        }
+
+        /*6. 子选择器*/
+        .content h2>small{
+            color: #00f;
+        }
+
+        .ci{
+            width: 400px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+        .ci .first~p{
+            color: #00f;
+        }
+
+        /**
+         + ~ >
+        */
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>asdfgh
+            <span >
+                <small>吓破胆</small>
+            </span>
+            <small>12</small>
+        </h2>
+    </div>
+
+    <div class="ci">
+        <p>这是第二段文本</p>
+        <p>这是第二段文本</p>
+        <h1 class="first">这是第一段文本</h1>
+        <p>这是第二段文本</p>
+        <p>这是第二段文本</p>
+    </div>
+</body>
+</html>

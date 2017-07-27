@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="file" multiple="multiple" name="fileDemo" id="fileDemo" />
+<br />
+<input type="button" value="获取文件的名字" id="btnGetFile" />
+<input type="button" value="readAsDataURL" id="readAsDataURL" onclick="showDataByURL();" />
+<input type="button" value="readAsBinaryString" id="readAsBinaryString" onclick="showDataByBinaryString();" />
+<input type="button" value="readAsText" id="readAsText" onclick="showDataByText();" />
+
+<div id="result"></div>
+
+<script src="../lib/jquery.js"></script>
+<script>
+//    localStorage.setItem("user", {"user":"jac"});
+    localStorage.setItem("user", ["1", 2]);
+
+//    var usr = localStorage.getItem("user");
+var usr = localStorage["user"];
+    console.log(typeof usr, usr);
+
+var s =localStorage.key(0);
+console.log(s);
+    /*JSON.stringify(value)
+
+ localStorage.clear()*/
+//    JSON.parse()
+
+$("#btnGetFile").click(function(e) {
+    var fileList = document.getElementById("fileDemo").files;
+
+    console.log(fileList);
+    /*fileList.name
+
+    fileList.size
+
+    fileList.type*/
+    /**
+     *
+     */
+    /*for (var i = 0; i < fileList.length; i++)
+    {
+        if (!(/image\/\w+/.test(fileList[i].type)))
+        {
+            $("#result").append("<span>type:" + fileList[i].type + "--******非图片类型*****--name:" + fileList[i].name + "--size:" + fileList[i].size + "</span><br />");
+        }
+        else
+        {
+            $("#result").append("<span>type:" + fileList[i].type + "--name:" + fileList[i].name + "--size:" + fileList[i].size + "</span><br />");
+        }
+    }*/
+});
+
+    //图片的本地预览
+
+
+</script>
+</body>
+</html>

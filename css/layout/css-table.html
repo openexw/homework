@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        html {
+            font-family: sans-serif;
+        }
+        form{
+            display: table;
+            margin: 0 auto;
+        }
+        form div{
+            display: table-row;
+        }
+        form label,form input{
+            display: table-cell;
+            margin-bottom: 10px;
+        }
+        form label{
+            width: 200px;
+            padding-right: 5%;
+            text-align: right;
+        }
+        form input{
+            width: 300px;
+            height: 30px;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            border: none;
+            border: 1px solid #000;
+            padding-left: 10px;
+            outline: none;
+        }
+        form p{
+            display: table-caption;
+            caption-side: top;
+            text-align: center;
+            font-size: 20px;
+            color: #999;
+        }
+
+    </style>
+</head>
+<body>
+<form action="">
+    <p>首先，请告诉我你的名字和电话！</p>
+    <div>
+        <label for="UserName">用户名</label>
+        <input type="text" id="UserName">
+    </div>
+    <div>
+        <label for="Telephone">电话号码</label>
+        <input type="text" id="Telephone">
+    </div>
+    <div>
+        <label for="Age">年龄</label>
+        <input type="text" id="Age">
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>heart</title>
+    <style>
+        @keyframes UI  {
+            form{
+               /* width: 200px;
+                height: 200px;*/
+                -webkit-transform: scale(1, 1);
+                -moz-transform: scale(1, 1);
+                -ms-transform: scale(1, 1);
+                -o-transform: scale(1, 1);
+                transform: scale(1, 1);
+            }
+            to{
+               /* width: 400px;
+                height: 400px;*/
+                -webkit-transform: scale(2, 2);
+                -moz-transform: scale(2, 2);
+                -ms-transform: scale(2, 2);
+                -o-transform: scale(2, 2);
+                transform: scale(2, 2);
+            }
+        }
+        .div{
+            width: 200px;
+            height: 200px;
+            margin:0 auto;
+            margin-top: 200px;
+            background: url(images/heart.svg) 0 0 no-repeat;
+            animation:UI .3s alternate 0s infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="div"></div>
+</body>
+</html>

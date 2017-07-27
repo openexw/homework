@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="ajx.js"></script>
+<script>
+    /*
+    * AJAX: 主要使用js去读取服务器上的数据
+    * 不刷新页面的情况下，去读取服务器的数据
+    **/
+    ajax("rea.txt?t="+new Date().getTime(), function(str){
+        console.log("sdf",  str);
+    }, function(){
+
+    });
+    /**
+     * 缓存：
+     *
+     * IE的缓存很严重，只有关闭浏览器后才能刷新数据，如股票
+     *
+     * 阻止缓存："rea.txt?t="+new Date().getTime()
+     */
+
+    /**
+     * GET: 通过网站
+     * 长度有限：4k~10k 容量小
+     * 安全性差
+     * 有缓存
+     *
+     * 更适合获取数据
+     *
+     * POST：通过HTTP content
+     *
+     * 容量相对比较大：2G
+     * 安全性好一点
+     * 没有缓存
+     *
+     * 更适合上传数据
+     *
+     * 安全性高的方式：走https
+     */
+</script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            position: relative;
+        }
+        .left{
+            width: 100px;
+            background-color: #f00;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .center{
+            margin: 0 200px 0 100px;
+            background-color: #000;
+            color: #fff;
+        }
+        .right{
+            width: 200px;
+            background-color: #f90;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        li{
+            float: left;
+        }
+        .clearFix{
+            zoom: 1;
+        }
+
+        .clearFix:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <div class="left">left</div>
+    <div class="center">center</div>
+    <div class="right">right</div>
+</div>
+
+<div class="clear">
+    <ul class="clearFix">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div>asedrtfyu</div>
+    <input type="text" placeholder="sdfghj">
+</div>
+</body>
+</html>

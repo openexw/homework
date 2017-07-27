@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    for(var i=100; i< 1000; i++){
+
+        //第一种方法
+        var index = i+"";
+        var g = +index[2];
+        var s = +index[1];
+        var b = +index[0];
+
+        //第二种方法
+        var g = i%10;
+//        var s = parseInt(i%100/10);
+        var s = parseInt(i/10%10);
+        var b = parseInt(i/100);
+
+        //第三种方法
+        var index = i+"";
+        var g = +index.substr(2,1);
+        var s = +index.substr(1,1);
+        var b = +index.substr(0,1);
+//        console.log(i, g, s, b);
+
+        if(g*g*g + s*s*s + b*b*b == i){
+            console.log(i)
+        }
+    }
+</script>
+</body>
+</html>

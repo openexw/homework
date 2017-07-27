@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #slide{
+            width: 625px;
+            height: 270px;
+            margin: 0 auto;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+        #slide-con{
+            height: 270px;
+            position: absolute;
+            left: 0;
+        }
+        #slide-con img{
+            width: 625px;
+            height: 270px;
+            float: left;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        #direction i{
+            font-weight: bold;
+            font-style: normal;
+            font-size: 30px;
+            z-index: 1000;
+            background-color: rgba(0,0,0,0.5);
+            padding: 15px 5px;
+            color: #fff;
+            cursor: pointer;
+            transform: translate(0, -50%);
+            position: absolute;
+            top: 50%;
+        }
+        #direction .left{
+            left: 0;
+        }
+        #direction .right{
+            right: 0;
+        }
+
+        /*指示器 start*/
+        #indicator{
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 1000;
+        }
+        #indicator span{
+            display: inline-block;
+            width: 30px;
+            height: 4px;
+            -webkit-border-radius: 2px;
+            -moz-border-radius: 2px;
+            border-radius: 2px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        #indicator span.active{
+            background-color: #0ff;
+        }
+        /*指示器 end*/
+    </style>
+</head>
+<body>
+    <div id="slide">
+        <div id="slide-con">
+            <img style="z-index:1" src=images/1.jpg alt="">
+            <img src=images/2.jpg alt="">
+            <img src=images/3.jpg alt="">
+            <img src=images/4.jpg alt="">
+            <img src=images/5.jpg alt="">
+        </div>
+        <div id="direction">
+            <i class="left"><</i>
+            <i class="right">></i>
+        </div>
+        <div id="indicator">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <script src="move.js"></script>
+    <script>
+        /**
+         * 根据类名获取数据
+         * @param parent
+         * @param sClass
+         * @returns {Array}
+         */
+        function getByClass(parent, sClass){
+            var ele = parent.getElementsByClassName("*");
+            var res = [];
+            for(var i=0; i<ele.length; i++){
+                if(ele[i].className == sClass) {
+                    res.push(ele[i]);
+                }
+            }
+            return res;
+        }
+
+        var parent = document.getElementById("slide");
+        var btn = document.querySelectorAll("#direction i")
+        var prev = btn[0];
+        var next = btn[1];
+
+        var indicator = document.querySelectorAll("#indicator span");
+        var img = document.querySelectorAll("#slide-con img");
+        var nowIndex = 2;
+
+        var now = 0;
+        var timer = null;
+
+        //左右按钮
+        prev.onclick = function(){
+            now--;
+            if(now == -1){
+                now = img.length-1;
+            }
+            tab();
+        };
+        next.onclick = function(){
+            now++;
+            if(now == img.length){
+                now = 0;
+            }
+            tab();
+        };
+        //大图切换
+        for(var i=0; i<indicator.length; i++){
+            indicator[i].index = i;
+            indicator[i].onclick = function(){
+                if(this.index == now) return; //判断点击的是否为当前
+                now = this.index;
+                tab();
+            }
+        }
+
+        function tab(){
+            img[now].style.zIndex = nowIndex++;
+            img[now].style.height = 0;
+            startMove(img[now], {"height": 270})
+            resetIndicator(now); //设置指示器
+        }
+        /**
+         * 重置指示器
+         * @param index
+         */
+        function resetIndicator(index){
+            for(var i=0; i<indicator.length; i++){
+                indicator[i].className = "";
+            }
+            indicator[index].className = "active";
+        }
+
+        timer = setInterval(next.onclick, 3000);
+
+
+    </script>
+</body>
+</html>

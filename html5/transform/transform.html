@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+
+            background-color: #908;
+            margin-top: 200px;
+
+            /*
+            * 位移：
+                translate(x, y): 复合属性，有两值(x表示水平方向的偏移，y表示垂直方向的偏移)
+                Note：如果值传一个参数，表示水平方向的偏移
+                translateX(x): 水平方向的偏移
+                translateY(y): 垂直方向的偏移
+            */
+            /*
+                        transform: translate(20px, 30px);
+                        transform: translateY(100px) translateX(100px);*/
+
+            /**
+            旋转：
+            rotate(angle): angel表示旋转角度
+            */
+
+            /*transform: rotate(-60deg);*/
+
+            /**
+            斜切
+            skew(angleX, angleY):
+                angleX表示X方向的斜切角度
+                angleY表示Y方向的斜切角度
+            skewX()
+            skewY()
+            */
+
+            /*transform: skew(60deg, 0deg);*/
+
+            /**
+            scale(numX, numY):
+                numX表示水平方向的缩放比例
+                numY表示垂直方向的缩放比例
+                Note：缩放比例大于表示放大，小于1表示缩小
+            scaleX(x)
+            scaleY(y)
+            */
+
+            /*transform: scale(2,2);*/
+            overflow: hidden;
+        }
+        .box img{
+            width: 200px;
+            height: 200px;
+        }
+        .box img:hover{
+            transform: scale(2);
+            transition: transform 1s;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <img src="../drag/images/logo.jpeg" alt="">
+</div>
+</body>
+</html>

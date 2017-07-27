@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0px;
+        }
+        #win{
+            width: 500px;
+            height: 500px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            background-color: #786;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -250px;
+            margin-top: -250px;
+        }
+        .content{
+            width: 150px;
+            height: 300px;
+            background-color: #eeeeee;
+            position: absolute;
+            display: none;
+        }
+        .content ul{
+            padding: 0;
+            margin: 0px;
+        }
+        .content li{
+            height: 30px;
+            border-bottom: 1px solid #000;
+            list-style: none;
+
+        }
+    </style>
+</head>
+<body>
+    <div id="win" draggable="true">
+        <input type="text">
+    </div>
+    <div class="content" id="con">
+        <ul>
+            <li>桌面</li>
+            <li>个性化</li>
+        </ul>
+    </div>
+    <script>
+        var win = document.getElementById("win");
+
+        /*win.addEventListener("mousemove", function(event){
+            var x = event.clientX; /!*鼠标的X坐标*!/
+            var y = event.clientY;/!*鼠标的Y坐标*!/
+            win.style.left = x+"px";
+            win.style.top = y+"px";
+        });*/
+
+        document.oncontextmenu = function(event){
+            var x = event.clientX;
+            var y = event.clientY;
+
+            var con = document.getElementById("con");
+
+            con.style.display = "block";
+            con.style.left = x+"px";
+            con.style.top = y+"px";
+
+            return false;
+        }
+
+        win.ondrag = function(e){
+
+        var x = e.clientX;
+        var y = e.clientY;
+//            this.style.display = "block";
+            this.style.left = x+"px";
+            this.style.top = y+"px";
+        }
+
+        document.oncopy = function(){
+            return false;
+        }
+    </script>
+</body>
+</html>

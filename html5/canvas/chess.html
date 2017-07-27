@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="805" height="905"></canvas>
+
+<script>
+    var canvas = document.querySelector("#canvas");
+    var data = [
+        [1, 2, 'bl'],
+        [1, 2, 'br'],
+        [1, 2, 'tl'],
+        [1, 2, 'tr'],
+        [7, 2, 'bl'],
+        [7, 2, 'br'],
+        [7, 2, 'tr'],
+        [7, 2, 'tl']
+    ];
+    if(canvas.getContext){
+        var ctx = canvas.getContext("2d");
+        drawOutLine();
+        drawChessLine();
+        drawAllText();
+        drawOblique();
+        drawAllBreak();
+    }
+
+    /**
+     * 棋盘外轮廓线
+     */
+    function drawOutLine(){
+        ctx.lineWidth = 5;
+        ctx.strokeStyle = "#a52a2a";
+        ctx.strokeRect(3, 3, 800, 900);
+
+    }
+
+    /**
+     * 画横线
+     * @param sx 开始坐标的x轴
+     * @param sy 开始坐标的y轴
+     * @param ex 结束点的x坐标
+     * @param ey 结束点的y坐标
+     */
+    function drawLine(sx, sy, ex, ey){
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(sx, sy);
+        ctx.lineTo(ex, ey);
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+    /**
+     * 画棋盘的线
+     */
+    function drawChessLine(){
+        for(var i=100; i<=800; i+=100){
+            //水平线
+            drawLine(5, i, 800, i);
+            //垂直线
+            drawLine(i, 5, i, 900);
+        }
+        //清除指定的矩形区域（楚河、汉界）
+        ctx.clearRect(5, 401, 794, 98);
+    }
+
+    function drawAllText(){
+        drawText("楚", 100);
+        drawText("河", 200);
+        drawText("汉", 500);
+        drawText("界", 600);
+    }
+
+    function drawText(text, x){
+        ctx.save();
+        ctx.font = "60px microsoft YaHei";
+        ctx.lineWidth = 1;
+        ctx.fillText(text, x, 470);
+        ctx.restore(); //恢复到保存点
+    }
+
+    /**
+     * 画斜线
+     */
+    function drawOblique(){
+        drawLine(300, 5, 500, 200);
+        drawLine(500, 5, 300, 200);
+        drawLine(300, 700, 500, 900);
+        drawLine(500, 700, 300, 900);
+    }
+
+
+//    drawBreak(0,1, 'right');
+    function drawBreak(data){
+        var x=data[0],
+            y=data[1],
+            direction=data[2];
+        ctx.beginPath();
+
+        switch (direction){
+            case "br":
+                var x = x*100+10,y = y*100-10;
+                ctx.moveTo(x, y-15);
+                ctx.lineTo(x, y);
+                ctx.lineTo(x+15, y);
+                break;
+            case 'bl':
+                var x = x*100-10,y = y*100-10;
+                ctx.moveTo(x, y-15);
+                ctx.lineTo(x, y);
+                ctx.lineTo(x-15, y);
+                break;
+            case 'tr':
+
+                break;
+            case 'tl':
+
+                break;
+        }
+        if(direction == "bl"){
+            ctx.moveTo(x, y-15);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x-15, y);
+        }else if(direction == "right"){
+            ctx.moveTo(x, y-15);
+            ctx.lineTo(x, y);
+            ctx.lineTo(x+15, y);
+        }else if(direction == "right"){
+
+        }
+
+        ctx.stroke();
+        ctx.closePath();
+    }
+
+    function drawAllBreak(){
+        for(var i=0; i<data.length; i++){
+            drawBreak(data[i]);
+        }
+    }
+    drawCheesPieces(70, 170, "image/BC.GIF");
+//    D:\example\html5\canvas\image\BA.GIF
+    function drawCheesPieces(x, y, src){
+        var img = new Image();
+
+        img.onload = function(){
+            /**
+             * drawImage(image,sx, sy,
+             * sWidth, sHeight,
+             * dx, dy, dWidth, dHeight) //裁剪
+             * image
+             * sx
+             * sy
+             * sWidth
+             * sHeight
+             * dx: 开始裁剪的位置的x坐标
+             * dy:开始裁剪的位置的y坐标
+             * dWidth: 裁剪图片的宽度
+             * dHeight: 裁剪图片的高度
+             */
+            ctx.drawImage(img, x, y, 60, 60 );
+        };
+
+        img.src = src;
+
+
+
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        video{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<video src="mv.mp4" width="500" height="400" poster="poster.jpeg">
+    您的浏览器不支持video标签！
+</video>
+
+<input type="button" value="play" />
+<input type="button" value="pause" />
+<!--<input type="button" value="pause" />-->
+<input type="button" value="静音" />
+<input type="button" value="音量" />
+<script>
+    var video = document.querySelector('video');
+    var btn = document.querySelectorAll("input");
+
+    //播放
+    btn[0].onclick = function () {
+        video.play();
+    }
+
+    //暂停
+    btn[1].onclick = function(){
+        video.pause();
+    }
+
+    btn[2].onclick = function(){
+        video.muted = true;
+/*//        video.muted = true;
+
+        console.log(video.volume);*/
+    }
+
+    btn[3].onclick = function () {
+//        [0,1]
+        video.volume = 0.3;
+    }
+
+    //视频可以播放后（缓冲已足够开始）的操作
+    video.oncanplay = function(){
+        this.style.display = "block"
+    };
+
+    //当播放位置改变时执行的脚本
+    video.ontimeupdate = function(){
+       //快进、选择视频播放的时间点
+
+//  s ==>      00:00:20
+    };
+
+    //视频播放完成后执行的操作
+    video.onended = function(){
+        //欢迎观看，弹出二维码等操作
+    }
+</script>
+<!--<video src="mv.mp4" controls poster="poster.jpeg" loop autoplay></video>-->
+<!--
+controls:
+显示播放、暂停、时间进度条、声音控制、全屏显示、下载等控件
+-->
+
+<!--
+    属性：
+
+    + autoplay: 视频在就绪后马上播放
+    + controls: 向用户显示控件
+    + height: 设置播放器的高度
+    + width: 设置播放器的宽度
+    + loop: 视频循环播放
+    + preload: 视频在页面加载时进行加载，并预备播放。如果使用 "autoplay"，则忽略该属性。
+    + src: 要播放的视频的 URL。
+
+-->
+
+
+<!--<input type="file" name="" id="" accept="video/mp4">
+<video width="320" height="240" controls="controls">
+    &lt;!&ndash;浏览器将识别第一个&ndash;&gt;
+
+    <source src="mv.ogg" type="video/ogg">
+    <source src="mv.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>-->
+
+<!--
+    classList: 获取指定元素的className集合。
+    属性：
+    length
+
+    方法：
+
+    + item(index): 获取指定索引的类名
+    + add(className): 往类名列表中新增一个类名；如果之前类名存在，则添加忽略。
+    + remove(className): 往类名列表中移除该类名
+    + toggle(className): 可以切换指定class样式类集合中一个或者多个样式类的删除和添加。即有则删除，武则添加
+
+    若类名列表中有此类名，移除之，并返回false; 如果没有，则添加该类名，并返回true.
+
+    + contains("className"): 类名列表中是否包含该类名。如果包含，则返回true, 不包含，则false
+-->
+
+
+<div class="tab tab-tit"></div>
+
+<script>
+    var tab = document.querySelector(".tab");
+
+    var list = tab.classList; //
+    list.add("tr")
+    list.remove("tab-tit");
+//    tab tr
+    list.toggle("tabs");
+    console.log();
+</script>
+</body>
+</html>

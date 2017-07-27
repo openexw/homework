@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../dist/css/bootstrap.css">
+    <style>
+        body{
+            font-family: "Microsoft YaHei";
+        }
+        form{
+            margin-top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="input-text"/>
+                </div>
+                <input type="button" id="btn" class="btn btn-primary col-md-2" value="查看等级">
+            </div>
+            <div class="form-group">
+                <div class="col-md-9">
+                    <input type="text" class="form-control" id="input-text1"/>
+                </div>
+                <input type="button" id="btn1" class="btn btn-primary col-md-2" value="我的奖金">
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-9">
+                    <input type="date" class="form-control" id="input-text2"/>
+                </div>
+                <input type="button" id="btn2" class="btn btn-primary col-md-2" value="这是第几天">
+            </div>
+
+            <h1 id="h1"></h1>
+            <!--<a href="javascipt:void(0)">sdgsd</a>-->
+        </form>
+
+    </div>
+    <script src="index.js"></script>
+    <script>
+        var btn = document.getElementById("btn");
+        var h1 = document.getElementById("h1");
+
+        btn.onclick = function(){
+            var grade = null;
+            var text = document.getElementById("input-text");
+            var score = text.value;
+            if("" == score){
+                h1.innerText = "请输入正确的分数";
+                h1.className = "text-danger";
+            }else{
+                if(+score != +score){
+                    h1.innerText = "请输入正确的分数";
+                    h1.className = "text-danger";
+                }else {
+                    /*switch (true){
+                        case (score>=90):
+                            grade = "A";
+                            break;
+                        case (score>=60 && score<=89):
+                            grade = "B";
+                            break;
+                        case (score<60):
+                            grade = "C";
+                            break;
+                    }*/
+                    switch (true){
+                        case score>=90:
+                            grade = "A";
+                            break;
+                        case score>=60 && score <= 89:
+                            grade = "B";
+                            break;
+                        case score<60:
+                            grade = "C";
+                            break;
+                    }
+                    /*if(score>=90){
+                     grade = "A";
+                     }else if(score>=60 && score<=89){
+                     grade = "B";
+                     }else if(score<60){
+                     grade = "C";
+                     }*/
+                    if(grade){
+                        h1.innerText = "等级为："+grade;
+                        h1.className = "text-success";
+                    }
+                }
+            }
+        }
+        /**
+         * 设学习成绩变量为score，成绩等级变量为grade。学习成绩>=90分的同学用A表示，
+         * 60-89分之间的用B表示，60分以下的用C表示。最后输 出学生成绩和学生成绩等级。
+         */
+        /*var score = 67;
+        var grade;
+        if(score>=90){
+            grade = "A";
+        }else if(score>=60 && score<=89){
+            grade = "B";
+        }else if(score<60){
+            grade = "C";
+        }
+        alert(grade);*/
+
+        /**
+         * 1. 写表单
+         * 2. js
+         *  2.1 获取按钮
+         *  2.2 给按钮添加点击事件
+         *  2.3 获取输入框中的值 1
+         *  2.4 判断是输入了值
+         *  2.5 判断是否是数字 1
+         *  2.5 等级判断
+         *  2.5 输出
+         */
+       /* var btn = document.getElementById("btn");
+        btn.onclick = function(){
+            var input = document.getElementById("input-text");
+            var score = input.value; //获取输入的内容
+            if(score == ""){
+                alert("请输入内容");
+            }
+//            String ==> Number
+            var score = +score;
+
+            //NaN != NaN
+            if(score != score){
+                alert("您输入的不是数字");
+            }
+        }*/
+
+       /* var con = a>0 ? "OK" : "NO";
+
+        if(a>0){
+            con = "OK"
+        }else{
+            con = "NO"
+
+        }
+        q = a ? b : c ? d : e ? f : g;
+*/
+        /*var sd = {
+            name: "Jack",
+            age: "df"
+        }
+
+        JSON*/
+//        var as = ((arr.length <= 0) || (arr[0] === undefined) )? x : arr[0];
+
+
+
+//        XML
+    </script>
+</body>
+</html>

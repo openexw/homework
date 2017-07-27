@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0, 0.5);
+            display: none;
+        }
+
+        .tag{
+            padding: 5px 20px;
+            background-color: #45bcf9;
+            color: #ffffff;
+            position: relative;
+        }
+        .tag:after{
+            display: inline-block;
+            content: "";
+            width: 0;
+            height: 0;
+            border-width: 8px;
+            border-style: solid;
+            border-color: transparent transparent transparent #45bcf9;
+            position: absolute;
+            top: 5px;
+            right: -16px;
+        }
+        body{
+            margin:20px;
+            /*font :Arial 12px;*/
+        }
+        #father{
+            margin-top: 20px;
+            background-color:#a0c8ff;
+            border:1px dashed #000000;
+            padding:15px;
+            height: 3000px;
+        }
+        #father div{
+            background-color:#fff0ac;
+            border:1px dashed #000000;
+            padding:10px;
+        }
+        #block1{
+            top: 30px;
+            left: 30px;
+        }
+        .tooltip{
+            width: 200px;
+            height: 50px;
+            background-color: #000;
+            color: #ffffff;
+            position: relative;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            margin-top: 40px;
+        }
+        .tooltip:after{
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 8px;
+            border-color: #000 transparent transparent transparent;
+            position: absolute;
+            bottom: -16px;
+            left: 50%;
+            margin-left: -8px;
+        }
+        .pm{
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            padding: 10px;
+            background-color: #000;
+        }
+
+        .layer{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
+        .z-index{
+            width: 1000px;
+            height: 500px;
+            background-color: #0ff;
+            position: relative;
+        }
+
+        .z-index .box-1{
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: #990;
+            z-index: 1;
+        }
+        .z-index .box-2{
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            background-color: #678;
+        }
+        .z-index .box-3{
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            background-color: #987;
+        }
+        .icon-home{
+            display: inline-block;
+            border:#000 2px solid;
+            border-top: none;
+            width: 22px;
+            height: 16px;
+            position: relative;
+        }
+        .icon-home:before{
+            width: 18px;
+            height: 18px;
+            border: 2px solid #000;
+            border-right-color: transparent;
+            border-bottom-color: transparent;
+           /* -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);*/
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .box-c{
+            width: 50px;
+            height: 50px;
+            border: 2px solid #000;
+            border-right: none;
+            border-bottom: none;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+touch
+   <!-- dghghjkjl
+
+    遮罩层
+    <div class="box"></div>
+
+    <span class="tag">
+        Wordpress
+    </span>-->
+
+    <div id="father">
+        <div id="block1">Box-1</div>
+        <div id="block2">Box-2</div>
+        <div id="block3">Box-3</div>
+    </div>
+
+<div id="layer"></div>
+<button id="btn">点我</button>
+
+    <div class="tooltip">
+
+    </div>
+
+
+<div class="z-index">
+    <div class="box-1">这是box1</div>
+    <div class="box-2">这是box2</div>
+    <div class="box-3">这是box3</div>
+</div>
+
+<i class="icon-home"></i>
+
+<div class="box-c"></div>
+<script>
+    var btn = document.getElementById("btn");
+    btn.onclick = function(){
+        document.getElementById("layer").className = "layer";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>淡入淡出</title>
+    <style>
+        #div{
+            width: 200px;
+            height: 200px;
+            background-color: #678;
+            filter: alpha(opacity=30);
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div" onmousemove="startMove(100)" onmouseout="startMove(30)">
+
+</div>
+
+<script>
+    var timer = null;
+    var alpha = 30;
+    function startMove(iTarget){
+        var div = document.getElementById("div");
+        var speed  = 0;
+        clearInterval(timer);
+        if(alpha<iTarget){
+            speed = 10;
+        }else{
+            speed = -10;
+        }
+        //这里没有offsetA..的方法，使用alpha变量折中解决
+        if(alpha == iTarget){
+            clearInterval(timer);
+        }else{
+            alpha += speed;
+            div.style.opacity = speed/100
+        }
+    }
+</script>
+</body>
+</html>

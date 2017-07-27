@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<div class="c">
+    <div class="box" width="200"></div>
+    <div width="300"></div>
+    <div  width="400"></div>
+    <div  width="500"></div>
+    <input type="text" class="df" value="etr">
+    <input type="checkbox" name="" checked disabled id=""> df
+    <input type="checkbox" name=""  id=""> df
+    <input type="checkbox" name="" disabled id=""> df
+    <input type="checkbox" name=""  id=""> df
+</div>
+<script src="../dist/js/jQuery.min.js"></script>
+<script>
+    $(".df")[0].value
+   var val = $(".df").val("w34567");
+//    alert(val);
+    /**
+     * 一个参数表示获取属性
+     * 两个参数表示设置属性
+     */
+    /*$(".box").attr("width");
+    $(".box").attr({
+        "width":"300px",
+        "height": "200px"
+    });*/
+    /**
+     * 移除指定属性
+     */
+    $(".box").removeAttr("width");
+    $("input[type='checkbox']").prop("width", "60");
+    var s = $("input[type='checkbox']").prop("disabled", function(index, attr){
+        console.log(index, attr);
+    });
+    /**
+     *不传值：获取html内容
+     * 传值：设置html内容
+     * @type {*|jQuery}
+     * innerHTML
+     */
+
+//    var s = $(".c").html("sertgyh");
+    console.log(s);
+</script>
+</body>
+</html>

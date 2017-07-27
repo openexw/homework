@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<input type="button" id="ipt" value="anniu">
+</body>
+<script>
+    var inp = document.getElementById("input");
+    var ipt = document.getElementById("ipt");
+    ipt.onclick = function (){
+        var a=b=c=d=e=0;
+        var m =input.value;
+
+        a =parseInt(m/10000);
+        b =parseInt(m%10000/1000);
+        /*c =parseInt(m%1000/100);*/
+        d =parseInt(m%100/10);
+        e =parseInt(m%10);
+
+        console.log("a:"+a);
+        console.log("b:"+b);
+        console.log("d:"+d);
+        console.log("e:"+e);
+
+        if(a==e && b==d){
+            console.log(m+"是回文数");
+        }
+        else {
+            console.log(m+"不是回文数");
+        }
+    }
+</script>
+</html>

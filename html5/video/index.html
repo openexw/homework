@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>视频播放器|Demos 代码演示、代码片段 - 读你 | 这世间唯有梦想和好姑娘不可辜负!</title>
+    <link rel="stylesheet" href="lib/css/font-awesome.css">
+    <link rel="stylesheet" href="payer.css">
+</head>
+<body>
+<figure>
+    <figcaption>视频播放器</figcaption>
+    <div class="player">
+        <i class=" fa fa-spinner fa-spin load"></i>
+        <video id="myVideo" src="mv.mp4" poster="poster.jpeg"></video>
+        <div class="controls">
+            <!-- 播放/暂停 -->
+            <a href="javascript:;" class="switch fa fa-play"></a>
+            <!-- 全屏 -->
+            <a href="javascript:;" class="expand fa fa-expand"></a>
+            <!-- 进度条 -->
+            <div class="progress">
+                <div class="loaded"></div>
+                <div class="line"></div>
+                <div class="bar"></div>
+            </div>
+            <!-- 时间 -->
+            <div class="timer">
+                <span class="current">00:00:00</span> /
+                <span class="total">00:00:00</span>
+            </div>
+        </div>
+    </div>
+</figure>
+<!--<script src="js/index.js"></script>-->
+<script src="js/app.js"></script>
+<!--<script type="text/javascript">
+    var video = document.querySelector("video");
+    var isPlay = document.querySelector(".switch");
+    var expand = document.querySelector(".expand");
+    var progress = document.querySelector(".progress");
+    var loaded = document.querySelector(".progress > .loaded");
+    var currPlayTime = document.querySelector(".timer > .current");
+    var totalTime = document.querySelector(".timer > .total");
+    var loading = document.querySelector(".load");
+
+    video.oncanplay = function(){
+        loading.style.display = "none"
+        //显示视频
+        this.style.display = "block";
+        //显示视频总时长
+        totalTime.innerHTML = getFormatTime(this.duration);
+    };
+
+    //播放按钮控制
+    isPlay.onclick = function(){
+        if(video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+        this.classList.toggle("fa-pause");
+    };
+    //全屏
+    expand.onclick = function(){
+        video.webkitRequestFullScreen();
+    };
+    //播放进度
+    video.ontimeupdate = function(){
+        var currTime = this.currentTime,    //当前播放时间
+                duration = this.duration;       // 视频总时长
+        //百分比
+        var pre = currTime / duration * 100 + "%";
+        //显示进度条
+        loaded.style.width = pre;
+        //显示当前播放进度时间
+        currPlayTime.innerHTML = getFormatTime(currTime);
+    };
+    //跳跃播放
+    progress.onclick = function(e){
+        video.currentTime = 10;
+        var event = e || window.event;
+       console.log((event.offsetX / this.offsetWidth) * video.duration);
+//        console.log(video.currentTime);
+        video.currentTime = parseInt((event.offsetX / this.offsetWidth) * video.duration);
+    };
+    //播放完毕还原设置
+    video.onended = function(){
+        var that = this;
+        //切换播放按钮状态
+        isPlay.classList.remove("fa-pause");
+        isPlay.classList.add("fa-play");
+        //进度条为0
+        loaded.style.width = 0;
+        //还原当前播放时间
+        currPlayTime.innerHTML = getFormatTime();
+        //视频恢复到播放开始状态
+        that.currentTime = 0;
+    };
+    function getFormatTime(time) {
+        var time = time || 0;
+        var h = parseInt(time/3600),
+                m = parseInt(time%3600/60),
+                s = parseInt(time%60);
+        h = h < 10 ? "0"+h : h;
+        m = m < 10 ? "0"+m : m;
+        s = s < 10 ? "0"+s : s;
+        return h+":"+m+":"+s;
+    }
+</script>-->
+</body>
+</html>

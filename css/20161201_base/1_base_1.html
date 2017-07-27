@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>基础</title>
+    <!--1. 引入外部样式表-->
+    <link rel="stylesheet" href="./css/style.css">
+    <!--
+
+        1. 引入外部样式表
+        2. 内联样式表
+        3. 行内样式
+
+        优先级：
+        行内样式>内联样式>外部样式
+
+        em：字体的大小相对于父级的字体大小进行缩放
+        rem：字体的大小相对于body的字体大小进行缩放
+    -->
+<!--
+
+-->
+    <style>
+        /*2. 内联样式表*/
+        body{
+            font-size: 12px;
+            background-color: #000;
+            margin: 0;
+            color: #fff;
+        }
+        h2{
+            margin: 0;
+        }
+        div{
+            font-size: 14px;
+        }
+        div h2{
+            font-weight: normal;
+            font-size:1.5em;
+        }
+        .box{
+            font-size: 1rem;
+        }
+        .box h3{
+            font-size: 1.5rem;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <!--3. 行内样式-->
+    <h2 style="background: #abd">行内样式</h2>
+    <div>
+
+        <h2>14px</h2>
+        14px
+    </div>
+
+<div class="box">
+    box rem
+    <h3>h3 rem</h3>
+</div>
+</body>
+</html>

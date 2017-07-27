@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+    <style>
+        body{
+            background: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<form action="">
+
+    <!--只读-->
+    readonly：<input type="text" name=""  readonly />
+    <br>
+    <!--禁用-->
+    Disable：<input type="text" name="" disabled />
+    <br>
+
+    <!--颜色选择 start-->
+    Color: <input type="color" name=""  />
+    <!--颜色选择 end-->
+
+    <br>
+    <!--数字 start-->
+    Number: <input type="number" name=""  />
+    <!--数字 end-->
+
+    <br />
+    <br />
+    <!--滑动条 start-->
+    <input type="range" name="" max="100"  min="1" step="5" id="range">
+    <!--滑动条 end-->
+
+    <br>
+
+    <!--电话号码 start-->
+    <input type="tel" name="" id="" />
+    <!--电话号码 end-->
+
+
+    <input type="submit"   value="ert">
+
+    <br>
+
+    
+    e-mail: <input type="email" name="" id="" />
+
+    <br>
+    URL： <input type="url" name="" id="" />
+
+    <br>
+    <hr>
+    dateTime: <input type="datetime" name="" id="">
+
+
+    <br>
+    dateTimeLocal: <input type="datetime-local" name="" id="">
+
+    <br>
+
+    Date: <input type="date" name="" id="">
+
+    <br>
+    Month: <input type="month" name="" id="">
+
+    <br>
+    Week: <input type="week" name="" id="">
+
+    <br>
+    <input type="file" name="" id="" hidden>
+    Hidden: <input type="button" name="" value="23456" id="hide">
+
+    <input type="image" src="23.JPEG" alt="">
+
+    <!--在HTML标准中，已经移除了datetime，使用datatime-local代替-->
+   <!-- <input type="datetime" name="" id="dateTime" />
+
+    <input type="datetime-local" name="" id="dateTimeLocal" />
+
+    <input type="month" name="" id="">-->
+
+</form>
+
+<textarea name="" id="" cols="30" rows="10"></textarea>
+
+<select name="" id="">
+
+    <option value="">e</option>
+    <option value="">1</option>
+    <option value="">3</option>
+    <option value="">4</option>
+    <option value="">5</option>
+</select>
+<style>
+    .df{
+        width: 400px;
+        height: 50px;
+    }
+
+</style>
+<div contenteditable="true" class="df"></div>
+<svg viewBox="0 0 120 120" version="1.1" xmls="http://www.w3.org/2000/svg">
+    <circle cx="60" cy="60" r="50" style="fill: red"/>
+</svg>
+<script>
+    var range = document.getElementById("range");
+    var dateTime = document.getElementById("dateTime");
+    var dateTimeLocal = document.getElementById("dateTimeLocal");
+    var hide = document.getElementById("hide");
+
+    range.onchange = function(){
+        console.log("滑动条的值：", range.value);
+        console.log(dateTime.value, dateTimeLocal.value);
+    }
+//    alert(hide.value)
+</script>
+
+</body>
+</html>

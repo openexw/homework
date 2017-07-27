@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app"></div>
+<script>
+    /**
+     * 任务：
+     *
+     * 将下列数据存储到localStorage，并取出来显示到id为app的容器里，最后删除其中的"user"
+     *
+     * 1. ["user", 1] ==> user
+     * 2. "How are you?" ==> hello
+     * 3. {"user": "Jack", "age": 23}
+     */
+
+    localStorage.setItem('user','["user",1]');
+    localStorage.setItem('hello','How are you?');
+    var user = localStorage.getItem('user');
+
+    document.getElementById("app").innerHTML = user;
+    localStorage.removeItem('user');
+
+
+</script>
+</body>
+</html>

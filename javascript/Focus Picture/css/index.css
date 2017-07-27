@@ -1,0 +1,14 @@
+*{ padding:0; margin:0; list-style:none; border:0;}
+body{ background-color: #262626; }
+.all{ width: 500px; height: 200px; padding: 7px; border: 1px solid #2D2D2D; margin: 100px auto; position: relative; }
+.screen{
+    width:500px;
+    height:200px;
+    overflow:hidden;
+    position:relative;
+}
+.screen li{ width:500px; height:200px; overflow:hidden; float:left;}
+.screen ul{ position:absolute; left:0; top:0px; width:3000px;}
+.all ol{ position:absolute; right:10px; bottom:10px; line-height:20px; text-align:center;}
+.all ol li{ float: left; width: 15px; height: 15px; background: #fff;  margin-left: 5px; cursor: pointer; font-size: 10px; font-family: Verdana; line-height: 15px; border-radius: 15px; }
+.all ol li.current{ background:yellow;}

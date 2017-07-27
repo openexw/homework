@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 1000px;
+            height: 100%;
+        }
+        .box li{
+            width: 25%;
+            float: left;
+            list-style: none;
+            perspective: 600px;/*在父级书写*/
+        }
+        .box li div{
+            margin: 10px;
+            background-color: #890;
+            height: 200px;
+        }
+        .box li:first-child div{
+            /*transform: perspective(600px) rotateX(45deg); !*在transform书写*!*/
+            transform: rotateX(45deg);
+
+        }
+        .box li:nth-child(2) div{
+            transform: rotateY(45deg);
+        }
+        .box li:nth-child(3) div{
+            transform: rotateY(45deg);
+        }
+        .box li:last-child div{
+            transform: rotate3d(0, 0, 1, 80deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>3d旋转（rotate3d）</h2>
+        <ul>
+            <li>
+                <div>rotateX()</div>
+            </li>
+            <li>
+                <div>rotateY()</div>
+            </li>
+            <li>
+                <div>rotateZ()</div>
+            </li>
+            <li>
+                <div>rotate3d(x, y, z, angle)</div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

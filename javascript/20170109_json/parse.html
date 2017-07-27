@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="list">
+    <li>
+        <img src="" alt="">
+        <a href="http://baidu.com">标题</a>
+        <i>发布时间： <span></span></i>
+        <i>作者: <span></span></i>
+        <i>分类: <span></span></i>
+    </li>
+</ul>
+<script src="data.js"></script>
+<!--<script>
+
+    /**
+     * 数据绑定
+     * json ==> html中
+     */
+    &lt;!&ndash;var list = document.getElementById("list");
+    var d = data.results;
+    var html = "";
+    for (var i = 0; i < d.length; i++) {
+        html += createList(d[i]);
+    }
+    list.innerHTML = html;
+    function createList(data) {
+        var imgUrl = "";
+        if (data["images"]) {
+            imgUrl = data["images"][0];
+        }
+        console.log(imgUrl);
+        var html = '<li>' +
+                '<img src="'+imgUrl+'" alt="">' +
+                '<a href="' + data["url"] + '">标题</a>' +
+                '<i>发布时间： <span>' + data["publishedAt"] + '</span></i>' +
+                '<i>作者: <span>' + data["who"] + '</span></i>' +
+                '<i>分类: <span>' + data["type"] + '</span></i>' +
+                '</li>';
+        return html;
+    }
+    var tit = "ert6yu7i";
+    var s = '<a href="index.html">' + tit + '</a>';
+</script>
+&ndash;&gt;-->
+
+<script src="data.js"></script>
+<script>
+    var list = document.getElementById("list");
+    var t = data.results;
+
+    var html ="";
+    for(var i=0;i< t.length;i++){
+        html += tts(t[i]);
+    }
+    list.innerHTML = html;
+    function tts(data){
+        /*html = '<li>'+
+               '<i>标题'+data["source"]+'</i>'+
+               '<i>类型'+data["type"]+'</i>'+
+               '<a href="'+data["url"]+'">'+'地址'+'</a>'+
+               '<i>name'+data["who"]+'</i>'+
+                        '</li>';*/
+            html = '<li>'
+            html+= '<img src="" alt="">';
+            html+= '<a href="http://baidu.com">标题</a>';
+            html+= '<i>发布时间： <span></span></i>';
+            html+= '<i>作者: <span></span></i>';
+            html+= '<i>分类: <span></span></i>';
+            html+= '</li>';
+        return html;
+    }
+</script>
+</body>
+</html>

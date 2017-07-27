@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+            list-style: none;
+        }
+body{
+    font-family: "Microsoft YaHei";
+}
+        #parent{
+            width: 250px;
+            padding-left: 20px;
+
+        }
+        #parent h2{
+            font-size: 18px;
+            font-weight: normal;
+            color: #000;
+            height: 30px;
+            line-height: 30px;
+        }
+        #parent>li{
+            margin: 5px 0;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .child{
+            padding-left: 20px;
+            display: none;
+        }
+        .child li{
+            height: 30px;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+<ul id="parent">
+    <li>
+        <h2>我的好友</h2>
+        <ul class="child">
+            <li>马化腾</li>
+        </ul>
+    </li>
+    <li>
+        <h2>去也</h2>
+        <ul class="child">
+            <li>马云</li>
+        </ul>
+    </li>
+    <li>
+        <h2>来吧</h2>
+        <ul class="child">
+            <li>扎克伯格</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+
+    var h2 = document.getElementsByTagName("h2");
+    var child = document.getElementsByClassName("child");
+    for(var i=0; i<h2.length; i++){
+        var flag = false;
+        h2[i].onclick = function(){
+            for(var j=0; j<child.length; j++){
+                child[j].style.display = "none"
+            }
+            if(flag == false){
+                this.nextElementSibling.style.display = "block";
+                flag = true;
+            }else{
+                this.nextElementSibling.style.display = "none";
+                flag = false;
+            }
+        }
+    }
+</script>
+</body>
+</html>

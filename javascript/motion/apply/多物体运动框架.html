@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            opacity:;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    var timer = null;
+    /**
+     * obj:给obj自定义一个timer,以解决定时器之间干扰问题
+     * @param obj
+     * @param iTarget
+     */
+    /*function startMove(obj, iTarget){
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+            var speed = (iTarget-obj.offsetLeft)/6;
+            speed = speed>0?Math.ceil(speed) : Math.floor(speed);
+
+            if(obj.offsetWidth == iTarget){
+                clearInterval(obj.timer)
+            }else {
+                obj.style.width = obj.offsetWidth + speed+"px";
+            }
+        }, 30);
+    }*/
+
+    function getStyle(obj, attr){
+        if(obj.getComputedStyle()){
+
+        }else{
+            return obj.getComputedStyle()
+        }
+    }
+    function startMove(obj, iTarget){
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function(){
+            var speed = (iTarget-obj.alpha)/6;
+            speed = speed>0?Math.ceil(speed) : Math.floor(speed);
+
+            if(alpha == iTarget){
+                clearInterval(obj.timer)
+            }else {
+                obj.style.opacity = speed/100;
+            }
+        }, 30);
+    }
+</script>
+</body>
+</html>

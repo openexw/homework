@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        .box{
+            width: 400px;
+            height: 300px;
+            border: 1px solid #000;
+            text-align: left|center|right;
+        }
+        .box p{
+            width: 300px;
+            white-space:nowrap; /**强制在一行显示*/
+            overflow:hidden; /*溢出部分掩藏*/
+            text-overflow:ellipsis; /**超出部分用省略号显示*/
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+
+        <p>让DIV,LI等元素超出部分文字用省略号让DIV,LI等元素超出部分文字用省略号…显示。让DIV,LI等元素超出部分文字用省略号…显示。让DIV,LI等元素超出部分文字用省略号…显示。</p>
+    </div>
+</body>
+</html>

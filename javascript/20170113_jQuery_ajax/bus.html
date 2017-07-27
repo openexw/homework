@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+    <style>
+        body,li,ul, p,h2{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            font-family: "Microsoft YaHei";
+        }
+        li{
+            list-style: none;
+        }
+        .list li{
+            height: 178px;
+            border: 1px solid #000;
+            position: relative;
+            border-top: none;
+        }
+        .list li img{
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            bottom: 20px;
+            width: 200px;
+        }
+        .list li .con{
+           padding: 20px 20px 20px 235px;
+            color: #999;
+        }
+        .tit{
+            height: 26px;
+            line-height: 26px;
+            font-size: 18px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .tit h2{
+            display: inline-block;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .tit span{
+            font-size: 12px;
+            color: #fff;
+            background-color: #45BCF9;
+            padding: 3px 6px;
+            font-size: 12px;
+            display: inline-block;
+            position: relative;
+            top: -2px;
+            margin-right: 6px;
+        }
+        .list-i{
+            margin-bottom: 10px;
+        }
+        .list-i span{
+            font-size: 12px;
+            color: #999;
+            margin-right: 10px;
+        }
+        .list-i i{
+            padding-right: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="col-md-9 list" >
+        <ul class="data-lsit">
+            <!--<li>
+                <img src="WEB.jpg" alt="">
+                <div class="con">
+                    <div class="tit">
+                        <span>前端资讯</span>
+                        <h2>必盛互联香港主机–建站首选</h2>
+                    </div>
+                    <div class="list-i">
+                        <span><i class="glyphicon glyphicon-time"></i>2017-1-13</span>
+                        <span><i class="glyphicon glyphicon-user"></i>jav</span>
+                    </div>
+                    <p>香港主机一直受到国内站长的喜爱，其比较突出的特点是主机比较稳定，访问速度比较快，并且免备案。那么说到性价比比较高的香港主机，必盛互联当然是首选。 首先，先介绍下必盛互联，其提供的香港主机最大的特点就是主机配置强大，支持功能较多，管理也尤为方...</p>
+                </div>
+            </li>-->
+        </ul>
+    </div>
+</div>
+<script src="../dist/js/jQuery.min.js"></script>
+<script>
+    var baseUrl = "http://op.juhe.cn/onebox/bus/query_ab"
+
+    /*$.get(
+            baseUrl,
+            {"from":"重庆", "to":"上海"},
+            function(data){
+                console.log(data);
+            },
+            "json"
+    );*/
+    var url='http://gank.io/api/random/data/Android/20';
+    $.ajax({
+        type:'GET',
+        url:url,
+        dataType:'json',
+
+        success:function(data){
+            var str = JSON.stringify(data)
+            console.log(str);
+            if(!data.error){
+                bindData(data.results)
+            }
+        },
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+          /*  alert(XMLHttpRequest.status);
+            alert(XMLHttpRequest.readyState);
+            alert(textStatus);*/
+        }});
+
+        function bindData(data){
+            var html = '';
+            for(i in data){
+                var img = "WEB.jpg";
+                if(data[i]["images"]){
+                    img = data[i]["images"];
+                }
+                var d = data[i];
+                var time = getDateF(d["createdAt"]);
+                var who = d["who"] == null? "未知": d["who"];
+                html += '<li>'+
+                        '<img src='+img+' alt="">'+
+                        '<div class="con">'+
+                        '<div class="tit">'+
+                        '<span>'+d["type"]+'</span>'+
+                        '<h2>'+d["desc"]+'</h2>'+
+                        '</div>'+
+                        '<div class="list-i">'+
+                        '<span><i class="glyphicon glyphicon-time"></i>'+time+'</span>'+
+                        '<span><i class="glyphicon glyphicon-user"></i>'+who+'</span>'+
+                        '</div>'+
+                        '<p>'+d["desc"]+'</p>'+
+                        '</div>'+
+                        '</li>';
+            }
+            console.log(html);
+            $(".data-lsit").html(html);
+        }
+    function getDateF(str){
+        var date = new Date(str);
+        var year = date.getFullYear();
+        var day = date.getDate();
+        var mouth = date.getMonth()+1;
+
+        day = checkF(day);
+        mouth = checkF(mouth);
+
+        return year+"-"+mouth+"-"+day;
+    }
+
+    function checkF(num){
+        if(num < 9){
+            return "0"+num;
+        }
+        return num+"";
+    }
+</script>
+</body>
+</html>

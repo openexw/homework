@@ -1,0 +1,20 @@
+@CHARSET "UTF-8";
+
+.container-fluid{
+	background: #3b5998;
+}
+
+/* 导航文字颜色 */
+.navbar-nav li a{
+	color: #fff;
+}
+
+/* 鼠标放上去后的颜色 */
+.navbar-nav li a:hover{
+	background: #2b4170;
+}
+
+/* 选中后的颜色 */
+.active{
+	background: #2b4170;
+}

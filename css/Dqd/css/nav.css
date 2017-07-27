@@ -1,0 +1,48 @@
+/*公共样式 start*/
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+
+.clearFix{
+
+}
+/*公共样式 end*/
+
+/*导航 start*/
+.nav{
+    width: 1200px;
+    height: 100px;
+    margin: 0 auto;
+    position: relative;
+    /*position: absolute;
+    left: 50%;
+    margin-left: -600px;*/
+    background-color: #808;
+    color: #fff;
+}
+
+.nav .logo{
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+.nav .min-tit{
+    padding-left: 147px ;
+    padding-top: 30px;
+}
+.navbar{
+    position: absolute;
+    right: 0;
+    top: 40px;
+}
+.navbar li{
+    float: left;
+}
+.navbar li a{
+    color: #ffffff;
+}
+/*导航 end*/

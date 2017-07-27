@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            float: left;
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            background-color: #976;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="text">
+<input type="button" value="前插入">
+<input type="button" value="后插入">
+<input type="button" value="删除前">
+<input type="button" value="后删除">
+<div id="con">[1,3,5]</div>
+
+<script>
+    var arr = [1,3,5]; //[1,3,5]
+    var con = document.getElementById("con");
+    var input = document.getElementsByTagName('input');
+    for(var i=0; i<input.length; i++){
+        var txt = input[0]; //输入框
+        input[1].onclick = function(){
+            /**
+             * 1. 获取input的值
+             *  1.1 判断是否为空？
+             * 2. 将值添加到数组中
+             * 3. 显示数组中的内容
+             * 4. 清空input中的值
+             */
+            var val = txt.value;
+
+            if(val != ""){
+              arr.unshift(val);
+            }
+
+            con.innerHTML = "["+arr+"]";
+            txt.value = ""; //将输入框的内容清空
+        }
+
+        new Array();
+        input[2].onclick = function(){
+            var val = txt.value;
+
+            if(val != ""){
+                arr.push(val);
+            }
+
+            con.innerHTML = "["+arr+"]";
+            txt.value = ""; //将输入框的内容清空
+        }
+
+        //
+        input[3].onclick = function(){
+            if(arr.length >0){
+                arr.shift();
+//            console.og();
+                con.innerHTML = "["+arr+"]";
+                txt.value = ""; //将输入框的内容清空
+            }else{
+                con.innerHTML = "数组已空";
+            }
+        }
+
+        input[4].onclick = function(){
+            if(arr.length >0){
+                arr.pop();
+//            console.og();
+                con.innerHTML = "["+arr+"]";
+                txt.value = ""; //将输入框的内容清空
+            }else{
+                con.innerHTML = "数组已空";
+            }
+        }
+
+    }
+</script>
+
+</body>
+</html>

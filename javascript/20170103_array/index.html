@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /**
+     * 数组：
+     * 定义
+     *  1. []
+     *  2. Array()
+     */
+    var arr = [];
+    arr[0] = "a";
+    arr[1] = "b";
+    arr[2] = "c";
+
+    var arr = ["a", 1, true, NaN];
+    console.log(typeof arr); //object
+
+    var a = Array(1,3,"a"); //构造函数
+    String()
+    console.log(a[3]);
+
+    if(a[3] != undefined){
+        //code
+    }
+
+    for(var i = 0; i < a.length; i++){
+        console.log(a[i]);
+    }
+
+    a[3] = "df";
+    //stack 栈
+    a.push("hehe"); //在数组末尾添加一个元素
+    a.unshift("io"); //在数组的最前面添加元素
+    a.pop(); //删除最后一个元素
+    a.shift(); //删除数组的第一个元素
+    console.log(a);
+
+    //
+
+    var a1 = [[],4,5]; // 1 16 25
+    var a = [
+            [1,0,1,1,1],
+            [0,0,0,0,1],
+            [0,0,0,0,1],
+            4567
+    ];
+
+    console.log(a)
+    var a2 = [3,5,7];
+    var a3 = a1.concat(a2);
+    console.log(a3);
+    console.log(a3.indexOf(5));
+    console.log(a3.join('%-'));
+    console.log(a3.lastIndexOf(5));
+
+    function s(x){
+        return x*x;
+    }
+    /**
+     * 属性
+     * 方法 - 函数
+     */
+
+    a1[1] = s(a1[1]);
+    console.log(a1);
+    console.log(a1.map(Math.sqrt));
+
+    console.log(a3.reverse()); //[7, 5, 3, 5, 4, 1]
+    var s = a3.slice(1, 5);
+    console.log(s, a3); // [5, 3,5]
+
+    function max(a, b){
+        return b-a;
+    }
+
+    a3.sort(max);
+    var arr = ["话", "地方", "方"];
+    arr.sort();
+    arr.reverse();
+    console.log(arr);
+
+    var As = ["B", "O", "A", "M"];
+console.log(As);
+    As.splice(2, 0, "Q", "()");
+    console.log(As, "dff");
+
+    var arrr = [3,5,7]; //0,1,2 下标=>键
+
+    console.log(1 in arrr);
+
+    for(var i=0; i<arrr.length; ++i){
+
+    }
+
+    // for in
+    /**
+     * array
+     * object
+     */
+    /**
+     * 索引数组 => 0,1,1
+     * 关联数组 =
+     */
+    var ax = [];
+//    ax[0] = "df"; // key=>value
+    ax["user"] = "Jack";
+    ax["age"] = 90;
+
+   /* ax[0] // "df"
+    ax["user"] //"Jack"
+    ax.user; // "Jack*/
+    var count = 0;
+    for(var i in ax){
+        console.log(i);
+        count++;
+    }
+    console.log(count);
+
+    var a = [,0,0];
+    console.log(a);
+
+
+</script>
+</body>
+</html>

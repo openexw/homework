@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>缓冲运动</title>
+    <style>
+        #div{
+            width: 100px;
+            height: 100px;
+            background-color: #ff0000;
+            position: absolute;
+            left: 0;
+            top: 50px;
+        }
+        #div2{
+            width: 1px;
+            height: 300px;
+            position: absolute;
+            left: 300px;
+            top: 0;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="开始运动" onclick="startMove()">
+<div id="div"></div>
+<!--
+    标杆，以验证div没有运动到300px
+-->
+<div id="div2"></div>
+<script>
+    /**
+     * 距离大，速度大
+     * 距离小，速度小
+     *
+     * 速度和距离成正比
+     */
+
+    /**
+     * 问题：div没有运动到300px
+     * 连个div
+     * 原因：距离291 速度0.9，计算机会默认把290.5px == 290px
+     * 290.9px == 290px
+     *
+     * px是屏幕的最小单位，不会允许出现比1px还小的单位
+     *
+     * 解决办法：向上（向下）取整
+     * 不能单一的使用一个:
+     * 左->右： cile
+     * 右->左：floor
+     * @type {null}
+     */
+    var timer = null;
+    /*function startMove(){
+        var oDiv = document.getElementById("div");
+
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var speed = (300 - oDiv.offsetLeft)/10; //距离(== 速度是)；成正比
+            oDiv.style.left = oDiv.offsetLeft+speed+"px";
+        }, 30);
+
+    }*/
+    function startMove(){
+        var oDiv = document.getElementById("div");
+
+        clearInterval(timer);
+        timer = setInterval(function(){
+            var speed = (300 - oDiv.offsetLeft)/10; //距离(== 速度是)；成正比
+            /**
+             * 解决两个方向是没有运动到300px的问题
+             */
+            speed = speed>0?Math.ceil(speed):Math.floor(speed);
+            oDiv.style.left = oDiv.offsetLeft+speed+"px";
+        }, 30);
+
+    }
+</script>
+</body>
+</html>

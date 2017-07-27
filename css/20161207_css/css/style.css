@@ -1,0 +1,23 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{ /*电脑*/
+    width: 1000px;
+    height: 400px;
+    background-color: #890;
+    margin: 0 auto;
+}
+
+@media all and (device-width: 1366px){ /*手机*/
+    .container{
+        width: 100%;
+        background-color: #00f;
+    }
+}
+@media all and (max-width: 768px){ /*平板*/
+    .container{
+        width: 800px;
+        background-color: #f00;
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../dist/js/jQuery.min.js"></script>
+    <script>
+        //callback: 回调函数
+        $(function(){
+            var doc = $("div");
+            console.log(doc);
+//            doc.get(1)
+
+            doc.css("width", "300px");
+            /**
+             * jQuery对象转换成JavaScript对象（DOM对象）？
+             * ```js
+             * var div = $("#div"); // jQuery对象 [div#div, dfs]
+             * //转换成DOM对象
+             * div[index] //index指的是“数组”的下标
+             * ``
+             * DOM对象转换成jQuery对象？
+             *
+             * ```js
+             * var div = document.getElementById("div"); //DOM对象
+             * $(div); //将DOM对象转换成jQuery对象
+             * ```
+             */
+
+            console.log(doc.length);
+            /**
+             * jQuery3.1.1 size() 移除了
+             */
+//            console.log(doc.size());
+            console.log(doc.selector);
+
+        });
+
+
+
+        $(document).ready(function(){
+
+        });
+
+       /* s(function(){
+//            arguments[0]
+        }, 1000);
+
+        function s(fn, rt){
+            console.log(arguments[1]);
+            fn("dsff");
+        }*/
+
+
+    </script>
+</head>
+<body>
+<div id="con">
+    <span  data-index="0001">1</span>
+    <span class="s" data-index="0001">2</span>
+    <span data-index="0001">3</span>
+    <span data-index="0001">4</span>
+    <span data-index="0001">5</span>
+    <div>
+        <div></div>
+    </div>
+
+</div>
+<div></div>
+
+
+<input type="text" name="" id="">
+<style>
+   #con div:nth-child(2){
+
+   }
+</style>
+
+<script>
+    var p = $("#con:parent");
+    console.log(p);
+    var span = $("span");
+    var i = span.attr("data-index", "45");
+    i = span.data("index");
+
+    console.log($(".s + span:gt(2)"));
+    span.each(function(i, item){
+        item.index = i;
+        item.onclick = function(){
+            console.log(this.index);
+        }
+    });
+    /*for(var i=0; i<span.length; i++){
+        span[i].index = i;
+        $(span[i]).data("data", i);
+        span[i].onclick = function(){
+            console.log($(this).data("data"));
+//            console.log(this.index)
+        }
+    }*/
+
+//    alert(i);
+//    i = span[0].getAttribute("data-index")
+    /**
+     * attr(name, value)
+     * //传一个参数：获取属性值
+     * //传二个参数：设置属性值
+     * name: 属性名字
+     * value：属性值
+     *
+     * attr("width", "200px")
+     */
+    i = span.attr("");
+
+    /**
+     * 1.x 兼容所有浏览器
+     * 2.x 放弃了IE、6/7、8
+     */
+   var div =  $("#con span"); //Jquery对象
+//   var div =  $("div"); //Jquery对象
+//    var divs = document.getElementById("con");
+    console.log(div);
+//    console.log(divs);
+
+
+    /**
+     * jQuery对象转换成哼JavaScript对象
+     */
+
+
+    /**
+     * 选择器；
+     * 1. 基本选择器
+     * 2. 关系选择器
+     * 3. 伪类选择器
+     * 4. 属性选择器
+     */
+    $("#id")
+</script>
+</body>
+</html>

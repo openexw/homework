@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>canvas</title>
+    <style>
+        #canvas{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500">
+    您的浏览器，不支持canvas标签！
+</canvas>
+
+<script>
+    var canvas = document.querySelector("#canvas");
+    if(canvas.getContext){
+        //获取上下文环境（渲染环境）
+        var ctx = canvas.getContext("2d");
+
+        //1. 画一个矩形rect
+        /**
+         * x: 矩形x轴的开始坐标
+         * y: 矩形y轴的开始坐标
+         * w: 矩形的宽度
+         * h: 矩形的高度
+         */
+       /* ctx.fillRect(0, 0, 50, 50);
+        //矩形轮廓
+        ctx.strokeRect(100, 100, 50, 50);
+        ctx.clearRect(0, 0, 500, 500);*/
+
+
+
+        // 2. 绘制路径
+
+        /**
+         * 步骤：
+         * 1. 创建一个路径的起始点 (beginPath)
+         * 2. 画图
+         * 3. 关闭路径(closePath)
+         */
+
+       /* ctx.beginPath();
+        ctx.moveTo(10, 20); //画笔的起始
+        ctx.lineTo(100, 100); //画一条线段
+        ctx.lineTo(200, 300);
+        ctx.lineTo(10, 20);
+        ctx.stroke(); //画出轮廓
+//        ctx.fill(); //填充
+        ctx.closePath();
+
+        // 3. 绘制文字
+        ctx.font = "40px MicrosoftYaHei";
+        ctx.fillStyle = "#f00";
+        ctx.fillText("你哈", 300, 400);
+        ctx.strokeText("He", 350, 450);*/
+
+        var img = new Image();
+        img.onload = function(){
+          ctx.drawImage(img, 0, 0, 300, 300)
+        };
+//        ctx.drawImage(img, 0, 0, 300, 300)
+        img.src = 'image/BA.GIF';
+    }
+</script>
+</body>
+</html>

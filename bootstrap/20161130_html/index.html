@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #bg_img{
+            /*background 后才可以同时加颜色和背景图*/
+            background: yellow url('./img/login.png');
+            width: 200px;
+            height: 200px;
+            -webkit-background-size: 100px 100px;
+            background-size: 100px 100px;
+            color: #fff;
+            background-position: 50px 30px;
+            border: 1px solid red;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <link rel="stylesheet" href="../dist/css/bootstrap.min.css">
+    <script src="./js/jquery.js"></script>
+    <script src="../dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <a href="D:\example\bootstrap\20161130_html\test.html">绝对路径</a>
+
+    <!-- .当前目录
+         ..父级目录-->
+    <a href="./test.html">相对路径</a>
+
+    <a href="../test.html">第二个测试相对路径</a>
+
+    <a href="../20161129_html/nav.html">nav.html</a>
+
+    <!-- 注意：
+            当前目录记得也加上./
+            相对路径是有当前文件所在目录进行查看 -->
+
+    <a href="http://www.baidu.com" target="_parent">
+        <img width="300px" height="" src="./img/login.png" alt="图片格式出错" />
+        <img src="" alt="" />
+    </a>
+
+    <a href="./img/login.png">这是一张图片</a>
+
+    <iframe src="./test.html" frameborder="0" style="width:200px;height:200px;border:1px solid red"></iframe>
+
+    <div id="bg_img">
+        这是一张背景图片
+    </div>
+
+
+    <!-- 路径导航 -->
+    <ol class="breadcrumb">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Html</a></li>
+        <li class="active">Div</li>
+    </ol>
+    <!-- 路径导航结束 -->
+
+    <!-- 分页 -->
+    <nav>
+        <ul class="pagination"><!-- 默认尺寸 -->
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul class="pagination pagination-lg"><!-- 最大尺寸 -->
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <ul class="pagination pagination-sm"><!-- 最小尺寸 -->
+            <li><a href="#">&laquo;</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">&raquo;</a></li>
+        </ul>
+    </nav>
+
+    <!-- 翻页 -->
+    <ul class="pager"><!-- li上加class 可以分开显示在最左 和 最右 (previous/next)-->
+        <li class="previous disabled"><a href="#">上一页</a></li>
+        <li class="next"><a href="#">下一页</a></li>
+    </ul>
+
+    <!-- 标签 -->
+    <span class="label label-default">default</span>
+    <span class="label label-danger">danger</span>
+    <span class="label label-warning">warning</span>
+    <span class="label label-info">info</span>
+    <span class="label label-primary">primary</span>
+    <span class="label label-success">success</span>
+
+    <!-- 微章 -->
+    xxx 等级：<span class="badge">45级</span>
+    <button class="btn btn-warning" type="button">
+        点击次数 <span class="badge">100</span>
+    </button>
+
+    <br /><br />
+
+
+    <br /><br />
+
+    <!--<div class="progress">-->
+        <!--<div id="aria" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">-->
+            <!--45%-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <div class="progress">
+        <div id="aria" class="progress-bar progress-bar-danger progress-bar-striped active" aria-valuemin="1" aria-valuemax="100" style="width: 0%">
+            10%
+        </div>
+    </div>
+    <button id="start" class="btn btn-primary">start</button>
+    <button id="stop" class="btn btn-warning">stop</button>
+    <script>
+        var aria = document.getElementById('aria');
+        var start = document.getElementById('start');
+        var stop = document.getElementById('stop');
+
+        var timer;
+        var n = 1;
+        /**
+         * 定义time函数
+         */
+        function time(){
+            //清除定时器
+            clearInterval(timer);
+            //设置定时器并赋值给timer
+            timer = setInterval(function(){
+                //设置进度条的宽度
+                aria.style.width = n+"%";
+                //设置进度条的值（显示的的值）
+                aria.innerHTML = n+"%";
+                //数组用来存放各种不同的样式
+                var arr = ["progress-bar progress-bar-info progress-bar-striped active",
+                            "progress-bar progress-bar-success progress-bar-striped active",
+                            "progress-bar progress-bar-primary progress-bar-striped active",
+                            "progress-bar progress-bar-danger progress-bar-striped active"];
+                //设置进度条的样式
+                aria.className = arr[Math.floor(n/30)];
+
+                //进度条最大的值为100，若大于100，清除定时器
+                if (n>=100){
+                    clearInterval(timer);
+                }else{
+
+                    n++;
+                }
+            },200);
+        }
+
+        //设置事件
+        start.onclick = function(){
+            time();
+        }
+        stop.onclick = function(){
+            clearInterval(timer);
+        }
+    </script>
+
+
+
+    <script>
+//        var n = 0;
+//        var timer = setInterval(function(){
+//            $('#aria').css('width', n+"%");
+//            $('#aria').html(n+"%");
+//            n = n>100 ? 100 : n+1;
+//
+//            if (n>100)
+//                    clearInterval(timer);
+//        },16);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<script>
+    var canvas = document.querySelector("#canvas");
+    canvas.width = 500;
+    canvas.height = 500;
+    if(canvas.getContext){
+        var ctx = canvas.getContext('2d');
+
+        /*//设置线段端点的显示样式
+        ctx.lineCap = "round";
+        ctx.lineWidth = 2;
+        //设置两条线段连接处的显示样式
+        ctx.lineJoin = 'miter';
+
+        ctx.moveTo(0, 0);
+        ctx.lineTo(100, 100);
+        ctx.lineTo(100, 30);
+        ctx.stroke();
+
+        ctx.save(); //保存当前的状态
+
+        ctx.lineCap = "butt";
+        ctx.lineJoin = 'bevel';
+        ctx.moveTo(20, 20);
+        ctx.lineTo(50, 70);
+        ctx.lineTo(20, 50);
+        ctx.stroke();
+
+        ctx.restore(); //恢复到上一个save的状态
+
+        ctx.moveTo(400, 300);
+        ctx.lineTo(300, 200);
+        ctx.lineTo(300, 250);
+        ctx.stroke();*/
+
+        ctx.save();
+        ctx.translate(40, 40);
+        /**
+         * angle：表示旋转的角度，单位为弧度制
+         */
+        ctx.rotate(Math.PI/180*45);
+        /**
+         * x: X轴的缩放比例
+         * y：Y轴的缩放比例
+         * Note: 如果值大于1则表示放大，小于1则表示缩小
+         */
+        ctx.scale(0.5, 0.5);
+        ctx.fillRect(0, 0, 40, 40);
+        ctx.fill();
+        ctx.restore();
+
+        ctx.save();
+        /**
+         * 2 0 0
+         * 0 2 0
+         * 0 0 1
+         */
+        ctx.transform(2, 20, 20, 2, 100, 100);
+        ctx.fillRect(0, 0, 100, 100);
+        ctx.fill();
+        ctx.restore();
+//        ctx.
+        /*ctx.moveTo(100, 100);
+        ctx.lineTo(300,200);
+        ctx.lineTo(500, 100);
+        //接受一个数组，来指定线段与间隙的交替
+        ctx.setLineDash([10, 10]);
+        //设置起始偏移量
+        ctx.lineDashOffset = -10;
+        ctx.stroke();*/
+
+        /**
+         * x,y:表示的是以(x, y)为圆心
+         * radius：圆的半径
+         * startAngle：开始角度 单位为弧度
+         * endAngle：结束角度 单位为弧度
+         * anticlockwise：绘制的方向，true为逆时针、false为顺时针
+         */
+        /*ctx.arc(100, 60, 50, 0, Math.PI*2);
+
+        ctx.stroke();
+
+        ctx.beginPath();
+        //60*的一个扇形 ==> 角度->弧度：PI/180*a
+        ctx.arc(200, 200, 60, 0, Math.PI/180*60, false);
+        ctx.lineTo(200, 200);
+        ctx.fill();
+        ctx.closePath();*/
+       /* var offset = 0;
+
+        function draw() {
+            ctx.clearRect(0,0, canvas.width, canvas.height);
+            ctx.setLineDash([4, 2]);
+            ctx.lineDashOffset = -2;
+            ctx.strokeRect(10,10, 100, 100);
+        }
+        draw();
+        /!*function march() {
+            offset++;
+            if (offset > 16) {
+                offset = 0;
+            }
+            draw();
+            setTimeout(march, 20);
+        }*!/
+        march();*/
+    }
+</script>
+</body>
+</html>

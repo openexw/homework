@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+
+    <style>
+        div{
+            width: 500px;
+            height: 500px;
+            margin-left: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+<div id="div" >电风扇</div>
+<script>
+   /* document.getElementById("div").onclick = function(){
+        alert("90");
+    };
+*/
+    var div = document.getElementById("div");
+   div.addEventListener("click",function(event){
+       console.log(div.offsetLeft);
+   });
+   /*function ad(){
+       alert("dff");
+   }*/
+
+  /* onclick()
+
+   ondblclick() //双击*/
+
+   /* div.oncontextmenu = function(e){
+        console.log(div.offsetLeft);
+
+        console.log(e);
+        console.log("dff");
+
+        return false;
+    };
+*/
+   /**
+    * 一、鼠标事件
+    * 1. 点击事件（单击、双击）
+    * 2. 滑动事件
+    * 3. 滚轮事件
+    * 二、键盘事件
+    * 三、HTML事件
+    * */
+
+/**
+ * 添加事件
+ * 1. 在html中添加`onXXX`属性
+ * 2. 获取元素后添加`.onXXXX`
+ * 3. 通过`addEventListener("eventType", callback)`
+ */
+
+   /**
+    * onclick	当用户点击某个对象时调用的事件句柄。
+      ondblclick	当用户双击某个对象时调用的事件句柄。
+      oncontextmenu	在用户点击鼠标右键打开上下文菜单时触
+      onmousemove	鼠标被移动。
+      onmouseover	鼠标移到某元素之上。
+      onmouseout 鼠标从某元素移开。
+    */
+
+    document.onkeydown = function(e){
+        var code = e.keyCode;
+//        console.log(code);
+        if(code == 13){
+            console.log("df")
+        }
+    }
+   document.onkeyup = function(e){
+       var code = e.keyCode;
+       console.log(code);
+       /*if(code == 13){
+           console.log("ddff")
+       }*/
+   }
+
+    document.onkeypress = function(){
+
+    }
+</script>
+</body>
+</html>

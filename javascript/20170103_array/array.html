@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="text">
+<input type="button" value="前插入" id="beforein">
+<input type="button" value="后插入" id="afterin">
+<input type="button" value="前删除" id="beforedel">
+<input type="button" value="后删除" id="afterdel">
+<h2 id="h2">[1,2,3,4,5,6]</h2>
+
+<script>
+    var beforein =document.getElementById("beforein");
+    var text =document.getElementById("text");
+    var h2 =document.getElementById("h2");
+    var arr =[1,2,3,4,5,6];
+    beforein.onclick=function(){
+        var val =text.value;
+        arr.unshift(val);
+        h2.innerText="["+arr+"]";
+    }
+    var afterin =document.getElementById("afterin");
+    afterin.onclick=function(){
+        var val =text.value;
+        arr.push(val);
+        h2.innerText="["+arr+"]";
+    }
+    var beforedel =document.getElementById("beforedel");
+    beforedel.onclick=function(){
+        var val =text.value;
+        arr.shift(val);
+        h2.innerText="["+arr+"]";
+    }
+    var afterdel =document.getElementById("afterdel");
+    afterdel.onclick=function(){
+        var val =text.value;
+        arr.pop(val);
+        h2.innerText="["+arr+"]";
+    }
+</script>
+</body>
+</html>
